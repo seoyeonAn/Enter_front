@@ -18,6 +18,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <p>seo 230915</p>
     </div>
   );
 }
