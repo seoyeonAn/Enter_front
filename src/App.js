@@ -18,11 +18,6 @@ function App() {
           Learn React
         </a>
       </header>
-
-      <p>seo 230915</p>
-      <p>hye 230915</p>
-      <p>hyeon 230915</p>
-      <p>sj 230915</p>
     </div>
   );
 }
