@@ -19,7 +19,8 @@ const BaseLayout = () => {
             </li>
 
             <li>
-              <NavLink to="/info/1" style={activeStyle} className="nav-link">
+              <NavLink to="/info/1" 
+              style={activeStyle} className="nav-link">
                 INFO
               </NavLink>
             </li>

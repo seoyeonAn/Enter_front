@@ -1,6 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
+const buttonStyle = () => ({
+  backgoundColor: "#be3455"
+});
+
 const InfoCard = ({ information }) => {
   return (
     <>
@@ -11,6 +15,7 @@ const InfoCard = ({ information }) => {
           {information.start_date} ~ {information.end_date}
         </Card.Text>
         <Button variant="primary">Show More</Button>
+        {/* <Button style={buttonStyle}>Show More</Button> */}
       </Card.Body>
     </>
   );

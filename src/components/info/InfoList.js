@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { infoActions } from "../../toolkit/actions/info_action";
-import PageNavigation from "./PageNavigation";
+import { useParams } from "react-router-dom";
 import InfoCard from "./InfoCard";
+import PageNavigation from "./PageNavigation";
 
 import Card from "react-bootstrap/Card";
 
@@ -25,7 +25,7 @@ const InfoList = () => {
     state.information.pv ? state.information.pv : { currentPage: 1 }
   );
 
-  console.log("infoList(view): ", infoList);
+  console.log("infoList: ", infoList);
 
   return (
     <>

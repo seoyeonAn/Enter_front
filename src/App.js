@@ -12,8 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<BaseLayout />}>
           <Route index element={<Home />} />
-          <Route path="info/:currentPage" element={<InfoList />} />
-          {/* <Route path="info/:currentPage" component={InfoList} /> */}
+          <Route path="info/:currentPage" 
+          element={<InfoList />} />
         </Route>
       </Routes>
     </div>

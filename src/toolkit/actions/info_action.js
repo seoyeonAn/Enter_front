@@ -1,6 +1,7 @@
 import axios from "axios";
 import { infoReducers } from "../reducers/info_reducer";
 
+
 function getInfoList(currentPage) {
   return async (dispatch) => {
     const data = await axios
@@ -9,7 +10,7 @@ function getInfoList(currentPage) {
       .catch((error) => {
         console.log(error);
       });
-    console.log(data);
+    console.log('data: ', data);
     dispatch(infoReducers.getInfoList({ data }));
   };
 }
