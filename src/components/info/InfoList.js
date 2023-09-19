@@ -23,7 +23,7 @@ const InfoList = () => {
     state.information.pv ? state.information.pv : { currentPage: 1 }
   );
 
-  console.log("infoList: ", infoList);
+  //console.log("infoList: ", infoList);
 
   return (
     <>
@@ -31,7 +31,8 @@ const InfoList = () => {
         {infoList &&
           infoList.map((information) => {
             return (
-              <InfoCard information={information} key={information.title} />
+              // <InfoCard information={information} key={information.title} />
+              <InfoCard information={information} key={information.info_seq} />
             );
           })}
       </div>

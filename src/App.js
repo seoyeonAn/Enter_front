@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import BaseLayout from "./components/layout/BaseLayout";
 import Home from "./components/Home";
 import InfoList from "./components/info/InfoList";
+import InfoView from "./components/info/InfoView";
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<BaseLayout />}>
           <Route index element={<Home />} />
-          <Route path="info/:currentPage" 
-          element={<InfoList />} />
+          <Route path="info/:currentPage" element={<InfoList />} />
+          <Route path="info/view/:info_seq" element={<InfoView />} />
         </Route>
       </Routes>
     </div>

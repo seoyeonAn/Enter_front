@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
   infoList: [],
   pv: { currentPage: 1 },
+  infoDetail: {},
 };
 
 const infoSlice = createSlice({
@@ -10,9 +11,12 @@ const infoSlice = createSlice({
   initialState,
   reducers: {
     getInfoList(state, action) {
-      console.log("infoList(reducer): ", action.payload.data);
       state.infoList = action.payload.data.infoList;
       state.pv = action.payload.data.pv;
+    },
+    getInfoDetail(state, action) {
+      //console.log("infoDetail(reducer): ", action.payload.data.infoDetail);
+      state.infoDetail = action.payload.data;
     },
   },
 });

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const activeStyle = ({ isActive }) => ({
-  color: isActive ? "green" : "",
+  color: isActive ? "#be3455" : "",
   fontSize: isActive ? "1.2rem" : "",
 });
 
@@ -19,8 +19,7 @@ const BaseLayout = () => {
             </li>
 
             <li>
-              <NavLink to="/info/1" 
-              style={activeStyle} className="nav-link">
+              <NavLink to="/info/1" style={activeStyle} className="nav-link">
                 INFO
               </NavLink>
             </li>
