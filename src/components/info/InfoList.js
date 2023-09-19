@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import InfoCard from "./InfoCard";
 import PageNavigation from "./PageNavigation";
 
-import Card from "react-bootstrap/Card";
-
 const InfoList = () => {
   const { currentPage } = useParams();
   const dispatch = useDispatch();
@@ -29,15 +27,14 @@ const InfoList = () => {
 
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <div className="row">
         {infoList &&
           infoList.map((information) => {
             return (
               <InfoCard information={information} key={information.title} />
             );
           })}
-      </Card>
-
+      </div>
       {pv && <PageNavigation getInfoList={getInfoList} />}
     </>
   );
