@@ -1,35 +1,33 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import thumbnail from "./thumbnail.css";
+import "./infocard.css";
 import { Link } from "react-router-dom";
 
 const InfoCard = ({ information }) => {
   return (
     <>
-      <div className="col-3" style={{ width: "18%" }}>
-        <Card style={{ width: "230px", height: "480px" }}>
-          <Card.Img
-            variant="top"
-            src={information.thumbnail}
-            className="thumbnail"
-          />
-          <Card.Body>
-            <Card.Title>
-              <Link
-                to={`/info/view/${information.info_seq}`}
-                style={{ textDecorationLine: "none", color: "black" }}
-              >
-                {information.title}
-              </Link>
-            </Card.Title>
-            <Card.Text
-              style={{ padding: "30px 0", position: "absolute", bottom: "5px" }}
-            >
-              {information.start_date} ~ {information.end_date}
-            </Card.Text>
-          </Card.Body>
+      <div className="col-3">
+        <Card className="mainCard">
+          <Link to={`/info/view/${information.info_seq}`}>
+            <Card.Img
+              variant="top"
+              src={information.thumbnail}
+              className="thumbnail"
+            />
+
+            <Card.Body>
+              <Card.Title>{information.title}</Card.Title>
+
+              {information.start_date === null ? (
+                <Card.Text className="cardText">상시 개관</Card.Text>
+              ) : (
+                <Card.Text className="cardText">
+                  {information.start_date} ~ {information.end_date}
+                </Card.Text>
+              )}
+            </Card.Body>
+          </Link>
         </Card>
-        <br />
       </div>
     </>
   );

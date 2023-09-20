@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import pagination from "./pagination.css";
+import "./pagination.css";
 
 const PageNavigation = ({ getInfoList }) => {
   const pv = useSelector((state) =>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { infoActions } from "../../toolkit/actions/info_action";
 import { Button, Table } from "react-bootstrap";
-import "./button.css";
+import "./infoview.css";
 import { Link } from "react-router-dom";
 
 const InfoView = () => {
@@ -18,22 +18,20 @@ const InfoView = () => {
 
   return (
     <>
-      <h1
-        style={{
-          textAlign: "center",
-          marginTop: "100px",
-          marginBottom: "100px",
-        }}
-      >
-        {infoDetail.category}
-      </h1>
-      <div className="tableContent" style={{ position: "absolute" }}>
-        <img
-          src={infoDetail.thumbnail}
-          style={{ float: "left", marginRight: "100px", width: "350px" }}
-        />
-        <div className="tablediv" style={{ float: "right" }}>
-          <h2>{infoDetail.title}</h2> <hr />
+      <h1>{infoDetail.category}</h1>
+      <div className="tableContent">
+        <div className="imgDetail">
+          <img src={infoDetail.thumbnail} />
+        </div>
+        <div className="tableDetail">
+          <img
+            src="../../add.png"
+            style={{ height: "40px", width: "40px", float: "right" }}
+          />
+          <h2>{infoDetail.title}</h2>
+
+          <br />
+          <hr />
           <Table size="bg">
             <tbody>
               <tr>
@@ -42,9 +40,13 @@ const InfoView = () => {
               </tr>
               <tr>
                 <th>기간</th>
-                <td>
-                  {infoDetail.start_date} ~ {infoDetail.end_date}
-                </td>
+                {infoDetail.start_date === null ? (
+                  <td>상시 개관</td>
+                ) : (
+                  <td>
+                    {infoDetail.start_date} ~ {infoDetail.end_date}
+                  </td>
+                )}
               </tr>
               <tr>
                 <th>가격</th>
@@ -57,11 +59,9 @@ const InfoView = () => {
               <tr>
                 <th>문의</th>
                 <td>
-                  {infoDetail.tel} &nbsp;
+                  {infoDetail.tel}
                   <Link to={infoDetail.homepage} target="_blank">
-                    <Button className="button" style={{ float: "right" }}>
-                      홈페이지
-                    </Button>
+                    <Button className="buttonDetail">홈페이지</Button>
                   </Link>
                 </td>
               </tr>
@@ -70,16 +70,20 @@ const InfoView = () => {
         </div>
       </div>
 
-      {/* <div
-        className="detailContent"
-        style={{
-          marginTop: "100px",
-          position: "absolute",
-          bottom: "0px",
-        }}
-      >
+      {infoDetail.start_date === null ? null : (
+        <div className="D_DAY">
+          <div className="d_day">
+            <strong className="strongText">D-7</strong> 일 남았습니다.
+          </div>
+        </div>
+      )}
+
+      <div className="textContent">
         <h3>상세내용</h3>
-      </div> */}
+        <div className="division-line"></div>
+        <p>● 내용 : {infoDetail.content}</p>
+        <img src="https://www.sejongpac.or.kr/upload/2023/09/20230918_081814580_45150.jpg" />
+      </div>
     </>
   );
 };
