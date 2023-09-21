@@ -9,7 +9,6 @@ const Use_Join = () => {
   const [users, setUsers] = useState({
     // useState 함수를 사용하여 초기 상태를 설정합니다.
     // 이 상태 객체는 다음과 같은 속성을 가지며, 빈 문자열로 초기화됩니다.
-    Id: "",
     usersEmail: "",
     usersPass: "",
     usersName: "",
@@ -25,13 +24,13 @@ const Use_Join = () => {
       <form>
         <h1>회원가입</h1>
         <div className="container con">
-          <div className="form-group mb-1 id_area">
-            아이디
+          <div className="form-group mb-1 email_area">
+            이메일
             <input
               type="usersid"
               className="form-control"
               name="usersid"
-              placeholder="아이디입력(5-10글자)"
+              placeholder="예시)example@gmail.com"
               onChange={handleValueChange}
             />
             <button type="submit" className="btn btn-primary">
@@ -79,26 +78,6 @@ const Use_Join = () => {
             />
           </div>
 
-          <div className="email_area">
-            이메일
-            <div className="form-group mb-1 users_email">
-              <input
-                type="email"
-                className="form-control"
-                name="usersEmail"
-                placeholder="이메일"
-                onChange={handleValueChange}
-              />
-              @
-              <input
-                type="email"
-                className="form-control "
-                name="usersEmail"
-                placeholder="  예시)  gmail.com"
-                onChange={handleValueChange}
-              />
-            </div>
-          </div>
           <div className="btn">
             <button type="submit" className="btn btn-primary">
               가입 완료

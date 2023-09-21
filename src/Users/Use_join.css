@@ -8,13 +8,13 @@ div.con {
   border: 1px solid #be3455;
   max-width: 500px; /* 최대 너비 설정 */
   margin: 0 auto; /* 가운데 정렬 */
-  padding: 20px; /* 내부 여백 설정 */
+  padding: 40px; /* 내부 여백 설정 */
 }
-.id_area .form-control {
-  width: 40%;
+.email_area .form-control {
+  width: 33%;
 }
 
-div.id_area {
+div.email_area {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,25 +36,11 @@ div.users_phone {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-div.users_email {
-  margin-right: 10px;
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-div.email_area {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .form-control {
-  width: 75%;
+  width: 72%;
   border: 0;
   border-bottom: 1px solid #d9d9d9;
   padding: 20px 5px;
