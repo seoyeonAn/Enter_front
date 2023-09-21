@@ -23,6 +23,12 @@ const BaseLayout = () => {
                 INFO
               </NavLink>
             </li>
+
+            <li>
+              <NavLink to="/enter" style={activeStyle} className="nav-link">
+                ENTERLIST
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
