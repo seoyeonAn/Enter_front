@@ -15,7 +15,6 @@ const Mypage = () => {
                     <h1 className='mp-Title'>마이페이지</h1>
                 </div>
                 <Container className='user-info pd-content-60'>
-                    {/* <Image src="mypage/nouserpic.png" roundedCircle /> */}
                     <div className='user-info-img-area'>
                         <img src="images/mypage/thumb1.png" className='user-info-img' />
                     </div>
