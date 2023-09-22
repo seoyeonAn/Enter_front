@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Use_join.css";
 
@@ -16,21 +17,33 @@ const Use_Join = () => {
   });
 
   const handleValueChange = (e) => {
-    setUsers({ ...users[e.targer.name] });
+    setUsers({ ...users, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios
+      .post("/join", users)
+      .then((response) => {
+        navigator("/login");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
     <div className="container">
-      <form>
+      <form onSubmit={onSubmit}>
         <h1>회원가입</h1>
         <div className="container con">
           <div className="form-group mb-1 email_area">
             이메일
             <input
-              type="usersid"
+              type="email"
               className="form-control"
-              name="usersid"
-              placeholder="예시)example@gmail.com"
+              name="email"
+              placeholder="예시) exam@example.com"
               onChange={handleValueChange}
             />
             <button type="submit" className="btn btn-primary">
@@ -40,9 +53,9 @@ const Use_Join = () => {
           <div className="form-group mb-1 users_name">
             이름
             <input
-              type="text"
+              type="name"
               className="form-control"
-              name="usersName"
+              name="Name"
               placeholder="이름"
               onChange={handleValueChange}
             />
@@ -70,9 +83,9 @@ const Use_Join = () => {
           <div className="form-group mb-1 users_phone">
             휴대폰 번호
             <input
-              type="text"
+              type="phone"
               className="form-control"
-              name="usersPhone"
+              name="Phone"
               placeholder="-를 빼고 입력해주세요."
               onChange={handleValueChange}
             />

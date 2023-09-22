@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Use_Login.css";
 
@@ -9,8 +10,21 @@ const Use_Login = () => {
     usersPass: "",
   });
 
+  const { usersEmail, usersPass } = users;
   const handleValueChange = (e) => {
-    setUsers({ ...users[e.targer.name] });
+    setUsers({ ...users[e.target.name] });
+  };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios
+      .post("/login", users)
+      .then((response) => {
+        navigator("/");
+        window.location.replace("/"); //현재 페이지가 루트 경로로 리디렉션되어 현재 페이지의 내용은 제거되고 새로운 페이지가 로드
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -20,9 +34,9 @@ const Use_Login = () => {
         <div className="form-group mb-1 userid">
           아이디
           <input
-            type="usersid"
+            type="email"
             className="form-control useid"
-            name="userid"
+            name="email"
             onChange={handleValueChange}
           />
         </div>
@@ -31,7 +45,7 @@ const Use_Login = () => {
           <input
             type="password"
             className="form-control"
-            name="usersName"
+            name="usersPass"
             onChange={handleValueChange}
           />
         </div>
