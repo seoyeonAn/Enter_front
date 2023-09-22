@@ -1,6 +1,5 @@
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "./infocard.css";
+import "../../css/infocard.css";
 import { Link } from "react-router-dom";
 
 const InfoCard = ({ information }) => {

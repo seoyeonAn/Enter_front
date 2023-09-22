@@ -4,7 +4,7 @@ import { infoActions } from "../../toolkit/actions/info_action";
 import { useParams } from "react-router-dom";
 import InfoCard from "./InfoCard";
 import PageNavigation from "./PageNavigation";
-import "./infolist.css";
+import "../../css/infolist.css";
 import { Button, FormLabel } from "react-bootstrap";
 
 const InfoList = () => {

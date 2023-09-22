@@ -1,6 +1,6 @@
 import React from "react";
 import { enterActions } from "../../toolkit/actions/enter_action";
-import "./enterlabel.css";
+import "../../css/enterlabel.css";
 
 const EnterLabel = ({ enter }) => {
   const updateEnter = (enter_seq, completed) => {

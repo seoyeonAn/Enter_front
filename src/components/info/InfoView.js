@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { infoActions } from "../../toolkit/actions/info_action";
 import { Button, Table } from "react-bootstrap";
-import "./infoview.css";
 import { Link } from "react-router-dom";
+import "../../css/infoview.css";
 
 const InfoView = () => {
   const { info_seq } = useParams();
