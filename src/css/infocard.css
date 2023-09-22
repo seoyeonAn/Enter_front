@@ -1,0 +1,32 @@
+* {
+  font-family: "Pretendard-Regular";
+}
+
+.col-3 {
+  width: 18%;
+  display: contents;
+}
+
+.mainCard {
+  width: 230px;
+  height: 480px;
+  margin: 10px;
+}
+
+/* Link tag */
+a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.cardText {
+  padding: 30px 0;
+  position: absolute;
+  bottom: 5px;
+}
+
+.thumbnail {
+  height: 280px;
+  width: 100%;
+  padding: 10px;
+}
