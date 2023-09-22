@@ -1,0 +1,23 @@
+.pagination {
+  padding-left: 45%;
+  padding-right: 45%;
+  margin-top: 100px;
+  --bs-pagination-border-color: none;
+  --bs-pagination-hover-border-color: none;
+  --bs-pagination-disabled-bg: none;
+}
+
+.active > .page-link,
+.page-link.active {
+  background-color: #be3455;
+  border: #be3455;
+}
+
+li.page-item.disabled,
+.page-link.disabled {
+  background-color: #fff;
+}
+
+.page-link {
+  color: black;
+}
