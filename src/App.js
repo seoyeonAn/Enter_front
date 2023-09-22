@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import InfoList from "./components/info/InfoList";
 import InfoView from "./components/info/InfoView";
 import EnterList from "./components/enter/EnterList";
+import Mypage from "./mypage/Mypage"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="info/:currentPage" element={<InfoList />} />
           <Route path="info/view/:info_seq" element={<InfoView />} />
           <Route path="enter" element={<EnterList />} />
+          <Route path="mypage" element={<Mypage />} />
         </Route>
       </Routes>
     </div>
