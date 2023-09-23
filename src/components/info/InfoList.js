@@ -49,7 +49,7 @@ const InfoList = () => {
       </div>
       <div className="totalSearch">
         <div className="total">
-          검색 결과 총 <strong className="strongText">11</strong> 건
+          검색 결과 총 <strong className="strongText">{pv.totalCount}</strong> 건
         </div>
       </div>
 
