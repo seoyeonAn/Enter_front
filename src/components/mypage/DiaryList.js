@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UsersInfoRow = ({ users }) => {
+const DiaryList = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const UsersInfoRow = ({ users }) => {
     );
 };
 
-export default UsersInfoRow;
+export default DiaryList;
