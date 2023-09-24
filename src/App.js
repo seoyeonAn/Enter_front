@@ -26,7 +26,6 @@ function App() {
           <Route path="info/view/:info_seq" element={<InfoView />} />
           <Route path="enter" element={<EnterList />} />
           <Route path="mypage" element={<Mypage />} />
-
         </Route>
       </Routes>
     </div>
