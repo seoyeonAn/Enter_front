@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 let initialState = {
     userList:[],
+    diaryList: [],
 }
 
 const userSlice = createSlice({
@@ -14,5 +15,18 @@ const userSlice = createSlice({
     }
 })
 
+const diarySlice = createSlice({
+    name: 'diary',
+    initialState,
+    reducers: {
+        getDiaryList(state, action) {
+            state.diaryList = action.payload.data.diaryList;
+        }
+    }
+})
+
 export const userReducers = userSlice.actions;
-export default userSlice;
+export const diaryReducers = diarySlice.actions;
+
+//export default userSlice;
+export const slice = { userSlice, diarySlice };

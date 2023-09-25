@@ -76,6 +76,15 @@
     padding-bottom: 5px;
     text-align: center;
 }
+
+.user-info-desc-area .passcheck {
+    padding-top: 5px;
+}
+
+.user-info-desc-btn {
+    text-align: center;
+}
+
 .user-info-desc-btn .btn {
     padding: 10px 20px;
     color: #fff;
