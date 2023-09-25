@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Use_join.css";
+import "../../css/Use_join.css";
 
 const Use_Join = () => {
   // const 키워드를 사용하여 변수 users를 선언합니다.
