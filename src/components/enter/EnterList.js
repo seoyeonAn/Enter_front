@@ -14,20 +14,16 @@ const EnterList = () => {
     getEnterList();
   }, []);
 
-  const enterlist = useSelector((state) => state.enterlist.enterlist);
+  const enterList = useSelector((state) => state.enterlist.enterList);
 
-  console.log("enter(view): ", enterlist);
+  console.log("enterList: ", enterList);
 
   return (
     <>
       <h3>EnterList</h3>
-      {enterlist &&
-        enterlist.map((enter) => {
-          return (
-            <div className="enter" key={enter.enter_seq}>
-              <EnterLabel enter={enter} />
-            </div>
-          );
+      {enterList &&
+        enterList.map((enterlist) => {
+          return <EnterLabel enterlist={enterlist} key={enterlist.enter_seq} />;
         })}
     </>
   );

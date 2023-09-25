@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { infoActions } from "../../toolkit/actions/info_action";
 import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ import "../../css/infoview.css";
 const InfoView = () => {
   const { info_seq } = useParams();
   const dispatch = useDispatch();
-
+  const navigator = useNavigate();
   const infoDetail = useSelector((state) => state.information.infoDetail);
 
   const today = new Date();
@@ -17,6 +17,28 @@ const InfoView = () => {
   useEffect(() => {
     dispatch(infoActions.getInfoDetail(info_seq));
   }, [dispatch, info_seq]);
+
+  const [imageSrc, setImageSrc] = useState("../../images/infoview/unstar.png");
+  const [isClicked, setIsClicked] = useState(false);
+  const addenter = () => {
+    if (isClicked) {
+      setImageSrc("../../images/infoview/unstar.png");
+      setIsClicked(false);
+    } else {
+      setImageSrc("../../images/infoview/star.png");
+      setIsClicked(true);
+    }
+  };
+
+  const onSubmit = async (e) => {
+    //infoActions.insertInfo(infoDetail.info_seq);
+    console.log(info_seq);
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("info_seq", info_seq);
+    await dispatch(infoActions.insertInfo(formData, info_seq));
+    navigator(`/info/view/${info_seq}`);
+  };
 
   return (
     <>
@@ -26,10 +48,16 @@ const InfoView = () => {
           <img src={infoDetail.thumbnail} />
         </div>
         <div className="tableDetail">
-          <img
-            src="../../images/infoview/unstar.png"
-            style={{ height: "40px", width: "40px", float: "right" }}
-          />
+          <form onSubmit={onSubmit}>
+            <input type="text" value={infoDetail.info_seq} readOnly />
+            <button type="submit" onClick={addenter}>
+              <img
+                src={imageSrc}
+                style={{ height: "40px", width: "40px", float: "right" }}
+              />
+            </button>
+          </form>
+
           <h2>{infoDetail.title}</h2>
           <br />
           <hr />
@@ -74,12 +102,26 @@ const InfoView = () => {
       {infoDetail.start_date === null ? null : (
         <div className="D_DAY">
           <div className="d_day">
-          {/* <strong className="strongText"> */}
-          {Math.floor(Date.parse(infoDetail.end_date)/ (1000 * 60 * 60 * 24)) -Math.floor(Date.parse(today)/ (1000 * 60 * 60 * 24))-1 < 0 
-            ? <strong><strong className="strongText">종료</strong>되었습니다.</strong>
-            :<strong><strong className="strongText">
-              {Math.floor(Date.parse(infoDetail.end_date)/ (1000 * 60 * 60 * 24)) -Math.floor(Date.parse(today)/ (1000 * 60 * 60 * 24))-1}
-              </strong> 일 남았습니다.</strong>}
+            {/* <strong className="strongText"> */}
+            {Math.floor(
+              Date.parse(infoDetail.end_date) / (1000 * 60 * 60 * 24)
+            ) -
+              Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24)) -
+              1 <
+            0 ? (
+              <strong>
+                <strong className="strongText">종료</strong>되었습니다.
+              </strong>
+            ) : (
+              <strong>
+                <strong className="strongText">
+                  {Math.floor(
+                    Date.parse(infoDetail.end_date) / (1000 * 60 * 60 * 24)
+                  ) - Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24))}
+                </strong>{" "}
+                일 남았습니다.
+              </strong>
+            )}
           </div>
         </div>
       )}

@@ -23,4 +23,26 @@ function getInfoDetail(info_seq) {
   };
 }
 
-export const infoActions = { getInfoList, getInfoDetail };
+// const insertInfo = async (formData, input) => {
+//   await axios
+//     .post("/info", formData, { input })
+//     .then((response) => {
+//       window.location.replace("/");
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+
+function insertInfo(formData, info_seq) {
+  return async () => {
+    await axios
+      .post(`/info/view/${info_seq}`, formData)
+      .then((response) => response.data)
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+}
+
+export const infoActions = { getInfoList, getInfoDetail, insertInfo };

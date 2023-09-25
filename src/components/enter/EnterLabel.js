@@ -2,7 +2,7 @@ import React from "react";
 import { enterActions } from "../../toolkit/actions/enter_action";
 import "../../css/enterlabel.css";
 
-const EnterLabel = ({ enter }) => {
+const EnterLabel = ({ enterlist }) => {
   const updateEnter = (enter_seq, completed) => {
     enterActions.getEnterUpdate(enter_seq, completed);
   };
@@ -10,12 +10,12 @@ const EnterLabel = ({ enter }) => {
   return (
     <>
       <h3>
-        <label>{enter.enter_seq}</label>
+        <label>{enterlist.enter_seq}</label>
         <label
-          className={enter.completed === 1 ? "completed" : null}
-          onClick={() => updateEnter(enter.enter_seq, enter.completed)}
+          className={enterlist.completed === 1 ? "completed" : null}
+          onClick={() => updateEnter(enterlist.enter_seq, enterlist.completed)}
         >
-          {enter.title}
+          {enterlist.title}
         </label>
       </h3>
     </>
