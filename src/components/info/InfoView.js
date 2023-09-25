@@ -12,6 +12,8 @@ const InfoView = () => {
 
   const infoDetail = useSelector((state) => state.information.infoDetail);
 
+  const today = new Date();
+
   useEffect(() => {
     dispatch(infoActions.getInfoDetail(info_seq));
   }, [dispatch, info_seq]);
@@ -25,11 +27,10 @@ const InfoView = () => {
         </div>
         <div className="tableDetail">
           <img
-            src="../../add.png"
+            src="../../images/infoview/unstar.png"
             style={{ height: "40px", width: "40px", float: "right" }}
           />
           <h2>{infoDetail.title}</h2>
-
           <br />
           <hr />
           <Table size="bg">
@@ -73,7 +74,12 @@ const InfoView = () => {
       {infoDetail.start_date === null ? null : (
         <div className="D_DAY">
           <div className="d_day">
-            <strong className="strongText">D-7</strong> 일 남았습니다.
+          {/* <strong className="strongText"> */}
+          {Math.floor(Date.parse(infoDetail.end_date)/ (1000 * 60 * 60 * 24)) -Math.floor(Date.parse(today)/ (1000 * 60 * 60 * 24))-1 < 0 
+            ? <strong><strong className="strongText">종료</strong>되었습니다.</strong>
+            :<strong><strong className="strongText">
+              {Math.floor(Date.parse(infoDetail.end_date)/ (1000 * 60 * 60 * 24)) -Math.floor(Date.parse(today)/ (1000 * 60 * 60 * 24))-1}
+              </strong> 일 남았습니다.</strong>}
           </div>
         </div>
       )}
