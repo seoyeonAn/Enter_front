@@ -19,7 +19,15 @@ const InfoView = () => {
   }, [dispatch, info_seq]);
 
   const [imageSrc, setImageSrc] = useState("../../images/infoview/unstar.png");
+
+  // const [imageSrc, setImageSrc] = useState(
+  //   infoDetail.enter_seq === null
+  //     ? "../../images/infoview/unstar.png"
+  //     : "../../images/infoview/star.png"
+  // );
+
   const [isClicked, setIsClicked] = useState(false);
+
   const addenter = () => {
     if (isClicked) {
       setImageSrc("../../images/infoview/unstar.png");
@@ -37,9 +45,11 @@ const InfoView = () => {
     let config = { "Content-Type": "multipart/form-data" };
     const formData = new FormData();
     formData.append("info_seq", info_seq);
-    dispatch(infoActions.insertInfo(formData, info_seq));
+    dispatch(infoActions.insertInfo(formData, config));
     navigator(`/info/view/${info_seq}`);
   };
+
+  console.log(infoDetail.enter_seq);
 
   return (
     <>
@@ -49,12 +59,14 @@ const InfoView = () => {
           <img src={infoDetail.thumbnail} />
         </div>
         <div className="tableDetail">
-          <form onSubmit={onSubmit} >
+          <form onSubmit={onSubmit}>
             <input type="hidden" value={infoDetail.info_seq} readOnly />
-            <input type="image" onClick={addenter} 
-                src={imageSrc} 
-                style={{ height: "40px", width: "40px", float: "right" }}/>
-
+            <input
+              type="image"
+              onClick={addenter}
+              src={imageSrc}
+              style={{ height: "40px", width: "40px", float: "right" }}
+            />
           </form>
           <h2>{infoDetail.title}</h2>
           <br />
@@ -100,7 +112,6 @@ const InfoView = () => {
       {infoDetail.start_date === null ? null : (
         <div className="D_DAY">
           <div className="d_day">
-            {/* <strong className="strongText"> */}
             {Math.floor(
               Date.parse(infoDetail.end_date) / (1000 * 60 * 60 * 24)
             ) -

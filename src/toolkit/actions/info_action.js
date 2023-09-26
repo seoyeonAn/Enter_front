@@ -23,11 +23,10 @@ function getInfoDetail(info_seq) {
   };
 }
 
-
 function insertInfo(formData, config) {
   return async () => {
     await axios
-      .post('/info/view', formData,config)
+      .post('/info/view', formData, config)
       .then((response) => response.data)
       .catch((error) => {
         console.log(error);
