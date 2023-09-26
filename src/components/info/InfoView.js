@@ -34,6 +34,7 @@ const InfoView = () => {
     console.log(info_seq);
     e.preventDefault();
 
+    let config = { "Content-Type": "multipart/form-data" };
     const formData = new FormData();
     formData.append("info_seq", info_seq);
     dispatch(infoActions.insertInfo(formData, info_seq));
@@ -48,16 +49,7 @@ const InfoView = () => {
           <img src={infoDetail.thumbnail} />
         </div>
         <div className="tableDetail">
-          {/* <form onSubmit={onSubmit} >
-            <input type="text" value={infoDetail.info_seq} readOnly />
-            <button type="submit" onClick={addenter}>
-              <img
-                src={imageSrc} 
-                style={{ height: "40px", width: "40px", float: "right" }}
-              />
-            </button>
-          </form> */}
-  <form onSubmit={onSubmit} >
+          <form onSubmit={onSubmit} >
             <input type="hidden" value={infoDetail.info_seq} readOnly />
             <input type="image" onClick={addenter} 
                 src={imageSrc} 
