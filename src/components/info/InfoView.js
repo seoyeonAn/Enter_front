@@ -30,6 +30,12 @@ const InfoView = () => {
 
   const [isClicked, setIsClicked] = useState(false);
 
+  // const [imageSrc, setImageSrc] = useState(
+  //   isClicked === false
+  //     ? "../../images/infoview/unstar.png"
+  //     : "../../images/infoview/star.png"
+  // );
+
   const addenter = () => {
     if (isClicked) {
       setImageSrc("../../images/infoview/unstar.png");
@@ -62,7 +68,6 @@ const InfoView = () => {
         </div>
         <div className="tableDetail">
           <form onSubmit={onSubmit}>
-            {/* <input type="hidden" value={infoDetail.info_seq} readOnly /> */}
             <input type="hidden" value={infoDetail.infoSeq} readOnly />
             <input
               type="image"
