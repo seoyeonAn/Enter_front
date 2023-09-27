@@ -23,7 +23,7 @@ const EnterList = () => {
       <h3>EnterList</h3>
       {enterList &&
         enterList.map((enterlist) => {
-          return <EnterLabel enterlist={enterlist} key={enterlist.enter_seq} />;
+          return <EnterLabel enterlist={enterlist} key={enterlist.enterSeq} />;
         })}
     </>
   );

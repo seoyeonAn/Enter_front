@@ -9,7 +9,7 @@ let initialState = {
 const infoSlice = createSlice({
   name: "information",
   initialState,
-  reducers: {ij
+  reducers: {
     getInfoList(state, action) {
       state.infoList = action.payload.data.infoList;
       state.pv = action.payload.data.pv;

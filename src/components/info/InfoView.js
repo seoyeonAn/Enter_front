@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 import "../../css/infoview.css";
 
 const InfoView = () => {
-  const { info_seq } = useParams();
+  const { infoSeq } = useParams();
+  console.log("infoSeq: ", infoSeq);
+
   const dispatch = useDispatch();
   const navigator = useNavigate();
   const infoDetail = useSelector((state) => state.information.infoDetail);
@@ -15,8 +17,8 @@ const InfoView = () => {
   const today = new Date();
 
   useEffect(() => {
-    dispatch(infoActions.getInfoDetail(info_seq));
-  }, [dispatch, info_seq]);
+    dispatch(infoActions.getInfoDetail(infoSeq));
+  }, [dispatch, infoSeq]);
 
   const [imageSrc, setImageSrc] = useState("../../images/infoview/unstar.png");
 
@@ -39,17 +41,17 @@ const InfoView = () => {
   };
 
   const onSubmit = async (e) => {
-    console.log(info_seq);
+    console.log(infoSeq);
     e.preventDefault();
 
     let config = { "Content-Type": "multipart/form-data" };
     const formData = new FormData();
-    formData.append("info_seq", info_seq);
+    formData.append("infoSeq", infoSeq);
     dispatch(infoActions.insertInfo(formData, config));
-    navigator(`/info/view/${info_seq}`);
+    navigator(`/info/view/${infoSeq}`);
   };
 
-  console.log(infoDetail.enter_seq);
+  //console.log(infoDetail.enter_seq);
 
   return (
     <>
@@ -60,7 +62,8 @@ const InfoView = () => {
         </div>
         <div className="tableDetail">
           <form onSubmit={onSubmit}>
-            <input type="hidden" value={infoDetail.info_seq} readOnly />
+            {/* <input type="hidden" value={infoDetail.info_seq} readOnly /> */}
+            <input type="hidden" value={infoDetail.infoSeq} readOnly />
             <input
               type="image"
               onClick={addenter}
@@ -79,11 +82,12 @@ const InfoView = () => {
               </tr>
               <tr>
                 <th>기간</th>
-                {infoDetail.start_date === null ? (
+
+                {infoDetail.startDate === null ? (
                   <td>상시 개관</td>
                 ) : (
                   <td>
-                    {infoDetail.start_date} ~ {infoDetail.end_date}
+                    {infoDetail.startDate} ~ {infoDetail.endDate}
                   </td>
                 )}
               </tr>
@@ -109,11 +113,11 @@ const InfoView = () => {
         </div>
       </div>
 
-      {infoDetail.start_date === null ? null : (
+      {infoDetail.startDate === null ? null : (
         <div className="D_DAY">
           <div className="d_day">
             {Math.floor(
-              Date.parse(infoDetail.end_date) / (1000 * 60 * 60 * 24)
+              Date.parse(infoDetail.endDate) / (1000 * 60 * 60 * 24)
             ) -
               Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24)) -
               1 <
@@ -125,9 +129,9 @@ const InfoView = () => {
               <strong>
                 <strong className="strongText">
                   {Math.floor(
-                    Date.parse(infoDetail.end_date) / (1000 * 60 * 60 * 24)
+                    Date.parse(infoDetail.endDate) / (1000 * 60 * 60 * 24)
                   ) - Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24))}
-                </strong>{" "}
+                </strong>
                 일 남았습니다.
               </strong>
             )}

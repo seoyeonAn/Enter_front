@@ -3,19 +3,19 @@ import { enterActions } from "../../toolkit/actions/enter_action";
 import "../../css/enterlabel.css";
 
 const EnterLabel = ({ enterlist }) => {
-  const updateEnter = (enter_seq, completed) => {
-    enterActions.getEnterUpdate(enter_seq, completed);
+  const updateEnter = (enterSeq, completed) => {
+    enterActions.getEnterUpdate(enterSeq, completed);
   };
 
   return (
     <>
       <h3>
-        <label>{enterlist.enter_seq}</label>
+        <label>{enterlist.enterSeq}</label>
         <label
           className={enterlist.completed === 1 ? "completed" : null}
-          onClick={() => updateEnter(enterlist.enter_seq, enterlist.completed)}
+          onClick={() => updateEnter(enterlist.enterSeq, enterlist.completed)}
         >
-          {enterlist.title}
+          {enterlist["infoDTO"]["title"]}
         </label>
       </h3>
     </>

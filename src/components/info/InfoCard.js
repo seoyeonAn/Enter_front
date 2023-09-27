@@ -7,7 +7,7 @@ const InfoCard = ({ information }) => {
     <>
       <div className="col-3">
         <Card className="mainCard">
-          <Link to={`/info/view/${information.info_seq}`}>
+          <Link to={`/info/view/${information.infoSeq}`}>
             <Card.Img
               variant="top"
               src={information.thumbnail}
@@ -16,12 +16,11 @@ const InfoCard = ({ information }) => {
 
             <Card.Body>
               <Card.Title>{information.title}</Card.Title>
-
-              {information.start_date === null ? (
+              {information.startDate === null ? (
                 <Card.Text className="cardText">상시 개관</Card.Text>
               ) : (
                 <Card.Text className="cardText">
-                  {information.start_date} ~ {information.end_date}
+                  {information.startDate} ~ {information.endDate}
                 </Card.Text>
               )}
             </Card.Body>

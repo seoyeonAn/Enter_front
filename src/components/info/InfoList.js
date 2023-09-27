@@ -74,19 +74,20 @@ const InfoList = () => {
 
       <div className="totalSearch">
         <div className="total">
-          검색 결과 총 <strong className="strongText">{pv.totalCount}</strong>{" "}
-          건
+          검색 결과 총 <strong className="strongText">{pv.totalCount}</strong>건
+        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+          {infoList &&
+            infoList.map((information) => {
+              return (
+                <InfoCard information={information} key={information.infoSeq} />
+              );
+            })}
         </div>
       </div>
 
-      <div className="row">
-        {infoList &&
-          infoList.map((information) => {
-            return (
-              <InfoCard information={information} key={information.info_seq} />
-            );
-          })}
-      </div>
       {pv && <PageNavigation getInfoList={getInfoList} />}
     </>
   );
