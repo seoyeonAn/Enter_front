@@ -1,126 +1,129 @@
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 * {
-    font-family: 'Pretendard-Regular';
+  font-family: "Pretendard-Regular";
 }
 
 *::selection {
-    background-color: #BE3455;
-    color: #fff;
+  background-color: #be3455;
+  color: #fff;
 }
 
 /* padding */
 .pd-top-60 {
-    padding-top: 60px;
+  padding-top: 60px;
 }
 .pd-top-100 {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 .pd-content-100 {
-    padding: 100px 0;
+  padding: 100px 0;
 }
 .pd-content-60 {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .mp-Title {
-    font-weight: 900;
+  font-weight: 900;
 }
 .user-info {
-    /* padding-bottom: 60px; */
-    border-bottom: 1px solid #d9d9d9;
+  /* padding-bottom: 60px; */
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .user-info .user-info-img-area {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border: 1px solid #d9d9d9;
-    border-radius: 100px;
-    overflow: hidden;
-    /* background-color: #BE3455;     */
-    
-    
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: 1px solid #d9d9d9;
+  border-radius: 100px;
+  overflow: hidden;
+  /* background-color: #BE3455;     */
 }
 .user-info .user-info-img {
-    width: 200%;
-    
+  width: 200%;
 }
 
 .user-info .user-info-desc-area {
-    width: 33%;
-    margin: 0 auto;
+  width: 33%;
+  margin: 0 auto;
 }
 .user-info-desc-area .user-info-desc {
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .user-info-desc-area .user-info-desc .user-info-desc-l {
-    width: 40%;
+  width: 40%;
 }
 .user-info-desc-area .user-info-desc .user-info-desc-r {
-    width: 60%;
-    border: 0;
-    border-bottom: 1px solid #d9d9d9;
-    padding-bottom: 5px;
-    text-align: center;
+  width: 60%;
+  border: 0;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 5px;
+  text-align: center;
 }
 .user-info-desc-btn .btn {
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #BE3455;
-    border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #be3455;
+  border-radius: 5px;
 }
 .user-info-desc-btn .btn:hover {
-    background-color: #a82040;
-    color: #fff;
+  background-color: #a82040;
+  color: #fff;
 }
 
 .list-diary-area {
-    padding-top: 60px;
-    width: 40%;
-    margin: 0 auto;
+  padding-top: 60px;
+  width: 40%;
+  margin: 0 auto;
 }
 .list-diary-area .tab-area .tab-li {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 .list-diary-area .tab-area .tab-li .nav-item button {
-    border: 1px solid #BE3455;
-    color: #BE3455;
+  border: 1px solid #be3455;
+  color: #be3455;
 }
 .list-diary-area .tab-area .tab-li .nav-item .nav-link.active {
-    background-color: #BE3455;
-    border: 1px solid #BE3455;
-    border-color: #BE3455;
-    color: #fff;
+  background-color: #be3455;
+  border: 1px solid #be3455;
+  border-color: #be3455;
+  color: #fff;
 }
 .list-diary-area .tab-area .tab-content-area {
-    width: 100%;
-    height: 600px;
-    border-radius: 5px;
-    background-color: #BE3455;
-    padding: 10px;
+  width: 100%;
+  height: 600px;
+  border-radius: 5px;
+  background-color: #be3455;
+  padding: 10px;
 }
 .list-diary-area .tab-area .tab-content-area .tab-content-desc {
-    height: 580px;
-    overflow: auto;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #fff;
+  height: 580px;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 .tab-content-desc::-webkit-scrollbar {
-    width: 5px;
-    background-color: #a82040;
-    border-radius: 5px;
+  width: 5px;
+  background-color: #a82040;
+  border-radius: 5px;
+}
+
+/*인풋박스 선택시 테두리없애기 및 색변경*/
+input:focus {
+  outline: none;
+  border-bottom: 1px solid #be3455;
 }

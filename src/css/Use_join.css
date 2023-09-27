@@ -48,8 +48,8 @@ div.users_phone {
 
 /*인풋박스 선택시 테두리없애기 및 색변경*/
 input:focus {
-  outline: none;
-  border-bottom: 1px solid #be3455;
+  outline: none !important;
+  border-bottom: 1px solid #be3455 !important;
 }
 
 /*가입완료 버튼*/
