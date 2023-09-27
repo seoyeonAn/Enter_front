@@ -16,6 +16,7 @@ const Use_Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log("aa");
     await axios
       .post("/login", users)
       .then((response) => {
@@ -48,6 +49,7 @@ const Use_Login = () => {
             아이디
             <input
               type="email"
+              id="email"
               className="form-control useid"
               name="email"
               value={email}
@@ -60,6 +62,7 @@ const Use_Login = () => {
             비밀번호
             <input
               type="password"
+              id="password"
               className="form-control"
               name="password"
               value={password}
@@ -68,7 +71,7 @@ const Use_Login = () => {
             />
           </div>
           <div className="btnarea">
-            <button type="submit" className="btn btn-primary Login">
+            <button type="submit" className="btn btn-primary">
               로그인
             </button>
             <Link className="btn btn-primary Join" to="/join">
