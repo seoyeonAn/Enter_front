@@ -10,7 +10,7 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         getUserList(state, action) {
-            state.userList = action.payload.data.userList;
+            state.userList = action.payload.userList;
         }
     }
 })
@@ -20,7 +20,7 @@ const diarySlice = createSlice({
     initialState,
     reducers: {
         getDiaryList(state, action) {
-            state.diaryList = action.payload.data.diaryList;
+            state.diaryList = action.payload.diaryList;
         }
     }
 })

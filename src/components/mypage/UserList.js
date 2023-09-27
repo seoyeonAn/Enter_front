@@ -1,15 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const UserList = ({ user }) => {
 
- 
+const UserList = () => {
+   
+
     const [users, setUsers] = useState({
         email: "",
         password: "",
         name: "",
         phone: "",
     });
+
+    const userList = useSelector((state) => state.user.userList);
+    
 
     const { email, password, name, phone } = users;
 
@@ -31,22 +36,30 @@ const UserList = ({ user }) => {
         else setPasswordCheck("비밀번호 일치");
     }
 
-    const info = async () => {
-        await axios
-            .get("/mypage", config)
-            .then((response) => {
-                console.log(response.data);
-               // setUsers({ ...response.data, password: "" });
-               setUsers({...response.data.userList[0]});
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
 
-    useEffect(() => {
-        info();
-    }, []);
+    // const info = async () => {
+    //     await axios
+    //         .get("/mypage", config)
+    //         .then((response) => {
+    //             console.log(response.data);
+    //            // setUsers({ ...response.data, password: "" });
+    //            setUsers({...response.data.userList});
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // };
+
+    // useEffect(() => {
+    //     info();
+    // }, []);
+
+ 
+   
+   
+    useEffect(()=>{       
+     setUsers({...userList});
+    },[userList]);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -58,7 +71,7 @@ const UserList = ({ user }) => {
         console.log("user:", users);
         setUsers({...users, "email":email});
         await axios
-            .post("/mypage", users, config)
+            .post("/mypage/updateuser", users, config)
             .then((response) => {
                 localStorage.setItem("name", name);
                 window.location.replace("/mypage")
@@ -73,7 +86,7 @@ const UserList = ({ user }) => {
             <form onSubmit={onSubmit}>
                 <div className='user-info-email user-info-desc'>
                     <span className='user-info-desc-l'>이메일</span>
-                    <span className='user-info-desc-r'>{user.email}</span>
+                    <span className='user-info-desc-r'>{users.email}</span>
                 </div>
                 <div className='user-info-name user-info-desc'>
                     <span className='user-info-desc-l'>이름</span>
@@ -92,7 +105,7 @@ const UserList = ({ user }) => {
                 </div>
                 <div className='user-info-phone user-info-desc'>
                     <span className='user-info-desc-l'>전화번호</span>
-                    <input type='text' className='user-info-desc-r' name='phone' value={user.phone} onChange={handleValueChange} />
+                    <input type='text' className='user-info-desc-r' name='phone' value={phone} onChange={handleValueChange} />
                 </div>
                 <div className='user-info-desc-btn pd-top-60'>
                     <button type='submit' className='btn'>변경하기</button>
