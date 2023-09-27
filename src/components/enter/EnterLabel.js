@@ -2,20 +2,20 @@ import React from "react";
 import { enterActions } from "../../toolkit/actions/enter_action";
 import "../../css/enterlabel.css";
 
-const EnterLabel = ({ enter }) => {
-  const updateEnter = (enter_seq, completed) => {
-    enterActions.getEnterUpdate(enter_seq, completed);
+const EnterLabel = ({ enterlist }) => {
+  const updateEnter = (enterSeq, completed) => {
+    enterActions.getEnterUpdate(enterSeq, completed);
   };
 
   return (
     <>
       <h3>
-        <label>{enter.enter_seq}</label>
+        <label>{enterlist.enterSeq}</label>
         <label
-          className={enter.completed === 1 ? "completed" : null}
-          onClick={() => updateEnter(enter.enter_seq, enter.completed)}
+          className={enterlist.completed === 1 ? "completed" : null}
+          onClick={() => updateEnter(enterlist.enterSeq, enterlist.completed)}
         >
-          {enter.title}
+          {enterlist["infoDTO"]["title"]}
         </label>
       </h3>
     </>

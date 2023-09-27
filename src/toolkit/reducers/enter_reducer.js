@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
-  enterlist: [],
+  enterList: [],
 };
 
 const enterSlice = createSlice({
-  name: "enter",
+  name: "enterlist",
   initialState,
   reducers: {
     getEnterList(state, action) {
-      console.log("enterList(reducer): ", action.payload.data);
-      //console.log("enterList(reducer): ", action.payload.data.enterlist);
-      //state.enterlist = action.payload.data.enterlist;
-      state.enterlist = action.payload.data;
-      console.log("state: ", state.enterlist);
+      //console.log("enterList(reducer): ", action.payload.data);
+      console.log("enterList(reducer): ", action.payload.data.enterList);
+      state.enterList = action.payload.data.enterList;
+      //state.enterList = action.payload.data;
+      console.log("state: ", state.enterList);
     },
   },
 });

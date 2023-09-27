@@ -15,10 +15,12 @@ function getEnterList() {
   };
 }
 
-function getEnterUpdate(enter_seq, completed) {
+function getEnterUpdate(enterSeq, completed) {
+  //function getEnterUpdate(enter_seq, completed) {
   return async () => {
     await axios
-      .put(`/enter/${enter_seq}/${completed}`)
+      .put(`/enter/${enterSeq}/${completed}`)
+      // .put(`/enter/${enter_seq}/${completed}`)
       .then((response) => {
         window.location.replace("/");
       })

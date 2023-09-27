@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { infoActions } from "../../toolkit/actions/info_action";
 import { useParams } from "react-router-dom";
@@ -40,16 +40,25 @@ const InfoList = () => {
               <option value="museum">박물관</option>
             </select>
           </li>
+
           <li className="fieldTwo">
             <input type="text" placeholder="검색어를 입력하세요." />
-            <Button className="buttonSearch">검색</Button>
+
+            <Button className="buttonSearch" type="sumbmit">
+              검색
+            </Button>
             <Button className="buttonBack">취소</Button>
           </li>
         </ul>
       </div>
-      <div className="totalSearch">
+
+      {/* 검색된 게시물이 없을 경우 */}
+      {/* {infoList?.length === 0 && <div>검색 결과가 없습니다.</div>} */}
+
+      {/* 검색된 게시물이 있을 경우 */}
+      {/* {infoList?.length !== 0 && <><div className="totalSearch">
         <div className="total">
-          검색 결과 총 <strong className="strongText">11</strong> 건
+          검색 결과 총 <strong className="strongText">{pv.totalCount}</strong> 건
         </div>
       </div>
 
@@ -61,6 +70,24 @@ const InfoList = () => {
             );
           })}
       </div>
+      {pv && <PageNavigation getInfoList={getInfoList} />}</>} */}
+
+      <div className="totalSearch">
+        <div className="total">
+          검색 결과 총 <strong className="strongText">{pv.totalCount}</strong>건
+        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+          {infoList &&
+            infoList.map((information) => {
+              return (
+                <InfoCard information={information} key={information.infoSeq} />
+              );
+            })}
+        </div>
+      </div>
+
       {pv && <PageNavigation getInfoList={getInfoList} />}
     </>
   );
