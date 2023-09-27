@@ -3,9 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../css/Use_join.css";
 
-//https://velog.io/@sg_yksv77/%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EC%A7%80-%EC%A4%91%EB%B3%B5%ED%99%95%EC%9D%B8-axios.get :front
-//https://juran-devblog.tistory.com/40 :back
-
 const Use_Join = () => {
   // const 키워드를 사용하여 변수 users를 선언합니다.
   // 이 변수는 나중에 상태 값을 저장할 때 사용됩니다.

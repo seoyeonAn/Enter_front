@@ -7,7 +7,9 @@
 }
 
 * {
-  font-family: "Pretendard-Regular";
+    font-family: 'Pretendard-Regular';
+    padding: 0;
+    margin: 0;
 }
 
 *::selection {
@@ -15,7 +17,18 @@
   color: #fff;
 }
 
+input:focus {
+    outline: none;
+    border-bottom: 1px solid #BE3455 !important;
+}
+
 /* padding */
+.pd-top-20 {
+    padding-top: 20px;
+}
+.pd-top-40 {
+    padding-top: 40px;
+}
 .pd-top-60 {
   padding-top: 60px;
 }
@@ -73,6 +86,15 @@
   padding-bottom: 5px;
   text-align: center;
 }
+
+.user-info-desc-area .passcheck {
+    padding-top: 5px;
+}
+
+.user-info-desc-btn {
+    text-align: center;
+}
+
 .user-info-desc-btn .btn {
   padding: 10px 20px;
   color: #fff;
@@ -110,20 +132,100 @@
   padding: 10px;
 }
 .list-diary-area .tab-area .tab-content-area .tab-content-desc {
-  height: 580px;
-  overflow: auto;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: #fff;
-}
-.tab-content-desc::-webkit-scrollbar {
-  width: 5px;
-  background-color: #a82040;
-  border-radius: 5px;
+    height: 580px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
-/*인풋박스 선택시 테두리없애기 및 색변경*/
-input:focus {
-  outline: none;
-  border-bottom: 1px solid #be3455;
+.tab-content-desc .user-diary-write .title-form-area {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.tab-content-desc .user-diary-write .title-form-area input {
+    border: 0;
+    border-bottom: 1px solid #d9d9d9;
+    width: 88%;
+}
+
+.tab-content-desc .user-diary-write textarea {
+    width: 100%;
+    resize: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+.tab-content-desc .user-diary-write textarea::placeholder {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.tab-content-desc .user-diary-write textarea:focus {
+    outline: none;
+    border: 1px solid #BE3455;
+}
+
+.list-diary-area .tab-area .tab-content-area .tab-content-desc .user-diary-list {
+    height: 330px;
+    overflow: auto;
+    padding-right: 5px;
+}
+
+.tab-content-desc .user-diary-list::-webkit-scrollbar {
+    width: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.tab-content-desc .user-diary-list::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #BE3455;
+    border-radius: 5px;
+}
+
+/* diary */
+.form-Area {
+    padding-bottom: 40px;
+}
+
+.list-item {
+    padding-bottom: 10px;
+}
+
+.user-diary-list .title-Area {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-diary-list .title-Area small.d-date {
+    font-size: 0.8rem;
+    padding-top: 4px;
+    color: #999;
+}
+
+.accordion-button:focus {
+    border-color: #BE3455;
+    box-shadow: none;
+}
+
+.accordion-item {
+    border: 1px solid #BE3455;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #BE3455;
+    color: #fff;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) .d-date {
+    color: #fff !important;
+    font-weight: 100 !important;
+}
+
+.accordion-button {
+    padding: 16px;
 }
