@@ -11,6 +11,7 @@ const BaseLayout = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
+        {/* <div> */}
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <NavLink to="/" style={activeStyle} className="nav-link">

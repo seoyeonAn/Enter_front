@@ -1,0 +1,51 @@
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+  * {
+      font-family: 'Pretendard';
+      padding: 0;
+      margin: 0;
+  }
+  
+  *::selection {
+    background-color: #be3455;
+    color: #fff;
+  }
+
+ul,ol,li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.title h1 {
+  font-weight: 700;
+}
+
+/* padding */
+.pd-top-20 {
+    padding-top: 20px;
+}
+.pd-top-40 {
+    padding-top: 40px;
+}
+.pd-top-60 {
+  padding-top: 60px;
+}
+.pd-top-100 {
+  padding-top: 100px;
+}
+
+.pd-bottom-60 {
+  padding-bottom: 60px;
+}
+
+.pd-bottom-100 {
+    padding-bottom: 100px;
+  }
+
+.pd-content-100 {
+  padding: 100px 0;
+}
+.pd-content-60 {
+  padding: 60px 0;
+}

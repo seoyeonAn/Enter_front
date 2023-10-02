@@ -5,13 +5,13 @@ import UserList from './UserList';
 import DiaryList from './DiaryList';
 
 import "../../css/mypage.css"
+import '../../css/common.css'
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useNavigate, useParams } from 'react-router-dom';
-import { TabContainer } from 'react-bootstrap';
 
 
 
