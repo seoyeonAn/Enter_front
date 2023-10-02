@@ -29,7 +29,7 @@ const Use_Login = () => {
         localStorage.setItem("authoRole", response.data.authoRole);
         localStorage.setItem("isLogin", true);
 
-        setUsers({ email: "", password: "" });
+      setUsers({ email: "", password: "" });
       })
       .then((response) => {
         navigator("/");
@@ -37,8 +37,14 @@ const Use_Login = () => {
       })
       .catch((error) => {
         console.error(error);
+        if (error.response.status === 401) {
+          alert('아이디나 패스워드를 확인해주세요.');
+        } else if (error.response.status === 400) {
+          if (email || password === "null") {
+            alert('정보를 입력해주세요.');}}
       });
   };
+  /**어흐흑 왜 400번error안뜨지??? 왜 null값 작동 안하는거야 */
 
   return (
     <>
