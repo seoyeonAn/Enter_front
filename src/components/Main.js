@@ -128,7 +128,7 @@ const Main = () => {
                                 <Tab.Pane eventKey="first">
                                     <div className='ranking-List-content'>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
@@ -138,7 +138,7 @@ const Main = () => {
                                             </Card.Body>
                                         </Card>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
@@ -148,7 +148,7 @@ const Main = () => {
                                             </Card.Body>
                                         </Card>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
@@ -158,7 +158,7 @@ const Main = () => {
                                             </Card.Body>
                                         </Card>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
@@ -172,7 +172,7 @@ const Main = () => {
                                 <Tab.Pane eventKey="second">
                                     <div className='ranking-List-content'>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
@@ -182,7 +182,7 @@ const Main = () => {
                                             </Card.Body>
                                         </Card>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
@@ -192,7 +192,7 @@ const Main = () => {
                                             </Card.Body>
                                         </Card>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
@@ -202,7 +202,7 @@ const Main = () => {
                                             </Card.Body>
                                         </Card>
                                         <Card className='ranking-List-Item'>
-                                            <Card.Img variant="top" src="images/main/banner.jpg" />
+                                            <Card.Img variant="top" src="images/main/test.jpg" />
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
