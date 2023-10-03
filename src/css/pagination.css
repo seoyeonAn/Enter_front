@@ -13,7 +13,7 @@
   border: #be3455;
 }
 
-li.page-item.disabled,
+ li.page-item.disabled,
 .page-link.disabled {
   background-color: #fff;
 }

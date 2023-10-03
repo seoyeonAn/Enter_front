@@ -73,7 +73,7 @@ const handleSearchInfo = (e) => {
             <div className="fieldTwo">
               <input type='text'
               className="inputField"
-              placeholder='제목을 입력하세요'
+              placeholder=' 제목을 입력하세요'
               onChange={handleSearchWordChange} />
                 <button type='submit' className="btnSearch" onClick={handleSearchInfo}>검색</button>
                 {/* <button className="btnBack">취소</button> */}
