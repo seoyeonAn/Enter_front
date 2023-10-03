@@ -34,6 +34,19 @@ const BaseLayout = () => {
                 MYPAGE
               </NavLink>
             </li>
+
+            <li>
+              <NavLink to="/join" style={activeStyle} className="nav-link">
+                JOIN
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/login" style={activeStyle} className="nav-link">
+                LOGIN
+              </NavLink>
+            </li>
+            {localStorage.getItem("email") !== null ? (<li>{localStorage.getItem("name") + " 님"}</li>):null}
           </ul>
         </div>
       </nav>

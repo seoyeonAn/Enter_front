@@ -5,58 +5,85 @@ import { useParams } from "react-router-dom";
 import InfoCard from "./InfoCard";
 import PageNavigation from "./PageNavigation";
 import "../../css/infolist.css";
-import { Button, FormLabel } from "react-bootstrap";
 
 const InfoList = () => {
-  const { currentPage } = useParams();
+  // const { currentPage } = useParams();
+  const { currentPage, params } = useParams();
   const dispatch = useDispatch();
 
-  const getInfoList = (currentPage) => {
-    dispatch(infoActions.getInfoList(currentPage));
+
+const [selectedSearchKey, setSelectedSearchKey] = useState('');
+const [selectedSearchWord, setSelectedSearchWord] = useState('');
+
+const infoList = useSelector((state) => state.information.infoList);
+const pv = useSelector((state) =>
+  state.information.pv ? state.information.pv : { currentPage: 1 }
+);
+
+const getInfoList = (currentPage, params) => {
+  dispatch(infoActions.getInfoList(currentPage, params));
+};
+
+const handleChangeSelectSearch = (e) => {
+  setSelectedSearchKey(e.target.value);
+};
+
+const handleSearchWordChange = (e) => {
+  setSelectedSearchWord(e.target.value);
+};
+
+const handleSearchInfo = (e) => {
+  e.preventDefault();
+
+  const params = {
+    searchKey: selectedSearchKey,
+    searchWord: selectedSearchWord,
   };
+  
+  getInfoList(currentPage, params);
+};
 
   useEffect(() => {
-    getInfoList(currentPage);
-  }, []);
+    getInfoList(currentPage, params);
+  }, [currentPage, params]);
 
-  const infoList = useSelector((state) => state.information.infoList);
-
-  const pv = useSelector((state) =>
-    state.information.pv ? state.information.pv : { currentPage: 1 }
-  );
-
-  //console.log("infoList: ", infoList);
 
   return (
-    <>
-      <div className="searchBar">
-        <ul className="searchField">
-          <li className="fieldOne">
-            <FormLabel>카테고리</FormLabel>
-            <select className="selectBox">
-              <option>전체</option>
-              <option value="exhibition">전시</option>
-              <option value="show">공연</option>
-              <option value="museum">박물관</option>
-            </select>
-          </li>
-
-          <li className="fieldTwo">
-            <input type="text" placeholder="검색어를 입력하세요." />
-
-            <Button className="buttonSearch" type="sumbmit">
-              검색
-            </Button>
-            <Button className="buttonBack">취소</Button>
-          </li>
-        </ul>
-      </div>
-
-      {/* 검색된 게시물이 없을 경우 */}
-      {/* {infoList?.length === 0 && <div>검색 결과가 없습니다.</div>} */}
-
-      {/* 검색된 게시물이 있을 경우 */}
-      {/* {infoList?.length !== 0 && <><div className="totalSearch">
+    <><div className="selectBar">
+          <div className="fieldOne">
+                      <select
+                      className="selectBox"
+                        onChange={handleChangeSelectSearch}
+                        value={selectedSearchKey}
+                      >
+                        <option name='searchKey' value='' className="options">
+                          전체
+                        </option>
+                        <option name='searchKey' value='exhibition' className="options">
+                          전시
+                        </option>
+                        <option name='searchKey' value='show' className="options">
+                          공연
+                        </option>
+                        <option name='searchKey' value='museum' className="options">
+                          박물관
+                        </option>
+                      </select>
+                    </div>
+            <div className="fieldTwo">
+              <input type='text'
+              className="inputField"
+              placeholder='제목을 입력하세요'
+              onChange={handleSearchWordChange} />
+                <button type='submit' className="btnSearch" onClick={handleSearchInfo}>검색</button>
+                {/* <button className="btnBack">취소</button> */}
+            </div>
+            </div>
+    
+               
+{/* 
+      {infoList === null ? <div>검색 결과가 없습니다.</div> : 
+      <><div className="totalSearch">
         <div className="total">
           검색 결과 총 <strong className="strongText">{pv.totalCount}</strong> 건
         </div>
@@ -71,6 +98,8 @@ const InfoList = () => {
           })}
       </div>
       {pv && <PageNavigation getInfoList={getInfoList} />}</>} */}
+
+
 
       <div className="totalSearch">
         <div className="total">
@@ -90,6 +119,7 @@ const InfoList = () => {
 
       {pv && <PageNavigation getInfoList={getInfoList} />}
     </>
+
   );
 };
 
