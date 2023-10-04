@@ -1,6 +1,8 @@
 import Card from "react-bootstrap/Card";
-import "../../css/infocard.css";
 import { Link } from "react-router-dom";
+
+// css
+import "../../css/info.css";
 
 const InfoCard = ({ information }) => {
   return (

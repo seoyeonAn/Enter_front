@@ -1,11 +1,3 @@
-input:focus {
-    outline: none;
-    border-bottom: 1px solid #BE3455 !important;
-}
-
-.mp-Title {
-  font-weight: 900;
-}
 .user-info {
   /* padding-bottom: 60px; */
   border-bottom: 1px solid #d9d9d9;
@@ -52,20 +44,6 @@ input:focus {
     padding-top: 5px;
 }
 
-.user-info-desc-btn {
-    text-align: center;
-}
-
-.user-info-desc-btn .btn {
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #be3455;
-  border-radius: 5px;
-}
-.user-info-desc-btn .btn:hover {
-  background-color: #a82040;
-  color: #fff;
-}
 
 .list-diary-area {
   padding-top: 60px;
@@ -74,16 +52,17 @@ input:focus {
 }
 .list-diary-area .tab-area .tab-li {
   padding-left: 20px;
+  border-bottom: 0;
 }
 .list-diary-area .tab-area .tab-li .nav-item button {
   border: 1px solid #be3455;
-  color: #be3455;
+  color: #be3455 !important;
 }
 .list-diary-area .tab-area .tab-li .nav-item .nav-link.active {
   background-color: #be3455;
   border: 1px solid #be3455;
   border-color: #be3455;
-  color: #fff;
+  color: #fff !important;
 }
 .list-diary-area .tab-area .tab-content-area {
   width: 100%;
@@ -94,7 +73,7 @@ input:focus {
 }
 .list-diary-area .tab-area .tab-content-area .tab-content-desc {
     height: 580px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 5px;
     background-color: #fff;
 }
@@ -130,7 +109,7 @@ input:focus {
 }
 
 .list-diary-area .tab-area .tab-content-area .tab-content-desc .user-diary-list {
-    height: 330px;
+    height: 320px;
     overflow: auto;
     padding-right: 5px;
 }
@@ -177,16 +156,24 @@ input:focus {
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #BE3455;
-    color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: #fff;
+    color: #fff !important;
     box-shadow: none;
+    font-weight: 700;
 }
 
 .accordion-button:not(.collapsed) .d-date {
-    color: #fff !important;
-    font-weight: 100 !important;
+    color: #333 !important;
+    font-weight: 500;
 }
 
 .accordion-button {
     padding: 16px;
+}
+
+@media screen and (max-width : 1200px) {
+  .list-diary-area {
+    width: 80%;
+  }
 }

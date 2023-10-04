@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../../css/Use_join.css";
+import "../../css/user.css";
 
 const Use_Join = () => {
   const navigator = useNavigate();
@@ -108,26 +108,29 @@ const Use_Join = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleJoinSubmit}>
+    <div className="container pd-content-100">
+      <form onSubmit={handleJoinSubmit} className="join-form">
         <h1 className="title">회원가입</h1>
         <div className="container con">
           <div className="form-group mb-1 email_area">
-            이메일
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              placeholder="예시) exam@example.com"
-              onChange={handleValueChange}
-            />
-            <button
-              type="submit"
-              className="btn btn-primary"
-              onClick={handleCheckEmail}
-            >
-              중복확인
-            </button>
+            <span>이메일</span>
+            <div className="email-input-area">
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="예시) exam@example.com"
+                onChange={handleValueChange}
+              />
+              <button
+                type="submit"
+                className="btn btn-origin"
+                onClick={handleCheckEmail}
+              >
+                중복확인
+              </button>
+            </div>
+
           </div>
           <div className="form-group mb-1 users_name">
             이름
@@ -177,10 +180,10 @@ const Use_Join = () => {
             />
           </div>
 
-          <div className="btn">
+          <div className="btn-area">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-origin"
               onClick={handleJoinSubmit}
             >
               가입 완료

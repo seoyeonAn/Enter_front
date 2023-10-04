@@ -1,9 +1,10 @@
+// css
 import "./App.css";
+import "./css/common.css"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import BaseLayout from "./components/layout/BaseLayout";
-import Home from "./components/Home";
 import InfoList from "./components/info/InfoList";
 import InfoView from "./components/info/InfoView";
 import Mypage from "./components/mypage/Mypage";
@@ -18,7 +19,6 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<BaseLayout />}>
-          {/* <Route index element={<Home />} /> */}
           <Route index element={<Main />} />
           <Route path="login" element={<Use_Login />} />
           <Route path="join" element={<Use_Join />} />
