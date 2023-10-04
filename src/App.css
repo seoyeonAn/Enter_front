@@ -44,3 +44,11 @@
     transform: rotate(360deg);
   }
 }
+
+footer {
+  background-color: #be3455;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}

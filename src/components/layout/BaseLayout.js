@@ -24,27 +24,47 @@ const BaseLayout = () => {
                 INFO
               </NavLink>
             </li>
+            {/*로그인의 조건식. 비로그인 시 로그인하도록 구현*/}
+            {localStorage.getItem("email") != null ? (
+              <>
+                <li>
+                  <NavLink
+                    to="/mypage"
+                    style={activeStyle}
+                    className="nav-link"
+                  >
+                    MYPAGE
+                  </NavLink>
+                </li>
 
-            <li>
-              <NavLink to="/mypage" style={activeStyle} className="nav-link">
-                MYPAGE
-              </NavLink>
-            </li>
+                <li className="nav-item">
+                  <NavLink
+                    style={activeStyle}
+                    className="nav-link"
+                    to="/logout"
+                  >
+                    LOGOUT
+                  </NavLink>
+                </li>
+                {localStorage.getItem("email") !== null ? (
+                  <li>{localStorage.getItem("name") + " 님"}</li>
+                ) : null}
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink to="/join" style={activeStyle} className="nav-link">
+                    JOIN
+                  </NavLink>
+                </li>
 
-            <li>
-              <NavLink to="/join" style={activeStyle} className="nav-link">
-                JOIN
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink to="/login" style={activeStyle} className="nav-link">
-                LOGIN
-              </NavLink>
-            </li>
-            {localStorage.getItem("email") !== null ? (
-              <li>{localStorage.getItem("name") + " 님"}</li>
-            ) : null}
+                <li>
+                  <NavLink to="/login" style={activeStyle} className="nav-link">
+                    LOGIN
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </nav>
