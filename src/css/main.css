@@ -1,0 +1,113 @@
+.main .slide-Area {
+    margin-bottom: 100px;
+}
+.main .carousel-inner {
+    height: 600px;
+}
+
+.main .banner-List {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main .banner-List .list-Item {
+    width: 33%;
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.main .banner-List .list-Item img {
+    width: 100%;
+}
+
+.main .calender-daylist-Area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .calender-daylist-Area .calender-Area {
+    width: 48%;
+}
+
+.main .calender-daylist-Area .calender-Area .react-calendar {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    font-family: 'Pretendard';
+}
+
+.main .calender-daylist-Area .calender-Area .react-calendar .react-calendar__tile--now {
+    background-color: #be3455;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.main .calender-daylist-Area .day-List-Area {
+    width: 48%;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}
+
+.main .calender-daylist-Area .day-List-Area .day-List {
+    margin: 0 20px;
+}
+
+.main .calender-daylist-Area .day-List-Area .d-list-Item {
+    padding: 20px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.main .calender-daylist-Area .day-List-Area .d-list-Item:last-child {
+    border-bottom: 0;
+}
+
+.main .calender-daylist-Area .day-List-Area .d-list-Item a {
+    display: flex;
+    justify-content: space-between;
+}
+.main .ranking-List-Area .title h1 {
+    margin: 0;
+}
+
+.main .ranking-List-Area .ranking-List .tab-area {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main .ranking-List-Area .ranking-List .tab-area .tab-content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main .ranking-List-Area .ranking-List .tab-area .nav {
+    width: 10%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main .ranking-List-Area .ranking-List .tab-area .nav-link {
+    color: #be3455;
+}
+
+.main .ranking-List-Area .ranking-List .tab-area .nav-link.active {
+    background-color: #be3455;
+    color: #fff;
+}
+
+.main .ranking-List-Area .ranking-List .ranking-List-content{
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+}
+.main .ranking-List-Area .ranking-List .ranking-List-Item {
+    width: 32%;
+    margin: 0 10px;
+}
+
+.main .ranking-List-Area .ranking-List .ranking-List-Item img {
+    padding: 10px;
+}

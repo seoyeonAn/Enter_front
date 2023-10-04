@@ -1,45 +1,6 @@
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-* {
-    font-family: 'Pretendard-Regular';
-    padding: 0;
-    margin: 0;
-}
-
-*::selection {
-  background-color: #be3455;
-  color: #fff;
-}
-
 input:focus {
     outline: none;
     border-bottom: 1px solid #BE3455 !important;
-}
-
-/* padding */
-.pd-top-20 {
-    padding-top: 20px;
-}
-.pd-top-40 {
-    padding-top: 40px;
-}
-.pd-top-60 {
-  padding-top: 60px;
-}
-.pd-top-100 {
-  padding-top: 100px;
-}
-.pd-content-100 {
-  padding: 100px 0;
-}
-.pd-content-60 {
-  padding: 60px 0;
 }
 
 .mp-Title {
