@@ -32,6 +32,10 @@ div.users_pass {
   justify-content: space-between;
 }
 
+div.users_passchek {
+  color: #be3455;
+}
+
 div.users_phone {
   display: flex;
   align-items: center;

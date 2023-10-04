@@ -26,9 +26,10 @@ const Use_Login = () => {
 
         localStorage.setItem("Authorization", jwtToken);
         localStorage.setItem("email", response.data.email);
-        localStorage.setItem("authoRole", response.data.authoRole);
+        console.log("email" + response.data.email);
         localStorage.setItem("isLogin", true);
 
+        //멤버정보 초기화
         setUsers({ email: "", password: "" });
       })
       .then((response) => {
@@ -37,6 +38,8 @@ const Use_Login = () => {
       })
       .catch((error) => {
         console.error(error);
+        if (error.response.status === 401)
+          alert("아이디나 패스워드를 확인해주세요.");
       });
   };
 
@@ -54,7 +57,7 @@ const Use_Login = () => {
               name="email"
               value={email}
               placeholder="이메일"
-              maxLength="50"
+              maxLength="20"
               onChange={handleValueChange}
             />
           </div>
