@@ -11,7 +11,7 @@ const BaseLayout = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-        {/* <div> */}
+          {/* <div> */}
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <NavLink to="/" style={activeStyle} className="nav-link">
@@ -25,11 +25,6 @@ const BaseLayout = () => {
               </NavLink>
             </li>
 
-            <li>
-              <NavLink to="/enter" style={activeStyle} className="nav-link">
-                ENTERLIST
-              </NavLink>
-            </li>
             <li>
               <NavLink to="/mypage" style={activeStyle} className="nav-link">
                 MYPAGE
