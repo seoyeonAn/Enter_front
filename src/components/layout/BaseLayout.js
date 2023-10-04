@@ -46,7 +46,9 @@ const BaseLayout = () => {
                 LOGIN
               </NavLink>
             </li>
-            {localStorage.getItem("email") !== null ? (<li>{localStorage.getItem("name") + " 님"}</li>):null}
+            {localStorage.getItem("email") !== null ? (
+              <li>{localStorage.getItem("name") + " 님"}</li>
+            ) : null}
           </ul>
         </div>
       </nav>
