@@ -26,10 +26,11 @@ const Use_Login = () => {
 
         localStorage.setItem("Authorization", jwtToken);
         localStorage.setItem("email", response.data.email);
-        localStorage.setItem("authoRole", response.data.authoRole);
+        console.log("email" + response.data.email);
         localStorage.setItem("isLogin", true);
 
-      setUsers({ email: "", password: "" });
+        //멤버정보 초기화
+        setUsers({ email: "", password: "" });
       })
       .then((response) => {
         navigator("/");
@@ -37,14 +38,10 @@ const Use_Login = () => {
       })
       .catch((error) => {
         console.error(error);
-        if (error.response.status === 401) {
-          alert('아이디나 패스워드를 확인해주세요.');
-        } else if (error.response.status === 400) {
-          if (email || password === "null") {
-            alert('정보를 입력해주세요.');}}
+        if (error.response.status === 401)
+          alert("아이디나 패스워드를 확인해주세요.");
       });
   };
-  /**어흐흑 왜 400번error안뜨지??? 왜 null값 작동 안하는거야 */
 
   return (
     <>
@@ -60,7 +57,7 @@ const Use_Login = () => {
               name="email"
               value={email}
               placeholder="이메일"
-              maxLength="50"
+              maxLength="20"
               onChange={handleValueChange}
             />
           </div>
