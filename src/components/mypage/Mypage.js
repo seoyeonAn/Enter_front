@@ -5,7 +5,6 @@ import UserList from "./UserList";
 import DiaryList from "./DiaryList";
 
 import "../../css/mypage.css";
-import "../../css/common.css";
 // bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
@@ -94,7 +93,7 @@ const Mypage = () => {
     <>
       <Container className="pd-content-100">
         <div className="title-area">
-          <h1 className="mp-Title">마이페이지</h1>
+          <h1 className="title">마이페이지</h1>
         </div>
         <Container className="user-info pd-content-60">
           <div className="user-info-img-area">
@@ -102,9 +101,9 @@ const Mypage = () => {
           </div>
           <div className="user-info-desc-area">{userList && <UserList />}</div>
         </Container>
-        <Container className="user-tab-area pd-content-60">
+        <Container className="user-tab-area pd-top-100">
           <div className="title-area">
-            <h1 className="mp-Title">EnterList/Diary</h1>
+            <h1 className="title">EnterList/Diary</h1>
           </div>
           <div className="list-diary-area">
             <div className="tab-area">
@@ -147,8 +146,8 @@ const Mypage = () => {
                             onChange={onChangeDiary}
                             placeholder="나의 감상을 기록해보세요!"
                           />
-                          <div className="user-info-desc-btn pd-top-20">
-                            <button type="submit" className="btn">
+                          <div className="user-info-desc-btn pd-top-20 btn-area">
+                            <button type="submit" className="btn btn-origin">
                               기록하기
                             </button>
                           </div>
