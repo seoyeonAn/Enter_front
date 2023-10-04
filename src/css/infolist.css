@@ -2,57 +2,48 @@
   font-family: "Pretendard-Regular";
 }
 
-.searchBar {
-  padding: 5px 30px;
-  background-color: #c9c9c9;
+.selectBar{
+  float:right;
 }
 
-.selectBox,
-.selectBox option {
-  width: 100px;
-  height: 30px;
+.fieldOne{
+  margin: 10px 10px;
+   display: inline-block;
 }
 
-.searchBar > ul > li {
-  height: 80%;
+.fieldTwo{
+  margin: 10px 0px;
+  display: inline-block;
 }
 
-.searchField {
-  list-style: none;
+.selectBox{
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
 }
-/* FormLabel tag */
-label {
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin: 0 30px;
-}
+
+ .selectBox option, .inputField {
+  box-sizing: border-box;
+  border-radius: 5px;
+} 
+
+.inputField {
+  width:300px;
+  height: 40px;
+  border-width:1px;
+} 
+
 .totalSearch {
   text-align: right;
   margin: 10px;
+clear:both;
 }
 
 .strongText {
   color: #a82040;
 }
 
-input {
-  width: 60%;
-}
-
-.fieldOne {
-  float: left;
-  margin: 10px 20px;
-}
-
-.fieldTwo {
-  margin: 10px 20px;
-}
-
-.selectBox option {
-  padding: 0 10px;
-}
-
-.buttonSearch {
+.btnSearch {
   background-color: #be3455;
   color: #fff;
   border-radius: 5px;
@@ -63,11 +54,13 @@ input {
   margin: 5px;
 }
 
-.buttonSearch:hover {
-  background-color: #a82040 !important;
+.btnSearch:hover {
+  background-color: #a82040;
+  color: #fff;
 }
 
-.buttonBack {
+
+/* .btnBack {
   background-color: #d9d9d9;
   border-radius: 5px;
   border: none;
@@ -75,8 +68,8 @@ input {
   font-size: 20px;
   position: relative;
   margin: 5px;
-  cursor: pointer;
 }
-.buttonBack:hover {
-  background-color: grey !important;
-}
+
+.btnBack:hover {
+  background-color: grey;
+} */

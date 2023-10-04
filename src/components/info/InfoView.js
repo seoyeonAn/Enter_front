@@ -61,7 +61,15 @@ const InfoView = () => {
 
   return (
     <>
-      <h1>{infoDetail.category}</h1>
+      {/* <h1>{infoDetail.category}</h1> */}
+      {infoDetail.category === "exhibition" ? (
+        <h1>전시</h1>
+      ) : infoDetail.category === "show" ? (
+        <h1>공연</h1>
+      ) : (
+        <h1>박물관</h1>
+      )}
+
       <div className="tableContent">
         <div className="imgDetail">
           <img src={infoDetail.thumbnail} />

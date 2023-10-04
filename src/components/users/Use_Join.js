@@ -110,7 +110,7 @@ const Use_Join = () => {
   return (
     <div className="container">
       <form onSubmit={handleJoinSubmit}>
-        <h1>회원가입</h1>
+        <h1 className="title">회원가입</h1>
         <div className="container con">
           <div className="form-group mb-1 email_area">
             이메일

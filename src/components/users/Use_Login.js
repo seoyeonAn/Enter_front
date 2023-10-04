@@ -45,7 +45,7 @@ const Use_Login = () => {
 
   return (
     <>
-      <h1>로그인</h1>
+      <h1 className="title">로그인</h1>
       <form onSubmit={onSubmit}>
         <div className="lg_area">
           <div className="form-group mb-1 userid">
