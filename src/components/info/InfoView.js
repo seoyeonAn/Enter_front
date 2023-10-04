@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import { infoActions } from "../../toolkit/actions/info_action";
 import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../../css/infoview.css";
+import "../../css/info.css";
 
 const InfoView = () => {
   const { infoSeq } = useParams();
@@ -60,33 +60,33 @@ const InfoView = () => {
   //console.log(infoDetail.enter_seq);
 
   return (
-    <>
+    <div className="container pd-content-100">
       {/* <h1>{infoDetail.category}</h1> */}
       {infoDetail.category === "exhibition" ? (
-        <h1>전시</h1>
+        <h1 className="title">전시</h1>
       ) : infoDetail.category === "show" ? (
-        <h1>공연</h1>
+        <h1 className="title">공연</h1>
       ) : (
-        <h1>박물관</h1>
+        <h1 className="title">박물관</h1>
       )}
 
-      <div className="tableContent">
+      <div className="tableContent pd-content-100">
         <div className="imgDetail">
           <img src={infoDetail.thumbnail} />
         </div>
         <div className="tableDetail">
-          <form onSubmit={onSubmit}>
-            <input type="hidden" value={infoDetail.infoSeq} readOnly />
-            <input
-              type="image"
-              onClick={addenter}
-              src={imageSrc}
-              style={{ height: "40px", width: "40px", float: "right" }}
-            />
-          </form>
-          <h2>{infoDetail.title}</h2>
-          <br />
-          <hr />
+          <div className="title-Area">
+            <h2>{infoDetail.title}</h2>
+            <form onSubmit={onSubmit}>
+              <input type="hidden" value={infoDetail.infoSeq} readOnly />
+              <input
+                type="image"
+                onClick={addenter}
+                src={imageSrc}
+                style={{ height: "30px", width: "30px", float: "right" }}
+              />
+            </form>
+          </div>
           <Table size="bg">
             <tbody>
               <tr>
@@ -114,51 +114,53 @@ const InfoView = () => {
               </tr>
               <tr>
                 <th>문의</th>
-                <td>
+                <td className="last-td">
                   {infoDetail.tel}
                   <Link to={infoDetail.homepage} target="_blank">
-                    <Button className="buttonDetail">홈페이지</Button>
+                    <Button className="btn-origin">홈페이지</Button>
                   </Link>
                 </td>
               </tr>
             </tbody>
           </Table>
+          {infoDetail.startDate === null ? null : (
+            <div className="D_DAY">
+              <div className="d_day">
+                {Math.floor(
+                  Date.parse(infoDetail.endDate) / (1000 * 60 * 60 * 24)
+                ) -
+                  Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24)) -
+                  1 <
+                  0 ? (
+                  <strong>
+                    <strong className="viva-color">종료</strong>되었습니다.
+                  </strong>
+                ) : (
+                  <strong>
+                    <strong className="viva-color">
+                      {Math.floor(
+                        Date.parse(infoDetail.endDate) / (1000 * 60 * 60 * 24)
+                      ) - Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24))}
+                    </strong>
+                    일 남았습니다.
+                  </strong>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
-      {infoDetail.startDate === null ? null : (
-        <div className="D_DAY">
-          <div className="d_day">
-            {Math.floor(
-              Date.parse(infoDetail.endDate) / (1000 * 60 * 60 * 24)
-            ) -
-              Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24)) -
-              1 <
-            0 ? (
-              <strong>
-                <strong className="strongText">종료</strong>되었습니다.
-              </strong>
-            ) : (
-              <strong>
-                <strong className="strongText">
-                  {Math.floor(
-                    Date.parse(infoDetail.endDate) / (1000 * 60 * 60 * 24)
-                  ) - Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24))}
-                </strong>
-                일 남았습니다.
-              </strong>
-            )}
-          </div>
-        </div>
-      )}
+
 
       <div className="textContent">
-        <h3>상세내용</h3>
-        <div className="division-line"></div>
-        <p>● 내용 : {infoDetail.content}</p>
-        <img src="https://www.sejongpac.or.kr/upload/2023/09/20230918_081814580_45150.jpg" />
+        <h3 className="sub-title">상세내용</h3>
+        <div className="division-line pd-top-100">
+          <p>● 내용 : {infoDetail.content}</p>
+          <img src="https://www.sejongpac.or.kr/upload/2023/09/20230918_081814580_45150.jpg" />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

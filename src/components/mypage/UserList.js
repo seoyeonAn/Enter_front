@@ -108,8 +108,8 @@ const UserList = () => {
                     <span className='user-info-desc-l'>전화번호</span>
                     <input type='text' className='user-info-desc-r' name='phone' value={phone} onChange={handleValueChange} />
                 </div>
-                <div className='user-info-desc-btn pd-top-60'>
-                    <button type='submit' className='btn'>변경하기</button>
+                <div className='btn-area user-info-desc-btn pd-top-60'>
+                    <button type='submit' className='btn btn-origin'>변경하기</button>
                 </div>
             </form>
         </>
