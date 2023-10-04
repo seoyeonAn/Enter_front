@@ -26,6 +26,7 @@ function App() {
           <Route path="mypage" element={<Mypage />} />
         </Route>
       </Routes>
+      {/* footer */}
     </div>
   );
 }

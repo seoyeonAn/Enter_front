@@ -1,14 +1,28 @@
 import axios from "axios";
 import { infoReducers } from "../reducers/info_reducer";
 
-function getInfoList(currentPage) {
+// function getInfoList(currentPage) {
+//   return async (dispatch) => {
+//     const data = await axios
+//       .get(`/info/${currentPage}`)
+//       .then((response) => response.data)
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//     console.log("data: ", data);
+//     dispatch(infoReducers.getInfoList({ data }));
+//   };
+// }
+
+function getInfoList(currentPage, params) {
   return async (dispatch) => {
     const data = await axios
-      .get(`/info/${currentPage}`)
+      .get(`/info/${currentPage}`, params)
       .then((response) => response.data)
       .catch((error) => {
         console.log(error);
       });
+    console.log("params: ", params);
     console.log("data: ", data);
     dispatch(infoReducers.getInfoList({ data }));
   };
