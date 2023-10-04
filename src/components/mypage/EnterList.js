@@ -1,31 +1,12 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import EnterLabel from '../enter/EnterLabel';
+import React from "react";
+import "../../css/common.css";
+import "../../css/mypage.css";
 
-const EnterList = () => {
-    const dispatch = useDispatch();
-
-    const getEnterList = () => {
-      dispatch(enterActions.getEnterList());
-    };
-  
-    useEffect(() => {
-      getEnterList();
-    }, []);
-  
-    const enterList = useSelector((state) => state.enterlist.enterList);
-  
-    console.log("enterList: ", enterList);
-  
-    return (
-      <>
-        <h3>EnterList</h3>
-        {enterList &&
-          enterList.map((enterlist) => {
-            return <EnterLabel enterlist={enterlist} key={enterlist.enterSeq} />;
-          })}
-      </>
-    )
+const EnterList = ({ enter }) => {
+  return (
+    <>
+      <li>□ {enter["infoDTO"]["title"]}</li>
+    </>
+  );
 };
-
 export default EnterList;
