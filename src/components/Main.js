@@ -7,6 +7,7 @@ import '../css/main.css'
 import '../css/common.css'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
+import ReactPlayer from 'react-player';
 
 
 const Main = () => {
@@ -17,27 +18,27 @@ const Main = () => {
                 <Carousel data-bs-theme="dark">
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="images/main/slide1.jpg"
-                        alt="First slide"
+                            className="d-block w-100"
+                            src="images/main/slide1.jpg"
+                            alt="First slide"
                         />
                         <Carousel.Caption>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="images/main/slide2.jpg"
-                        alt="Second slide"
+                            className="d-block w-100"
+                            src="images/main/slide2.jpg"
+                            alt="Second slide"
                         />
                         <Carousel.Caption>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="images/main/slide3.jpg"
-                        alt="Third slide"
+                            className="d-block w-100"
+                            src="images/main/slide3.jpg"
+                            alt="Third slide"
                         />
                         <Carousel.Caption>
                         </Carousel.Caption>
@@ -108,6 +109,38 @@ const Main = () => {
                     </ul>
                 </div>
             </div>
+            <div className='container pd-bottom-100'>
+                <h1>인기 동영상</h1>
+                <div className="videoBox">
+                    <ReactPlayer
+                        className="video"
+                        url={"https://youtu.be/rrI7tOhoVzA?si=U49HzIgORu8ErKAA"}
+                        height="300px"
+                        playing={true}
+                        muted={true}
+                        controls={true}
+                    />
+
+                    <ReactPlayer
+                        className="video"
+                        url={"https://youtu.be/EvStWwidM98?si=GKlEBoS5BSAicp_0"}
+                        height="300px"
+                        playing={false}
+                        muted={true}
+                        controls={true}
+                    />
+
+                    <ReactPlayer
+                        className="video"
+                        url={"https://youtu.be/G0ZuPjha-c8?si=Tri8gcbMQxh_KSxO"}
+                        height="300px"
+                        playing={false}
+                        muted={true}
+                        controls={true}
+                    />
+                </div>
+            </div>
+
             {/* Ranking-List */}
             <div className='container pd-bottom-100 ranking-List-Area'>
                 <div className='title'>
@@ -132,8 +165,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -142,8 +175,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -152,8 +185,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -162,8 +195,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -176,8 +209,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -186,8 +219,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -196,8 +229,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
@@ -206,8 +239,8 @@ const Main = () => {
                                             <Card.Body>
                                                 <Card.Title>Card Title</Card.Title>
                                                 <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
+                                                    Some quick example text to build on the card title and make up the
+                                                    bulk of the card's content.
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>
