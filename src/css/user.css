@@ -1,84 +1,52 @@
-.join-form .con {
-    border: 1px solid #be3455;
-    max-width: 500px; /* 최대 너비 설정 */
-    margin: 60px auto; /* 가운데 정렬 */
-    padding: 40px; /* 내부 여백 설정 */
-    border-radius: 5px;
-  }
+/* .join-form .form-group input:focus {
+  outline: none !important;
+} */
 
-.join-form .email-input-area {
-    display: flex;
-    align-items: center;
+.join-form .con {
+  border: 1px solid #be3455;
+  max-width: 500px;
+  /* 최대 너비 설정 */
+  margin: 60px auto;
+  /* 가운데 정렬 */
+  padding: 40px;
+  /* 내부 여백 설정 */
+  border-radius: 5px;
 }
 
-div.lg_area {
-    border: 1px solid #be3455;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  div.userid {
-    text-align: center;
-    margin: 20px;
-    margin-bottom: 30px;
-  }
-  
-  input.useid {
-    margin-left: 30px;
-  }
-  
-  div.userpass {
-    text-align: center;
-    margin-bottom: 25px;
-  }
-  
-  div.btnarea {
-    text-align: center;
-    margin: 10px;
-  }
-  
-  .form-control {
-    width: 75%;
-    border: 0;
-    border-bottom: 1px solid #d9d9d9;
-    margin-left: 15px;
-    border-radius: 0;
-  }
-  
-  /*인풋박스 선택시 테두리없애기 및 색변경*/
-  input:focus {
-    outline: none;
-    border-bottom: 1px solid #be3455;
-  }
-  
+.join-form .email-input-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .email_area .form-control {
-    width: 33%;
-  }
-  
-  div.email_area {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  div.users_name {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  div.users_pass {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  div.users_phone {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-  
+.join-form .form-group {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input.useid {
+  margin-left: 30px;
+}
+
+div.userpass {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-control {
+  width: 75%;
+  border: 0;
+  border-bottom: 1px solid #d9d9d9;
+  margin-left: 15px;
+  border-radius: 0;
+}
+
+.email_area .form-control {
+  width: 66%;
+}
+
+.login-btn {
+  margin-right: 20px;
+}
