@@ -56,16 +56,16 @@ const Main = () => {
                         <img src='images/main/banner2.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner3.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner4.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner5.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner6.png' />
                     </li>
                 </ul>
             </div>
