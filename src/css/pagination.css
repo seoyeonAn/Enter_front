@@ -1,6 +1,6 @@
 .pagination {
-  padding-left: 45%;
-  padding-right: 45%;
+  padding-left: 45% !important;
+  padding-right: 45% !important;
   margin-top: 100px;
   --bs-pagination-border-color: none;
   --bs-pagination-hover-border-color: none;
@@ -13,7 +13,7 @@
   border: #be3455;
 }
 
- li.page-item.disabled,
+li.page-item.disabled,
 .page-link.disabled {
   background-color: #fff;
 }
