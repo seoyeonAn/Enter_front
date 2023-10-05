@@ -1,7 +1,16 @@
-@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+@import url("https://webfontworld.github.io/pretendard/Pretendard.css");
 
-*, ul, ol, li, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Pretendard';
+*,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pretendard";
   font-size: 1rem;
   color: #333 !important;
   text-decoration: none !important;
@@ -19,13 +28,14 @@ a:hover {
   color: #fff;
 }
 
-/* ul,
+ul,
 ol,
 li {
   list-style: none;
   padding: 0;
   margin: 0;
-} */
+  padding-left: 0 !important;
+}
 
 /* padding */
 .pd-top-20 {
@@ -82,6 +92,7 @@ li {
   text-align: center;
 }
 
+/*버튼*/
 .btn-origin {
   background-color: #be3455 !important;
   color: #fff !important;
@@ -96,5 +107,5 @@ li {
 
 input:focus {
   outline: none;
-  border-bottom: 1px solid #BE3455;
+  border-bottom: 1px solid #be3455;
 }

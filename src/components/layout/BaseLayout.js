@@ -9,22 +9,42 @@ const activeStyle = ({ isActive }) => ({
 const BaseLayout = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand navbar-light bg-light">
         <div className="container-fluid">
           {/* <div> */}
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink to="/" style={activeStyle} className="nav-link">
                 HOME
+                {/*추후 로고이미지 삽입으로 이동*/}
               </NavLink>
             </li>
-
+          </ul>
+          <ul className="navbar-nav mx-auto">
             <li>
               <NavLink to="/info/1" style={activeStyle} className="nav-link">
-                INFO
+                전시
               </NavLink>
             </li>
-            {/*로그인의 조건식. 비로그인 시 로그인하도록 구현*/}
+            <li>
+              <NavLink to="/info/1" style={activeStyle} className="nav-link">
+                공연
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/info/1" style={activeStyle} className="nav-link">
+                박물관
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/info/1" style={activeStyle} className="nav-link">
+                검색
+                {/* <img src="../../images/main/search.png">검색</img> */}
+              </NavLink>
+            </li>
+          </ul>
+          {/*로그인의 조건식. 비로그인 시 로그인하도록 구현*/}
+          <ul className="navbar-nav ml-auto">
             {localStorage.getItem("email") != null ? (
               <>
                 <li>
@@ -69,7 +89,6 @@ const BaseLayout = () => {
         </div>
       </nav>
 
-      <hr />
       <Outlet />
     </div>
   );
