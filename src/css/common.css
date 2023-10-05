@@ -19,6 +19,18 @@ a:hover {
   color: #fff;
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #BE3455;
+  border-radius: 5px;
+}
+
 ul,
 ol,
 li {
