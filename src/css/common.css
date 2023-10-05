@@ -28,6 +28,18 @@ a:hover {
   color: #fff;
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #BE3455;
+  border-radius: 5px;
+}
+
 ul,
 ol,
 li {
@@ -136,4 +148,11 @@ ul.navbar-nav > li {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+
+}
+
+.footer p {
+  color: #fff !important;
+  text-align: left;
+  padding-left: 40px;
 }
