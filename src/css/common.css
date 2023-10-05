@@ -19,13 +19,13 @@ a:hover {
   color: #fff;
 }
 
-/* ul,
+ul,
 ol,
 li {
   list-style: none;
-  padding: 0;
+  padding-left: 0 !important;
   margin: 0;
-} */
+}
 
 /* padding */
 .pd-top-20 {
@@ -95,6 +95,6 @@ li {
 }
 
 input:focus {
-  outline: none;
-  border-bottom: 1px solid #BE3455;
+  outline: none !important;
+  border-bottom: 1px solid #BE3455 !important;
 }

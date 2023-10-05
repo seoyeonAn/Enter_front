@@ -51,7 +51,7 @@
   margin: 0 auto;
 }
 .list-diary-area .tab-area .tab-li {
-  padding-left: 20px;
+  padding-left: 20px !important;
   border-bottom: 0;
 }
 .list-diary-area .tab-area .tab-li .nav-item button {

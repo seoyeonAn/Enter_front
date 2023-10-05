@@ -180,7 +180,7 @@ const Use_Join = () => {
             />
           </div>
 
-          <div className="btn-area">
+          <div className="btn-area pd-top-40">
             <button
               type="submit"
               className="btn btn-origin"
