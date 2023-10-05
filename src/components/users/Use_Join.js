@@ -1,23 +1,26 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../../css/Use_join.css";
+import "../../css/user.css";
 
 const Use_Join = () => {
-  // const 키워드를 사용하여 변수 users를 선언합니다.
-  // 이 변수는 나중에 상태 값을 저장할 때 사용됩니다.
   const navigator = useNavigate();
   const [users, setUsers] = useState({
-    // useState 함수를 사용하여 초기 상태를 설정합니다.
-    // 이 상태 객체는 다음과 같은 속성을 가지며, 빈 문자열로 초기화됩니다.
     email: "",
     password: "",
     name: "",
     phone: "",
   });
+  const { password } = users;
 
-  const [emailErrMsg, setEmailErrMsg] = useState(""); //email error 메세지
-  const [emailChekMsg, setEmailChekMsg] = useState(""); //email 사용가능 메세지
+  const [passwordText, setPasswordText] = useState("");
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: localStorage.getItem("Authorization"),
+    },
+  };
 
   //email 유효성 검사
   const handleCheckEmail = (e) => {
@@ -28,15 +31,16 @@ const Use_Join = () => {
 
   //${process.env.REACT_APP_API_URL}
   const checkEmail = async (e) => {
-    const regExp = /^[a-zA-Z]+@[a-zA-Z0-9.]{2,20}$/;
+    const regExp = /^[a-zA-Z]+@[a-zA-Z.]{2,20}$/;
     if (!regExp.test(e.target.previousElementSibling.value)) {
-      setEmailErrMsg("이메일은 10-20자까지의 영어, 숫자를 사용하세요.");
+      alert("이메일은 영어로 시작한 10-20자까지의 영어를 사용하세요.");
       return;
     }
 
+    console.log("email" + users.email);
     await axios.get(`/users/email?email=${users.email}`).then((res) => {
       const resMessge = res.data;
-
+      console.log("email:" + res.data);
       if (resMessge === 1) {
         alert("사용가능한 이메일입니다.");
       } else {
@@ -44,14 +48,51 @@ const Use_Join = () => {
       }
     });
   };
+  const [passwordCheck, setPasswordCheck] = useState("");
 
-  //회원가입 시 form에 값을 저장하고 로그인페이지로 넘어감
+  /*초기엔 passeordCheck가 빈 문자열(null이 아님!!)이지만, 
+ 비밀번호 확인(input name="passwordCheck")에 input이 없을 때 passcheck함수가 호출되어
+ <span className='passcheck'>{passwordCheck}</span>가 passwordCheck의 상태값을 대신해
+'비밀번호 불일치'메세지가 들어가므로 null이 아니게 됨.
+ 따라서 setPasswordCheck("")를 추가해 초기화시켜주기. 
+ 여기서 null로 초기화 시키면 빈문자열일 때 문장이 나오지 않게 됨.
+ 따라서 null이 아닌 빈문자열 ""로 초기화.
+ */
+
+  const passCheck = (e) => {
+    setPasswordText(e.target.value);
+    if (e.target.value === "") {
+      setPasswordCheck("");
+    } else {
+      if (password !== e.target.value) {
+        setPasswordCheck("비밀번호 불일치");
+      } else {
+        setPasswordCheck("비밀번호 일치");
+      }
+      return;
+    }
+  };
+
   const handleValueChange = (e) => {
     setUsers({ ...users, [e.target.name]: e.target.value });
   };
 
+  //로그인 정보를 넘겨줌
   const handleJoinSubmit = async (e) => {
     e.preventDefault();
+    const { email, password, name, phone } = users;
+
+    if (!email || !password || !name || !phone) {
+      alert("모든 가입 정보를 입력해주세요.");
+      return;
+    }
+
+    console.log(password, passwordText);
+    if (password !== passwordText) {
+      alert("비밀번호 불일치");
+      return;
+    }
+
     await axios
       .post("/join", users)
       .then((response) => {
@@ -59,30 +100,37 @@ const Use_Join = () => {
       })
       .catch((error) => {
         console.error(error);
+
+        if (error.response.status === 500) {
+          alert("가입정보를 확인해주세요");
+        }
       });
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleJoinSubmit}>
+    <div className="container pd-content-100">
+      <form onSubmit={handleJoinSubmit} className="join-form">
         <h1 className="title">회원가입</h1>
         <div className="container con">
           <div className="form-group mb-1 email_area">
-            이메일
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              placeholder="예시) exam@example.com"
-              onChange={handleValueChange}
-            />
-            <button
-              type="submit"
-              className="btn btn-primary"
-              onClick={handleCheckEmail}
-            >
-              중복확인
-            </button>
+            <span>이메일</span>
+            <div className="email-input-area">
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="예시) exam@example.com"
+                onChange={handleValueChange}
+              />
+              <button
+                type="submit"
+                className="btn btn-origin"
+                onClick={handleCheckEmail}
+              >
+                중복확인
+              </button>
+            </div>
+
           </div>
           <div className="form-group mb-1 users_name">
             이름
@@ -91,6 +139,7 @@ const Use_Join = () => {
               className="form-control"
               name="name"
               placeholder="이름"
+              autoComplete="name"
               onChange={handleValueChange}
             />
           </div>
@@ -101,6 +150,7 @@ const Use_Join = () => {
               className="form-control"
               name="password"
               placeholder="비밀번호"
+              autoComplete="current-password"
               onChange={handleValueChange}
             />
           </div>
@@ -109,11 +159,16 @@ const Use_Join = () => {
             <input
               type="password"
               className="form-control"
-              name="password"
+              name="passwordText"
               placeholder="비밀번호 확인"
-              onChange={handleValueChange}
+              value={passwordText}
+              onChange={passCheck}
             />
           </div>
+          <div className="users_passchek">
+            <span className="passcheck">{passwordCheck}</span>
+          </div>
+
           <div className="form-group mb-1 users_phone">
             휴대폰 번호
             <input
@@ -125,10 +180,10 @@ const Use_Join = () => {
             />
           </div>
 
-          <div className="btn">
+          <div className="btn-area">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-origin"
               onClick={handleJoinSubmit}
             >
               가입 완료

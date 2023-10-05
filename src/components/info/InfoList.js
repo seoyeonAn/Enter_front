@@ -4,7 +4,9 @@ import { infoActions } from "../../toolkit/actions/info_action";
 import { useParams } from "react-router-dom";
 import InfoCard from "./InfoCard";
 import PageNavigation from "./PageNavigation";
-import "../../css/infolist.css";
+
+// css
+import "../../css/info.css";
 
 const InfoList = () => {
   // const { currentPage } = useParams();
@@ -47,8 +49,8 @@ const InfoList = () => {
   }, [currentPage, params]);
 
   return (
-    <>
-      <div className="container">
+    <div className="container pd-content-100">
+      <div className="selectBar-Area">
         <div className="selectBar">
           <div className="fieldOne">
             <select
@@ -84,8 +86,8 @@ const InfoList = () => {
             >
               검색
             </button>
-            {/* <button className="btnBack">취소</button> */}
           </div>
+          {/* <button className="btnBack">취소</button> */}
         </div>
 
         {/* 
@@ -114,19 +116,17 @@ const InfoList = () => {
         </div>
       </div>
 
-      <div className="container">
-        <div className="row">
-          {infoList &&
-            infoList.map((information) => {
-              return (
-                <InfoCard information={information} key={information.infoSeq} />
-              );
-            })}
-        </div>
+      <div className="row">
+        {infoList &&
+          infoList.map((information) => {
+            return (
+              <InfoCard information={information} key={information.infoSeq} />
+            );
+          })}
       </div>
 
       {pv && <PageNavigation getInfoList={getInfoList} />}
-    </>
+    </div>
   );
 };
 
