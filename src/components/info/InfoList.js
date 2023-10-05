@@ -87,27 +87,7 @@ const InfoList = () => {
               검색
             </button>
           </div>
-          {/* <button className="btnBack">취소</button> */}
         </div>
-
-        {/* 
-      {infoList === null ? <div>검색 결과가 없습니다.</div> : 
-      <><div className="totalSearch">
-        <div className="total">
-          검색 결과 총 <strong className="strongText">{pv.totalCount}</strong> 건
-        </div>
-      </div>
-
-      <div className="row">
-        {infoList &&
-          infoList.map((information) => {
-            return (
-              <InfoCard information={information} key={information.info_seq} />
-            );
-          })}
-      </div>
-      {pv && <PageNavigation getInfoList={getInfoList} />}</>} */}
-
         <div className="totalSearch">
           <div className="total">
             검색 결과 총 <strong className="strongText">{pv.totalCount}</strong>

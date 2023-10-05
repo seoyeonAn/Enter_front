@@ -17,7 +17,10 @@ import { infoReducers } from "../reducers/info_reducer";
 function getInfoList(currentPage, params) {
   return async (dispatch) => {
     const data = await axios
-      .get(`/info/${currentPage}`, params)
+      .get(`/info/${currentPage}`, { params })
+      // .get(`info/${currentPage}`, {
+      //   params: { searchKey: "searchKey" },
+      // })
       .then((response) => response.data)
       .catch((error) => {
         console.log(error);
@@ -48,4 +51,8 @@ function insertInfo(formData, config) {
   };
 }
 
-export const infoActions = { getInfoList, getInfoDetail, insertInfo };
+export const infoActions = {
+  getInfoList,
+  getInfoDetail,
+  insertInfo,
+};
