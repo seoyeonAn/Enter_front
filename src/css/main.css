@@ -41,8 +41,12 @@
 
 .main .calender-daylist-Area .calender-Area .react-calendar .react-calendar__tile--now {
     background-color: #be3455;
-    color: #fff;
+    color: #fff !important;
     border-radius: 5px;
+}
+
+.main .calender-daylist-Area .calender-Area .react-calendar .react-calendar__tile--now abbr {
+    color: #fff !important;
 }
 
 .main .calender-daylist-Area .day-List-Area {
@@ -68,6 +72,18 @@
     display: flex;
     justify-content: space-between;
 }
+
+.main .videoBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .videoBox .video {
+    width: 33% !important;
+    height: 260px !important;
+}
+
 .main .ranking-List-Area .title h1 {
     margin: 0;
 }
@@ -95,7 +111,7 @@
 
 .main .ranking-List-Area .ranking-List .tab-area .nav-link.active {
     background-color: #be3455;
-    color: #fff;
+    color: #fff !important;
 }
 
 .main .ranking-List-Area .ranking-List .ranking-List-content{

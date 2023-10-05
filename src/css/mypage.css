@@ -51,7 +51,7 @@
   margin: 0 auto;
 }
 .list-diary-area .tab-area .tab-li {
-  padding-left: 20px;
+  padding-left: 20px !important;
   border-bottom: 0;
 }
 .list-diary-area .tab-area .tab-li .nav-item button {
@@ -125,6 +125,18 @@
     background-color: #BE3455;
     border-radius: 5px;
 }
+
+.form-check-label {
+  text-decoration: line-through !important;
+  text-decoration-color: #be3455 !important;
+  text-decoration-thickness: 2px !important;
+}
+
+.form-check-input:checked {
+  border-color: #be3455;
+  background-color: #be3455;
+}
+
 
 /* diary */
 .form-Area {

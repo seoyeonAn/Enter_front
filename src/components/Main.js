@@ -12,7 +12,7 @@ const Main = () => {
   return (
     <div className="main">
       {/* slide-Area */}
-      <div className="slide-Area">
+      <div className="slide-Area pd-bottom-100">
         <Carousel data-bs-theme="dark">
           <Carousel.Item>
             <img
@@ -105,8 +105,8 @@ const Main = () => {
         </div>
       </div>
       <div className="container pd-bottom-100">
-        <h1>인기 동영상</h1>
-        <div className="videoBox">
+        <h1 className="title">인기 동영상</h1>
+        <div className="videoBox pd-top-60">
           <ReactPlayer
             className="video"
             url={"https://youtu.be/rrI7tOhoVzA?si=U49HzIgORu8ErKAA"}
@@ -138,8 +138,8 @@ const Main = () => {
 
       {/* Ranking-List */}
       <div className="container pd-bottom-100 ranking-List-Area">
-        <div className="title">
-          <h1>장르별 랭킹</h1>
+        <div>
+          <h1 className="title">장르별 랭킹</h1>
         </div>
         <div className="ranking-List pd-top-60">
           <div className="tab-area">

@@ -32,7 +32,7 @@ ul,
 ol,
 li {
   list-style: none;
-  padding: 0;
+  padding-left: 0 !important;
   margin: 0;
   padding-left: 0 !important;
 }
@@ -106,6 +106,27 @@ li {
 }
 
 input:focus {
-  outline: none;
-  border-bottom: 1px solid #be3455;
+  outline: none !important;
+  border-bottom: 1px solid #be3455 !important;
+}
+
+/*BaseLayout*/
+.BaseLayout .nav {
+  height: 90px;
+}
+
+.BaseLayout .li {
+  margin-left: 40px;
+}
+
+.BaseLayout .li .search {
+  margin-right: 100px;
+}
+
+/*footer*/
+footer {
+  background-color: #be3455;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

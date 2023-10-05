@@ -37,9 +37,12 @@ const BaseLayout = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/info/1" style={activeStyle} className="nav-link">
-                검색
-                {/* <img src="../../images/main/search.png">검색</img> */}
+              <NavLink
+                to="/info/1"
+                style={activeStyle}
+                className="nav-link search"
+              >
+                <img src="/images/main/1.png" />
               </NavLink>
             </li>
           </ul>
@@ -90,6 +93,17 @@ const BaseLayout = () => {
       </nav>
 
       <Outlet />
+
+      {/* footer */}
+      <div>
+        <footer>
+          <p>
+            법인명(상호) : 주식회사 엔터미션 | 사업자등록번호: 110-81-123456
+          </p>
+          <p>주소 : 서울특별시 서초구 서초동 엔터미션 1호점</p>
+          <p>고객행복센터 : 1588-1234 (월~토요일 오전 10시~오후 6시)</p>
+        </footer>
+      </div>
     </div>
   );
 };
