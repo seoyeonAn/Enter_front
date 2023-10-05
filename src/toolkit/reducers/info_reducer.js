@@ -13,8 +13,6 @@ const infoSlice = createSlice({
     getInfoList(state, action) {
       state.infoList = action.payload.data.infoList;
       state.pv = action.payload.data.pv;
-
-      state.showList = action.payload.data.showList;
     },
     getInfoDetail(state, action) {
       //console.log("infoDetail(reducer): ", action.payload.data.infoDetail);
