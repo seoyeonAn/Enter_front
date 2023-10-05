@@ -1,7 +1,16 @@
-@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+@import url("https://webfontworld.github.io/pretendard/Pretendard.css");
 
-*, ul, ol, li, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Pretendard';
+*,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pretendard";
   font-size: 1rem;
   color: #333 !important;
   text-decoration: none !important;
@@ -37,6 +46,7 @@ li {
   list-style: none;
   padding-left: 0 !important;
   margin: 0;
+  padding-left: 0 !important;
 }
 
 /* padding */
@@ -94,6 +104,7 @@ li {
   text-align: center;
 }
 
+/*버튼*/
 .btn-origin {
   background-color: #be3455 !important;
   color: #fff !important;
@@ -108,5 +119,40 @@ li {
 
 input:focus {
   outline: none !important;
-  border-bottom: 1px solid #BE3455 !important;
+  border-bottom: 1px solid #be3455 !important;
+}
+
+/*BaseLayout   # :ID값을 줌(id=#main)  .은 class거나 classname일 때*/
+
+.navbar .container-fluid .navbar-nav .logo img {
+  
+  height: 50px;
+}
+
+.navbar .container-fluid .navbar-nav .search img {
+  width: 24px;
+}
+
+/*margin값은 위->오른->아래->왼쪽(시계방향)으로 적용됌*/
+ul.navbar-nav > li {
+  margin: 0 10px; /* '>'는 하위구조를 지칭해서,바로 아래의 자식태그를 적어줌  0:상하, 10px:좌우*/
+}
+
+.navbar .container-fluid .navbar-nav {
+  align-items: center;
+}
+
+/*footer*/
+.footer {
+  background-color: #be3455;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.footer p {
+  color: #fff !important;
+  text-align: left;
+  padding-left: 40px;
 }
