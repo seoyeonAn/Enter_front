@@ -18,7 +18,7 @@ const EnterList = ({ enter }) => {
 
   return (
     <>
-      <div className="form-check">
+      <div className="form-check enterlist-Item">
         <input
           className="form-check-input"
           type="checkbox"
