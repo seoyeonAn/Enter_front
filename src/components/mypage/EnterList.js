@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../../css/common.css";
 import "../../css/mypage.css";
 import "../../css/enterlist.css";
-import Form from "react-bootstrap/Form";
 import { mypageActions } from "../../toolkit/actions/mypage_action";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
@@ -19,13 +18,6 @@ const EnterList = ({ enter }) => {
 
   return (
     <>
-      {/* <Form.Check
-        label={enter["infoDTO"]["title"]}
-        className={enter.completed === 1 ? "completed" : null}
-        onClick={() => updateEnter(enter.enterSeq, enter.completed)}
-        checked={enter.completed === 1 ? true : null}
-      /> */}
-
       <div className="form-check">
         <input
           className="form-check-input"
