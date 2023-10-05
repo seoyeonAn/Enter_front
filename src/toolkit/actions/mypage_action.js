@@ -40,8 +40,20 @@ function getDiaryWrite(formData, config) {
   };
 }
 
+function getEnterUpdate(enterSeq, completed) {
+  axios
+    .put(`/mypage/${enterSeq}/${completed}`)
+    // .then((response) => {
+    //   window.location.replace("/mypage");
+    // })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
 export const mypageActions = {
   getUserList,
   getDiaryWrite,
+  getEnterUpdate,
   // ,getDiaryList
 };
