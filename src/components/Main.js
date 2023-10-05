@@ -50,10 +50,10 @@ const Main = () => {
             <div className='container pd-content-100'>
                 <ul className='banner-List'>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner1.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner2.png' />
                     </li>
                     <li className='list-Item'>
                         <img src='images/main/banner.jpg' />
