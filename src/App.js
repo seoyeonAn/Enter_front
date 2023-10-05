@@ -1,6 +1,6 @@
 // css
 import "./App.css";
-import "./css/common.css"
+import "./css/common.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
@@ -11,6 +11,7 @@ import Mypage from "./components/mypage/Mypage";
 import Use_Login from "./components/users/Use_Login";
 import Use_Join from "./components/users/Use_Join";
 import Main from "./components/Main";
+import MuseumCard from "./components/info/MuseumCard";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="info/:currentPage" element={<InfoList />} />
           <Route path="info/view/:infoSeq" element={<InfoView />} />
           <Route path="mypage" element={<Mypage />} />
+
+          <Route path="info/museum/:currentPage" element={<MuseumCard />} />
         </Route>
       </Routes>
       {/* footer */}

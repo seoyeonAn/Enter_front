@@ -26,6 +26,16 @@ const BaseLayout = () => {
             </li>
 
             <li>
+              <NavLink
+                to="/info/museum/1"
+                style={activeStyle}
+                className="nav-link"
+              >
+                MUSEUM
+              </NavLink>
+            </li>
+
+            <li>
               <NavLink to="/mypage" style={activeStyle} className="nav-link">
                 MYPAGE
               </NavLink>
@@ -42,6 +52,7 @@ const BaseLayout = () => {
                 LOGIN
               </NavLink>
             </li>
+
             {localStorage.getItem("email") !== null ? (
               <li>{localStorage.getItem("name") + " 님"}</li>
             ) : null}

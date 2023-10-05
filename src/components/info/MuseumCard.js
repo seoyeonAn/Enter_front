@@ -1,5 +1,5 @@
 import Card from "react-bootstrap/Card";
-import "../../css/infocard.css";
+// import "../../css/infocard.css";
 import { Link } from "react-router-dom";
 
 const MuseumCard = ({ information }) => {

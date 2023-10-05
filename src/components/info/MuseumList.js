@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { infoActions } from "../../toolkit/actions/info_action";
 import { useParams } from "react-router-dom";
-import InfoCard from "./InfoCard";
 import PageNavigation from "./PageNavigation";
-import "../../css/infolist.css";
+// import "../../css/infolist.css";
+import MuseumCard from "./MuseumCard";
 
 const MusuemList = () => {
   const { currentPage, params } = useParams();
   const dispatch = useDispatch();
 
-  const [selectedSearchKey, setSelectedSearchKey] = useState("");
+  const [selectedSearchKey, setSelectedSearchKey] = useState("museum");
   const [selectedSearchWord, setSelectedSearchWord] = useState("");
 
   const infoList = useSelector((state) => state.information.infoList);
@@ -96,11 +96,12 @@ const MusuemList = () => {
       <div className="container">
         <div className="row">
           {infoList &&
+            infoList.information.category === "museum" &&
             infoList.map((information) => {
               return (
                 // <InfoCard information={information} key={information.infoSeq} />
                 <MuseumCard
-                  information={information.category === "museum"}
+                  information={information}
                   key={information.infoSeq}
                 />
               );
