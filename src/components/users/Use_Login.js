@@ -26,6 +26,7 @@ const Use_Login = () => {
 
         localStorage.setItem("Authorization", jwtToken);
         localStorage.setItem("email", response.data.email);
+        localStorage.setItem("name", response.data.name);
         console.log("email" + response.data.email);
         localStorage.setItem("isLogin", true);
 

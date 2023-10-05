@@ -36,9 +36,8 @@ const Mypage = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    //     formData.append("email", localStorage.getItem("email"));
+    formData.append("email", localStorage.getItem("email"));
     //        formData.append("name", localStorage.getItem("name"));
-    formData.append("email", "aa@aaa.com");
 
     const config = {
       headers: {
@@ -69,7 +68,7 @@ const Mypage = () => {
   };
 
   const getUserList = () => {
-    dispatch(mypageActions.getUserList("aa@aaa.com"));
+    dispatch(mypageActions.getUserList(localStorage.getItem("email")));
   };
 
   //   const getEnterList = () => {
