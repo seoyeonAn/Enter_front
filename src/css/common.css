@@ -28,6 +28,18 @@ a:hover {
   color: #fff;
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #BE3455;
+  border-radius: 5px;
+}
+
 ul,
 ol,
 li {
@@ -110,23 +122,37 @@ input:focus {
   border-bottom: 1px solid #be3455 !important;
 }
 
-/*BaseLayout*/
-.BaseLayout .nav {
-  height: 90px;
+/*BaseLayout   # :ID값을 줌(id=#main)  .은 class거나 classname일 때*/
+
+.navbar .container-fluid .navbar-nav .logo img {
+  
+  height: 50px;
 }
 
-.BaseLayout .li {
-  margin-left: 40px;
+.navbar .container-fluid .navbar-nav .search img {
+  width: 24px;
 }
 
-.BaseLayout .li .search {
-  margin-right: 100px;
+/*margin값은 위->오른->아래->왼쪽(시계방향)으로 적용됌*/
+ul.navbar-nav > li {
+  margin: 0 10px; /* '>'는 하위구조를 지칭해서,바로 아래의 자식태그를 적어줌  0:상하, 10px:좌우*/
+}
+
+.navbar .container-fluid .navbar-nav {
+  align-items: center;
 }
 
 /*footer*/
-footer {
+.footer {
   background-color: #be3455;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+
+}
+
+.footer p {
+  color: #fff !important;
+  text-align: left;
+  padding-left: 40px;
 }

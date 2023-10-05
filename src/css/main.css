@@ -99,9 +99,8 @@
 }
 
 .main .ranking-List-Area .ranking-List .tab-area .nav {
-    width: 10%;
     margin: 0 auto;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 

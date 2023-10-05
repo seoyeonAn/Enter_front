@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { mypageActions } from "../../toolkit/actions/mypage_action";
 import UserList from "./UserList";
 import DiaryList from "./DiaryList";
+import EnterList from "./EnterList";
 
 import "../../css/mypage.css";
 // bootstrap
@@ -11,7 +12,6 @@ import Container from "react-bootstrap/Container";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { useNavigate, useParams } from "react-router-dom";
-import EnterList from "./EnterList";
 
 const Mypage = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,8 @@ const Mypage = () => {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("email", localStorage.getItem("email"));
-    //        formData.append("name", localStorage.getItem("name"));
+    //formData.append("name", localStorage.getItem("name"));
+    //formData.append("email", email);
 
     const config = {
       headers: {
