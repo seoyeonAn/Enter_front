@@ -95,9 +95,9 @@ const Mypage = () => {
         <div className="title-area">
           <h1 className="title">마이페이지</h1>
         </div>
-        <Container className="user-info pd-content-60">
+        <Container className="user-info pd-content-100">
           <div className="user-info-img-area">
-            <img src="images/mypage/thumb1.png" className="user-info-img" />
+            <img src="images/mypage/thumb.png" className="user-info-img" />
           </div>
           <div className="user-info-desc-area">{userList && <UserList />}</div>
         </Container>

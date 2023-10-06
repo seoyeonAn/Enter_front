@@ -15,7 +15,7 @@ const Main = () => {
         <div className='main'>
             {/* slide-Area */}
             <div className='slide-Area pd-bottom-100'>
-                <Carousel data-bs-theme="dark">
+                <Carousel>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
@@ -50,22 +50,22 @@ const Main = () => {
             <div className='container pd-content-100'>
                 <ul className='banner-List'>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner1.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner2.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner3.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner4.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner5.png' />
                     </li>
                     <li className='list-Item'>
-                        <img src='images/main/banner.jpg' />
+                        <img src='images/main/banner6.png' />
                     </li>
                 </ul>
             </div>
