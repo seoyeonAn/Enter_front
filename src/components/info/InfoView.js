@@ -53,15 +53,13 @@ const InfoView = () => {
     let config = { "Content-Type": "multipart/form-data" };
     const formData = new FormData();
     formData.append("infoSeq", infoSeq);
+    formData.append("email", localStorage.getItem("email"));
     dispatch(infoActions.insertInfo(formData, config));
     navigator(`/info/view/${infoSeq}`);
   };
 
-  //console.log(infoDetail.enter_seq);
-
   return (
     <div className="container pd-content-100">
-      {/* <h1>{infoDetail.category}</h1> */}
       {infoDetail.category === "exhibition" ? (
         <h1 className="title">전시</h1>
       ) : infoDetail.category === "show" ? (

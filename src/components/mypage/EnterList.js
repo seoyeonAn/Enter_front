@@ -12,8 +12,8 @@ const EnterList = ({ enter }) => {
 
   const updateEnter = (enterSeq, completed) => {
     mypageActions.getEnterUpdate(enterSeq, completed);
-    dispatch(mypageActions.getUserList("aa@aaa.com"));
-    navigator("/mypage");
+    dispatch(mypageActions.getUserList( localStorage.getItem("email")));
+    navigator('/mypage');
   };
 
   return (
