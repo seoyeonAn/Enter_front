@@ -35,58 +35,60 @@
 .card-title {
   font-weight: 700;
   font-size: 1.2rem;
-  line-height:1.6rem;
+  line-height: 1.6rem;
 }
 
 .card-title:hover {
   color: #be3455;
 }
 
-.active > .page-link, .page-link.active {
+.active > .page-link,
+.page-link.active {
   color: #fff !important;
 }
 
-.selectBar{
+.selectBar {
   /* float:right; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.fieldOne{
+.fieldOne {
   margin: 10px 10px;
-   display: inline-block;
+  display: inline-block;
 }
 
-.fieldTwo{
+.fieldTwo {
   margin: 10px 0px;
   display: inline-block;
 }
 
-.selectBox{
+.selectBox {
   width: 130px;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #d9d9d9;
 }
 
- .selectBox option, .inputField {
+.selectBox option,
+.inputField {
   box-sizing: border-box;
   border-radius: 5px;
-} 
+}
 
 .inputField {
-  width:300px;
+  width: 300px;
   height: 40px;
-  border-width:1px;
+  border-width: 1px;
   border: 1px solid #d9d9d9;
   margin-right: 5px;
-} 
+}
 
 .totalSearch {
   text-align: right;
   margin: 10px;
-  clear:both;
+  clear: both;
 }
 
 .totalSearch .total .strongText {
@@ -118,8 +120,7 @@
   border: 1px solid #be3455 !important;
 }
 
-
-@media screen and (max-width : 1200px) {
+@media screen and (max-width: 1200px) {
   .row {
     flex-wrap: wrap;
   }
@@ -214,6 +215,6 @@
   margin: 20px 0;
 }
 
-.textContent {
+.sub-title {
   text-align: center;
 }
