@@ -1,9 +1,6 @@
 .main .slide-Area {
     margin-bottom: 100px;
 }
-.main .carousel-inner {
-    height: 600px;
-}
 
 .main .banner-List {
     display: flex;
@@ -53,6 +50,20 @@
     width: 48%;
     border: 1px solid #d9d9d9;
     border-radius: 5px;
+    height: 300px;
+    overflow: auto;
+}
+
+.main .calender-daylist-Area .day-List-Area::-webkit-scrollbar {
+    width: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.main .calender-daylist-Area .day-List-Area::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #d9d9d9;
+    border-radius: 5px;
 }
 
 .main .calender-daylist-Area .day-List-Area .day-List {
@@ -60,7 +71,7 @@
 }
 
 .main .calender-daylist-Area .day-List-Area .d-list-Item {
-    padding: 20px;
+    padding: 20px !important;
     border-bottom: 1px solid #d9d9d9;
 }
 

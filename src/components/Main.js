@@ -15,7 +15,7 @@ const Main = () => {
         <div className='main'>
             {/* slide-Area */}
             <div className='slide-Area pd-bottom-100'>
-                <Carousel data-bs-theme="dark">
+                <Carousel>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"

@@ -86,6 +86,10 @@ li {
   padding: 60px 0;
 }
 
+.title-Area h2 {
+  font-size: 1.8rem !important;
+}
+
 .title {
   font-weight: 700;
   font-size: 3rem;
