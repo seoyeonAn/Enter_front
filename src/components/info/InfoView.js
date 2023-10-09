@@ -157,7 +157,7 @@ const InfoView = () => {
           ) : (
             infoDetail.content
           )}
-          {/* <img src="https://www.sejongpac.or.kr/upload/2023/09/20230918_081814580_45150.jpg" /> */}
+          <img src={infoDetail.content} />
         </div>
       </div>
     </div>

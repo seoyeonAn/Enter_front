@@ -17,8 +17,9 @@ const InfoList = () => {
   const [selectedSearchWord, setSelectedSearchWord] = useState("");
 
   const infoList = useSelector((state) => state.information.infoList);
+
   const pv = useSelector((state) =>
-    state.information.pv ? state.information.pv : { currentPage: 1 }
+    state.information.pv ? state.information.pv : { currentPage: 1}
   );
 
   const getInfoList = (currentPage, params) => {
@@ -41,12 +42,13 @@ const InfoList = () => {
       searchWord: selectedSearchWord,
     };
 
-    getInfoList(currentPage, params);
+    getInfoList(1, params);
   };
 
   useEffect(() => {
     getInfoList(currentPage, params);
   }, [currentPage, params]);
+
 
   return (
     <div className="container pd-content-100">
@@ -90,22 +92,26 @@ const InfoList = () => {
         </div>
         <div className="totalSearch">
           <div className="total">
-            검색 결과 총 <strong className="strongText">{pv.totalCount}</strong>
-            건
-          </div>
+            검색 결과 총
+            {pv.totalCount === undefined ?
+            <strong className="strongText"> 0</strong> : <strong className="strongText"> {pv.totalCount}</strong>}건
+           </div>
         </div>
       </div>
 
-      <div className="row">
+
+      {pv.totalCount === undefined ? <div className="noSearch">검색 결과가 없습니다.</div> : <div className="row">
         {infoList &&
           infoList.map((information) => {
             return (
               <InfoCard information={information} key={information.infoSeq} />
             );
           })}
-      </div>
+          
+      </div>}
 
-      {pv && <PageNavigation getInfoList={getInfoList} />}
+      {pv.totalCount === undefined ? null :pv && <PageNavigation getInfoList={getInfoList} />}
+
     </div>
   );
 };
