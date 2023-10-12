@@ -8,7 +8,7 @@ const activeStyle = ({ isActive }) => ({
 const BaseLayout = () => {
   return (
     <div className="total">
-      <nav class="navbar navbar-expand navbar-light bg-light">
+      <nav className="navbar navbar-expand navbar-light bg-light">
         <div className="container-fluid">
           {/* <div> */}
           <ul className="navbar-nav">
