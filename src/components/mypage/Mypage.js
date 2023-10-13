@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { mypageActions } from "../../toolkit/actions/mypage_action";
 import UserList from "./UserList";
 import DiaryList from "./DiaryList";
+import EnterList from "./EnterList";
 
 import "../../css/mypage.css";
 // bootstrap
@@ -11,7 +12,6 @@ import Container from "react-bootstrap/Container";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { useNavigate, useParams } from "react-router-dom";
-import EnterList from "./EnterList";
 
 const Mypage = () => {
   const dispatch = useDispatch();
@@ -36,9 +36,9 @@ const Mypage = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    //     formData.append("email", localStorage.getItem("email"));
-    //        formData.append("name", localStorage.getItem("name"));
-    formData.append("email", "aa@aaa.com");
+    formData.append("email", localStorage.getItem("email"));
+    //formData.append("name", localStorage.getItem("name"));
+    //formData.append("email", email);
 
     const config = {
       headers: {
@@ -69,7 +69,7 @@ const Mypage = () => {
   };
 
   const getUserList = () => {
-    dispatch(mypageActions.getUserList("aa@aaa.com"));
+    dispatch(mypageActions.getUserList(localStorage.getItem("email")));
   };
 
   //   const getEnterList = () => {
@@ -95,9 +95,9 @@ const Mypage = () => {
         <div className="title-area">
           <h1 className="title">마이페이지</h1>
         </div>
-        <Container className="user-info pd-content-60">
+        <Container className="user-info pd-content-100">
           <div className="user-info-img-area">
-            <img src="images/mypage/thumb1.png" className="user-info-img" />
+            <img src="images/mypage/thumb.png" className="user-info-img" />
           </div>
           <div className="user-info-desc-area">{userList && <UserList />}</div>
         </Container>

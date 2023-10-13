@@ -53,15 +53,13 @@ const InfoView = () => {
     let config = { "Content-Type": "multipart/form-data" };
     const formData = new FormData();
     formData.append("infoSeq", infoSeq);
+    formData.append("email", localStorage.getItem("email"));
     dispatch(infoActions.insertInfo(formData, config));
     navigator(`/info/view/${infoSeq}`);
   };
 
-  //console.log(infoDetail.enter_seq);
-
   return (
     <div className="container pd-content-100">
-      {/* <h1>{infoDetail.category}</h1> */}
       {infoDetail.category === "exhibition" ? (
         <h1 className="title">전시</h1>
       ) : infoDetail.category === "show" ? (
@@ -131,7 +129,7 @@ const InfoView = () => {
                 ) -
                   Math.floor(Date.parse(today) / (1000 * 60 * 60 * 24)) -
                   1 <
-                  0 ? (
+                0 ? (
                   <strong>
                     <strong className="viva-color">종료</strong>되었습니다.
                   </strong>
@@ -151,13 +149,15 @@ const InfoView = () => {
         </div>
       </div>
 
-
-
       <div className="textContent">
         <h3 className="sub-title">상세내용</h3>
         <div className="division-line pd-top-100">
-          <p>● 내용 : {infoDetail.content}</p>
-          <img src="https://www.sejongpac.or.kr/upload/2023/09/20230918_081814580_45150.jpg" />
+          {infoDetail.content === null ? (
+            <p>자세한 내용은 홈페이지를 참고해주세요.</p>
+          ) : (
+            infoDetail.content
+          )}
+          <img src={infoDetail.content} />
         </div>
       </div>
     </div>

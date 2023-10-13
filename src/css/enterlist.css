@@ -1,0 +1,12 @@
+
+
+.form-check-label {
+  text-decoration: line-through !important;
+  text-decoration-color: #be3455 !important;
+  text-decoration-thickness: 2px !important;
+}
+
+.form-check-input:checked {
+  border-color: #be3455;
+  background-color: #be3455;
+}

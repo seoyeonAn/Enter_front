@@ -22,4 +22,5 @@ const infoSlice = createSlice({
 });
 
 export const infoReducers = infoSlice.actions;
+
 export default infoSlice;

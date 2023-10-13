@@ -27,6 +27,7 @@ const Use_Login = () => {
         localStorage.setItem("Authorization", jwtToken);
         localStorage.setItem("email", response.data.email);
         localStorage.setItem("name", response.data.name);
+        console.log("email" + response.data.email);
         localStorage.setItem("isLogin", true);
 
         //멤버정보 초기화
@@ -44,10 +45,10 @@ const Use_Login = () => {
   };
 
   return (
-    <>
-      <h1 className="title">로그인</h1>
-      <form onSubmit={onSubmit}>
-        <div className="lg_area">
+    <div className="container pd-content-100">
+      <form onSubmit={onSubmit} className="join-form">
+        <h1 className="title">로그인</h1>
+        <div className="container con">
           <div className="form-group mb-1 userid">
             아이디
             <input
@@ -73,17 +74,17 @@ const Use_Login = () => {
               onChange={handleValueChange}
             />
           </div>
-          <div className="btnarea">
-            <button type="submit" className="btn btn-primary">
+          <div className="btn-area pd-top-40">
+            <button type="submit" className="btn btn-origin login-btn">
               로그인
             </button>
-            <Link className="btn btn-primary Join" to="/join">
+            <Link className="btn btn-origin" to="/join">
               회원가입
             </Link>
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
