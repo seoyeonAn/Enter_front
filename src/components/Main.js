@@ -11,19 +11,20 @@ import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { algoActions } from "../toolkit/actions/algorithm_action";
 import AlgoCard from "./AlgoCard";
+import axios from "axios";
 
 const Main = () => {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
 
-  const getAlgoList = () => {
-    dispatch(algoActions.getAlgoList());
-  };
+  // const getAlgoList = () => {
+  //   dispatch(algoActions.getAlgoList());
+  // };
 
-  useEffect(() => {
-    getAlgoList();
-  }, []);
+  // useEffect(() => {
+  //   getAlgoList();
+  // }, []);
 
   console.log("algoList:", algoList);
 
@@ -59,17 +60,25 @@ const Main = () => {
         </Carousel>
       </div>
 
-      <h1 className="title"> 00님을 위한 추천 </h1>
-      <ul>
-        {algoList &&
-          algoList.map((algorithm) => (
-            <li key={algorithm.email}>
-              <p>Email: {algorithm.email}</p>
-              <p>Name: {algorithm.name}</p>
-              <p>Phone: {algorithm.phone}</p>
-            </li>
-          ))}
-      </ul>
+      {localStorage.getItem("isLogin") ? (
+        <>
+          <h1 className="title">
+            {localStorage.getItem("name") + " 님을 위한 추천 "}
+          </h1>
+          <ul>
+            {algoList &&
+              algoList.map((algorithm) => (
+                <li key={algorithm.enter_seq}>
+                  <p>Email: {algorithm.email}</p>
+                  <p>Info_seq: {algorithm.info_seq}</p>
+                  <p>Enter_seq: {algorithm.enter_seq}</p>
+                </li>
+              ))}
+          </ul>
+        </>
+      ) : (
+        <></>
+      )}
 
       {/* {algoList &&
         algoList.map((algorithm) => {
