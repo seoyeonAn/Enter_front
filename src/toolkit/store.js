@@ -1,9 +1,20 @@
+
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import infoSlice from "./reducers/info_reducer";
 import { slice } from "./reducers/mypage_reducer";
 import algoSlice from "./reducers/algorithm_reducer";
-import { persistReducer } from "redux-persist";
+import { persistReducer, FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER, } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+
+//import persistStore from "redux-persist/es/persistStore";
+
+import logger from 'redux-logger'
+
 
 // const store = configureStore({
 //   reducer: {
@@ -32,8 +43,20 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
+
+
 const store = configureStore({
   reducer: persistedReducer,
-});
+  //middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            }
+        })
+  
+ });
 
-export default store;
+
+
+export default store; 
