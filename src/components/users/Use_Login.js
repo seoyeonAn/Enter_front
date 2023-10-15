@@ -39,9 +39,11 @@ const Use_Login = () => {
       .then((response) => {
         console.log("ddddddddddddddddddd");
         dispatch(algoActions.getAlgoList(localStorage.getItem("email")));
+       
+      }).then((response)=>{
         window.location.replace("/");
-
-        //navigator("/");
+      // navigator("/");
+       
       })
       .catch((error) => {
         console.error(error);
