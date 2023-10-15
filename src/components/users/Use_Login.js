@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../../css/user.css";
+import { useDispatch } from "react-redux";
+import { algoActions } from "../../toolkit/actions/algorithm_action";
 
 const Use_Login = () => {
   const navigator = useNavigate();
@@ -13,35 +15,53 @@ const Use_Login = () => {
   const handleValueChange = (e) => {
     setUsers({ ...users, [e.target.name]: e.target.value });
   };
-
+  const dispatch = useDispatch();
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log("aa");
+
     await axios
       .post("/login", users)
       .then((response) => {
         console.log(response.data);
         let jwtToken = response.headers.get("authorization");
         console.log(jwtToken);
-
+        console.log("ccccccccccccccc");
         localStorage.setItem("Authorization", jwtToken);
         localStorage.setItem("email", response.data.email);
         localStorage.setItem("name", response.data.name);
         console.log("email" + response.data.email);
         localStorage.setItem("isLogin", true);
-
+        console.log("user  email=========================");
         //멤버정보 초기화
         setUsers({ email: "", password: "" });
       })
       .then((response) => {
-        navigator("/");
+        console.log("ddddddddddddddddddd");
+        dispatch(algoActions.getAlgoList(localStorage.getItem("email")));
         window.location.replace("/");
+
+        //navigator("/");
       })
       .catch((error) => {
         console.error(error);
         if (error.response.status === 401)
           alert("아이디나 패스워드를 확인해주세요.");
       });
+
+    // Flask로 이메일 전송
+    // console.log("flask email===================", email);
+    //const email = localStorage.getItem("email");
+    //await axios.post("http://127.0.0.1:5000/flask_login", { email }).then((response) => {
+    //     console.log(response.data);
+    // dispatch(algoActions.getAlgoList(localStorage.getItem("email")));
+    //     localStorage.setItem("email", response.data.email);
+    //     window.location.replace("/");
+    //     navigator("/");
+    //});
+    //     .catch((error) => {
+    //       console.error(error);
+    //     });
   };
 
   return (
