@@ -7,14 +7,7 @@ import "../css/info.css";
 const AlgoCard = ({ algorithm }) => {
   return (
     <>
-      <ul>
-        <li>
-          <p>Email: {algorithm.email}</p>
-          <p>Name: {algorithm.name}</p>
-          <p>Phone: {algorithm.phone}</p>
-        </li>
-      </ul>
-      {/* <div className="col-3">
+      <div className="col-3">
         <Card className="mainCard">
           <Link to={`/info/view/${algorithm.enter_seq}`}>
             <Card.Img
@@ -35,7 +28,7 @@ const AlgoCard = ({ algorithm }) => {
             </Card.Body>
           </Link>
         </Card>
-      </div> */}
+      </div>
     </>
   );
 };

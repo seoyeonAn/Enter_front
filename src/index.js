@@ -11,6 +11,8 @@ import store from "./toolkit/store";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 
+//npm install react-router-dom
+
 const persistor = persistStore(store);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
