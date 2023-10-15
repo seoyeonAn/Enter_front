@@ -5,6 +5,7 @@ import { infoActions } from "../../toolkit/actions/info_action";
 import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../css/info.css";
+import axios from "axios";
 
 const InfoView = () => {
   const { infoSeq } = useParams();

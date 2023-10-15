@@ -42,6 +42,22 @@ const Use_Login = () => {
         if (error.response.status === 401)
           alert("아이디나 패스워드를 확인해주세요.");
       });
+
+      
+      //flask로 email 정보를 보냄
+      await axios
+      .post("http://127.0.0.1:5000/flask", users,{
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        localStorage.setItem("email", response.data.email);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (

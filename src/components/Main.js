@@ -63,11 +63,20 @@ const Main = () => {
       <ul>
         {algoList &&
           algoList.map((algorithm) => (
-            <li key={algorithm.email}>
-              <p>Email: {algorithm.email}</p>
-              <p>Name: {algorithm.name}</p>
-              <p>Phone: {algorithm.phone}</p>
-            </li>
+            <table key={algorithm.enter_seq}>
+              <tr>
+                <th>고유번호</th>
+                <th>체크여부</th>
+                <th>이메일</th>
+                <th>문화예술</th>
+              </tr>
+              <tr>
+                <td>{algorithm.enter_seq}</td>
+                <td>{algorithm.completed}</td>
+                <td>{algorithm.email}</td>
+                <td>{algorithm.info_seq}</td>
+              </tr>
+              </table>
           ))}
       </ul>
 
