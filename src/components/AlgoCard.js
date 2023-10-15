@@ -16,7 +16,7 @@ const AlgoCard = ({ algorithm }) => {
       </ul>
       {/* <div className="col-3">
         <Card className="mainCard">
-          <Link to={`/info/view/${algorithm.algo_Seq}`}>
+          <Link to={`/info/view/${algorithm.enter_seq}`}>
             <Card.Img
               variant="top"
               src={algorithm.thumbnail}

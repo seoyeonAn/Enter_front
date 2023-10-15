@@ -70,8 +70,10 @@ const Main = () => {
               algoList.map((algorithm) => (
                 <li key={algorithm.enter_seq}>
                   <p>Email: {algorithm.email}</p>
-                  <p>Info_seq: {algorithm.info_seq}</p>
+                  {/* <p>Info_seq: {algorithm.info_seq}</p> */}
                   <p>Enter_seq: {algorithm.enter_seq}</p>
+                  <p>title: {algorithm.title}</p>
+                  <p>tag: {algorithm.tag}</p>
                 </li>
               ))}
           </ul>
