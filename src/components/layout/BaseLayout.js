@@ -33,8 +33,8 @@ const BaseLayout = () => {
             </li>
 
             {/*로그인의 조건식. 비로그인 시 로그인하도록 구현*/}
-
-            {localStorage.getItem("email") != null ? (
+            {/* localStorage.getItem("email") != null */}
+            {loginList.name ? (
               <>
                 <li>
                   <NavLink
@@ -55,9 +55,8 @@ const BaseLayout = () => {
                     LOGOUT
                   </NavLink>
                 </li>
-                {localStorage.getItem("email") !== null ? (
-                  <li>{localStorage.getItem("name") + " 님"}</li>
-                ) : null}
+                {/* localStorage.getItem("email") !== null */}
+                {loginList.name ? <li>{loginList.name + " 님"}</li> : null}
               </>
             ) : (
               <>

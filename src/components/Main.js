@@ -17,6 +17,7 @@ const Main = () => {
   //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
+  const loginList = useSelector((state) => state.login.loginList);
 
   // const getAlgoList = () => {
   //   dispatch(algoActions.getAlgoList());
@@ -59,12 +60,10 @@ const Main = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-
-      {localStorage.getItem("isLogin") ? (
+      {/* localStorage.getItem("isLogin") ? */}
+      {loginList.name ? (
         <>
-          <h1 className="title">
-            {localStorage.getItem("name") + " 님을 위한 추천 "}
-          </h1>
+          <h1 className="title">{loginList.name + " 님을 위한 추천 "}</h1>
           <ul>
             {algoList &&
               algoList.map((algorithm) => {
