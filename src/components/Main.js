@@ -11,21 +11,23 @@ import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { algoActions } from "../toolkit/actions/algorithm_action";
 import AlgoCard from "./AlgoCard";
+import axios from "axios";
 
 const Main = () => {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
+  const loginList = useSelector((state) => state.login.loginList);
+  // const getAlgoList = () => {
+  //   dispatch(algoActions.getAlgoList());
+  // };
 
-  const getAlgoList = () => {
-    dispatch(algoActions.getAlgoList());
-  };
-
-  useEffect(() => {
-    getAlgoList();
-  }, []);
+  // useEffect(() => {
+  //   getAlgoList();
+  // }, []);
 
   console.log("algoList:", algoList);
+  console.log("loginList:", loginList);
 
   return (
     <div className="main">
@@ -59,31 +61,30 @@ const Main = () => {
         </Carousel>
       </div>
 
-      <h1 className="title"> 00님을 위한 추천 </h1>
-      <ul>
-        {algoList &&
-          algoList.map((algorithm) => (
-            <table key={algorithm.enter_seq}>
-              <tr>
-                <th>고유번호</th>
-                <th>체크여부</th>
-                <th>이메일</th>
-                <th>문화예술</th>
-              </tr>
-              <tr>
-                <td>{algorithm.enter_seq}</td>
-                <td>{algorithm.completed}</td>
-                <td>{algorithm.email}</td>
-                <td>{algorithm.info_seq}</td>
-              </tr>
-              </table>
-          ))}
-      </ul>
+      {loginList.name ? (
+        <>
+          <h1 className="title">
+            {loginList.name + " 님을 위한 추천 "}
+          </h1>
+          <ul>
+            {algoList &&
+              algoList.map((algorithm) => {
+                <li key={algorithm.enter_seq}>
+                  <p>Email: {algorithm.email}</p>
+                  <p>Enter_seq: {algorithm.enter_seq}</p>
+                  {/* <p>title: {algorithm.title}</p>
+                  <p>tag: {algorithm.tag}</p> */}
+                </li>;
+                // return (
+                //   <AlgoCard algorithm={algorithm} key={algorithm.enter_seq} />
+                // );
+              })}
+          </ul>
+        </>
+      ) : (
+        <></>
+      )}
 
-      {/* {algoList &&
-        algoList.map((algorithm) => {
-          return <AlgoCard algorithm={algorithm} key={algorithm.email} />;
-        })} */}
 
       {/* banner */}
       <div className="container pd-content-100">

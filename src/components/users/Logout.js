@@ -7,6 +7,7 @@ const Logout = () => {
     localStorage.removeItem("name");
     localStorage.removeItem("isLogin");
     localStorage.clear();
+
     window.location.replace("/");
   });
 };
