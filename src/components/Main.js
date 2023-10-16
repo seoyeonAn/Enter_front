@@ -26,8 +26,9 @@ const Main = () => {
   //   getAlgoList();
   // }, []);
 
-  console.log("algoList:", algoList);
-  console.log("loginList:", loginList);
+  useEffect(() => {
+    console.log("algoList:", algoList);
+  }, [algoList, loginList]);
 
   return (
     <div className="main">
@@ -61,23 +62,23 @@ const Main = () => {
         </Carousel>
       </div>
 
-      {loginList.name ? (
+      {loginList.name != null ? (
         <>
-          <h1 className="title">
-            {loginList.name + " 님을 위한 추천 "}
-          </h1>
+          <h1 className="title">{loginList.name + " 님을 위한 추천 "}</h1>
           <ul>
             {algoList &&
               algoList.map((algorithm) => {
-                <li key={algorithm.enter_seq}>
-                  <p>Email: {algorithm.email}</p>
-                  <p>Enter_seq: {algorithm.enter_seq}</p>
-                  {/* <p>title: {algorithm.title}</p>
-                  <p>tag: {algorithm.tag}</p> */}
-                </li>;
-                // return (
-                //   <AlgoCard algorithm={algorithm} key={algorithm.enter_seq} />
-                // );
+              //  return (
+              //     <li key={algorithm.info_seq}>
+              //       <p>제목: {algorithm.title}</p>
+              //       <p>Info_seq: {algorithm.info_seq}</p>
+              //       <p>코사인 유사도: {algorithm.cosine_sim}</p>
+              //       <p>태그: {algorithm.tag}</p>
+              //     </li>
+              //   );
+                return (
+                  <AlgoCard algorithm={algorithm} key={algorithm.info_seq} />
+                );
               })}
           </ul>
         </>
