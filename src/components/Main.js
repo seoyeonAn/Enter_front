@@ -27,7 +27,9 @@ const Main = () => {
   //   getAlgoList();
   // }, []);
 
-  console.log("algoList:", algoList);
+  useEffect(() => {
+    console.log("algoList:", algoList);
+  }, [algoList, loginList]);
 
   return (
     <div className="main">
@@ -60,19 +62,21 @@ const Main = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-      {/* localStorage.getItem("isLogin") ? */}
-      {loginList.name ? (
+
+      {loginList.name != null ? (
         <>
           <h1 className="title">{loginList.name + " 님을 위한 추천 "}</h1>
           <ul>
             {algoList &&
               algoList.map((algorithm) => {
-                <li key={algorithm.enter_seq}>
-                  <p>Email: {algorithm.email}</p>
-                  <p>Enter_seq: {algorithm.enter_seq}</p>
-                  <p>title: {algorithm.title}</p>
-                  <p>tag: {algorithm.tag}</p>
-                </li>;
+                return (
+                  <li key={algorithm.enter_seq}>
+                    <p>Email: {algorithm.email}</p>
+                    <p>Info_seq: {algorithm.info_seq}</p>
+                    <p>title: {algorithm.title}</p>
+                    <p>tag: {algorithm.tag}</p>
+                  </li>
+                );
                 // return (
                 //   <AlgoCard algorithm={algorithm} key={algorithm.enter_seq} />
                 // );
