@@ -67,23 +67,22 @@ const Main = () => {
           </h1>
           <ul>
             {algoList &&
-              algoList.map((algorithm) => (
+              algoList.map((algorithm) => {
                 <li key={algorithm.enter_seq}>
                   <p>Email: {algorithm.email}</p>
-                  <p>Info_seq: {algorithm.info_seq}</p>
                   <p>Enter_seq: {algorithm.enter_seq}</p>
-                </li>
-              ))}
+                  <p>title: {algorithm.title}</p>
+                  <p>tag: {algorithm.tag}</p>
+                </li>;
+                // return (
+                //   <AlgoCard algorithm={algorithm} key={algorithm.enter_seq} />
+                // );
+              })}
           </ul>
         </>
       ) : (
         <></>
       )}
-
-      {/* {algoList &&
-        algoList.map((algorithm) => {
-          return <AlgoCard algorithm={algorithm} key={algorithm.email} />;
-        })} */}
 
       {/* banner */}
       <div className="container pd-content-100">
