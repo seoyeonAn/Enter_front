@@ -7,6 +7,8 @@ const activeStyle = ({ isActive }) => ({
 });
 
 const BaseLayout = () => {
+  const loginList = useSelector((state) => state.login.loginList);
+
   return (
     <div className="total">
       <nav className="navbar navbar-expand navbar-light bg-light">
