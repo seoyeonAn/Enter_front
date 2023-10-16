@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -8,7 +8,9 @@ const activeStyle = ({ isActive }) => ({
 
 const BaseLayout = () => {
   const loginList = useSelector((state) => state.login.loginList);
-
+  useEffect(()=>{  
+    console.log('baselayout', loginList) ;
+  },[loginList]);
   return (
 
     <div className="total">
@@ -35,7 +37,7 @@ const BaseLayout = () => {
 
             {/*로그인의 조건식. 비로그인 시 로그인하도록 구현*/}
 
-            {localStorage.getItem("email") != null ? (
+            {loginList.email != null ? (
               <>
                 <li>
                   <NavLink
@@ -56,8 +58,8 @@ const BaseLayout = () => {
                     LOGOUT
                   </NavLink>
                 </li>
-                {localStorage.getItem("email") !== null ? (
-                  <li>{localStorage.getItem("name") + " 님"}</li>
+                {loginList.email != null  ? (
+                  <li>{loginList.name + " 님"}</li>
                 ) : null}
               </>
             ) : (

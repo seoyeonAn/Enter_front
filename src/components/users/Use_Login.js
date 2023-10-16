@@ -25,9 +25,15 @@ const Use_Login = () => {
     e.preventDefault();
     console.log("aa");
     //  const infoList = useSelector((state) => state.information.infoList);
-    dispatch(loginActions.getLoginList(users));
-    window.location.replace("/");
+     dispatch(loginActions.getLoginList(users));  
+     dispatch(algoActions.getAlgoList(email));
+     navigator("/");  
+      //window.location.replace("/");
   };
+
+  useEffect(()=>{
+    
+  },[loginList]);
   // await axios
   //   .post("/login", users)
   //   .then((response) => {
