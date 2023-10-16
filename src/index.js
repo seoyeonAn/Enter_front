@@ -13,16 +13,16 @@ import { PersistGate } from "redux-persist/integration/react";
 
 //npm install react-router-dom
 
-const persistor = persistStore(store);
+//const persistor = persistStore(store);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
+   <Provider store={store}>
+    {/* <PersistGate loading={null} persistor={persistor}> */}
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </PersistGate>
+    {/* </PersistGate> */}
   </Provider>
 );
 
