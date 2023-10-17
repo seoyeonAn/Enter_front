@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 
 // css
 import "../css/info.css";
+import "../css/common.css";
 
 const AlgoCard = ({ algorithm }) => {
   return (
     <>
       <div className="col-3">
         <Card className="mainCard">
-          <Link to={`/info/view/${algorithm.enter_seq}`}>
+          <Link to={`/info/view/${algorithm.info_seq}`}>
             <Card.Img
               variant="top"
               src={algorithm.thumbnail}
@@ -18,11 +19,12 @@ const AlgoCard = ({ algorithm }) => {
 
             <Card.Body>
               <Card.Title>{algorithm.title}</Card.Title>
-              {algorithm.startDate === null ? (
+              {/* <Card.Text className="cardText">코사인 유사도 : {algorithm.cosine_sim}</Card.Text> */}
+              {algorithm.start_date === null ? (
                 <Card.Text className="cardText">상시 개관</Card.Text>
               ) : (
                 <Card.Text className="cardText">
-                  {algorithm.startDate} ~ {algorithm.endDate}
+                  {algorithm.start_date} ~ {algorithm.end_date}
                 </Card.Text>
               )}
             </Card.Body>

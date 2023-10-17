@@ -24,6 +24,7 @@ const Use_Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log("aa");
+
     //  const infoList = useSelector((state) => state.information.infoList);
      dispatch(loginActions.getLoginList(users));  
      dispatch(algoActions.getAlgoList(email));
