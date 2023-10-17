@@ -8,9 +8,9 @@ const activeStyle = ({ isActive }) => ({
 
 const BaseLayout = () => {
   const loginList = useSelector((state) => state.login.loginList);
-  useEffect(()=>{  
-    console.log('baselayout', loginList) ;
-  },[loginList]);
+  useEffect(() => {
+    console.log("baselayout", loginList);
+  }, [loginList]);
   return (
 
     <div className="total">
@@ -58,7 +58,7 @@ const BaseLayout = () => {
                     LOGOUT
                   </NavLink>
                 </li>
-                {loginList.email != null  ? (
+                {loginList.email != null ? (
                   <li>{loginList.name + " 님"}</li>
                 ) : null}
               </>

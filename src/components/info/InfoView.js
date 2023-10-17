@@ -5,6 +5,7 @@ import { infoActions } from "../../toolkit/actions/info_action";
 import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../css/info.css";
+import axios from "axios";
 
 const InfoView = () => {
   const { infoSeq } = useParams();
@@ -13,7 +14,7 @@ const InfoView = () => {
   const dispatch = useDispatch();
   const navigator = useNavigate();
   const infoDetail = useSelector((state) => state.information.infoDetail);
-
+  const loginList = useSelector((state) => state.login.loginList);
   const today = new Date();
 
   useEffect(() => {
@@ -53,7 +54,8 @@ const InfoView = () => {
     let config = { "Content-Type": "multipart/form-data" };
     const formData = new FormData();
     formData.append("infoSeq", infoSeq);
-    formData.append("email", localStorage.getItem("email"));
+    //formData.append("email", localStorage.getItem("email"));
+    formData.append("email", loginList.email);
     dispatch(infoActions.insertInfo(formData, config));
     navigator(`/info/view/${infoSeq}`);
   };
