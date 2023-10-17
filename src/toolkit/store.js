@@ -16,6 +16,7 @@ import storage from "redux-persist/lib/storage";
 import loginSlice from "./reducers/users_reducer";
 
 import persistStore from "redux-persist/es/persistStore";
+import { mslice } from "./reducers/mainTaster_reducer";
 
 const store = configureStore({
   reducer: {
@@ -25,6 +26,9 @@ const store = configureStore({
     enterlist: slice.enterSlice.reducer,
     algorithm: algoSlice.reducer,
     login: loginSlice.reducer,
+    exhibition: mslice.exhibitionSlice.reducer,
+    show: mslice.showSlice.reducer,
+    museum: mslice.museumSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
   getDefaultMiddleware({

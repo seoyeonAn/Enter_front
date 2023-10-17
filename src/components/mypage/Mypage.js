@@ -22,7 +22,7 @@ const Mypage = () => {
     content: "",
   });
 
-  const { title, content, upload } = diary;
+  const { title, content } = diary;
 
   const { date_seq } = useParams();
 
