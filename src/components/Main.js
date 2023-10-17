@@ -62,30 +62,25 @@ const Main = () => {
         </Carousel>
       </div>
 
-      {loginList.name != null ? (
-        <>
-          <h1 className="title">{loginList.name + " 님을 위한 추천 "}</h1>
-          <ul>
-            {algoList &&
-              algoList.map((algorithm) => {
-              //  return (
-              //     <li key={algorithm.info_seq}>
-              //       <p>제목: {algorithm.title}</p>
-              //       <p>Info_seq: {algorithm.info_seq}</p>
-              //       <p>코사인 유사도: {algorithm.cosine_sim}</p>
-              //       <p>태그: {algorithm.tag}</p>
-              //     </li>
-              //   );
-                return (
-                  <AlgoCard algorithm={algorithm} key={algorithm.info_seq} />
-                );
-              })}
-          </ul>
-        </>
-      ) : (
-        <></>
-      )}
-
+      <div className="container pd-content-100 ranking-List-Area">
+        {loginList.name != null ? (
+          <>
+            <h1 className="algoTitle title">
+              {loginList.name + " 님을 위한 추천 "}
+            </h1>
+            <ul className="algoList">
+              {algoList &&
+                algoList.map((algorithm) => {
+                  return (
+                    <AlgoCard algorithm={algorithm} key={algorithm.info_seq} />
+                  );
+                })}
+            </ul>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
 
       {/* banner */}
       <div className="container pd-content-100">
