@@ -14,6 +14,7 @@ const Use_Join = () => {
   const { password } = users;
 
   const [passwordText, setPasswordText] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(false);
 
   const config = {
     headers: {
@@ -38,12 +39,17 @@ const Use_Join = () => {
     }
 
     console.log("email" + users.email);
+
+    //이메일 존재여부 체크 후 존재시 가입을 막음
+    
     await axios.get(`/users/email?email=${users.email}`).then((res) => {
       const resMessge = res.data;
       console.log("email:" + res.data);
       if (resMessge === 1) {
+        setIsEmailValid(true);
         alert("사용가능한 이메일입니다.");
       } else {
+        setIsEmailValid(false);
         alert("이미 사용중인 이메일입니다.");
       }
     });
@@ -82,6 +88,11 @@ const Use_Join = () => {
     e.preventDefault();
     const { email, password, name, phone } = users;
 
+    if(!isEmailValid){
+      alert('이메일 중복확인을 해주세요.')
+      return;
+    }
+
     if (!email || !password || !name || !phone) {
       alert("모든 가입 정보를 입력해주세요.");
       return;
@@ -92,6 +103,7 @@ const Use_Join = () => {
       alert("비밀번호 불일치");
       return;
     }
+// 이메일이 유효할 때 분기처리할 부분
 
     await axios
       .post("/join", users)

@@ -10,14 +10,30 @@ import "react-calendar/dist/Calendar.css";
 import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { algoActions } from "../toolkit/actions/algorithm_action";
+import { tasterActions } from "../toolkit/actions/mainTaster_action";
 import AlgoCard from "./AlgoCard";
 import axios from "axios";
+import ExhibitionTaster from "./main/ExhibitionTaster";
+import ShowTaster from "./main/ShowTaster";
+import MuseumTaster from "./main/MuseumTaster";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
   const loginList = useSelector((state) => state.login.loginList);
+  const exhibitionList = useSelector((state) => state.exhibition.exhibitionList);
+  const showList = useSelector((state) => state.show.showList);
+  const museumList = useSelector((state) => state.museum.museumList);
+
+  const dispatch = useDispatch();
+
+  const getMainTaster = () => {
+    dispatch(tasterActions.getMainTaster());
+  }
+  
+  console.log('exhibition list: ', exhibitionList);
   // const getAlgoList = () => {
   //   dispatch(algoActions.getAlgoList());
   // };
@@ -28,6 +44,7 @@ const Main = () => {
 
   useEffect(() => {
     console.log("algoList:", algoList);
+    getMainTaster();
   }, [algoList, loginList]);
 
   return (
@@ -128,107 +145,39 @@ const Main = () => {
               <Tab.Content>
                 <Tab.Pane eventKey="1">
                   <div className="taster-List-content">
-                    {/* {exhibitionList &&
+                    {exhibitionList &&
                     exhibitionList.map((exhibition) => {
                       return(
-                        <MainInfo_exhibition exhibition={exhibition} key={exhibition.info_seq} />
+                        <ExhibitionTaster exhibition={exhibition} key={exhibition.infoSeq} />
                       );
-                    })} */}
+                    })}
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="2">
                   <div className="taster-List-content">
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
+                  {showList &&
+                    showList.map((show) => {
+                      return(
+                        <ShowTaster show={show} key={show.infoSeq} />
+                      );
+                    })}
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="3">
                   <div className="taster-List-content">
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="taster-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
+                  {museumList &&
+                    museumList.map((museum) => {
+                      return(
+                        <MuseumTaster museum={museum} key={museum.infoSeq} />
+                      );
+                    })}
                   </div>
                 </Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </div>
           <div className="btn-area pd-top-40">
-            <button className="btn btn-origin">더보기</button>
+            <Link to={"/info/1"} className="btn btn-origin">더보기</Link>
           </div>
         </div>
       </div>
