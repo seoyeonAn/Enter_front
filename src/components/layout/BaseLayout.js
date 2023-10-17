@@ -12,6 +12,7 @@ const BaseLayout = () => {
     console.log("baselayout", loginList);
   }, [loginList]);
   return (
+
     <div className="total">
       <nav className="navbar navbar-expand navbar-light bg-light">
         <div className="container-fluid">
