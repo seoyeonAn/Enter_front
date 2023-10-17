@@ -107,11 +107,11 @@ const Main = () => {
       </div>
 
       {/* Ranking-List */}
-      <div className="container pd-content-100 ranking-List-Area">
+      <div className="container pd-content-100 taster-List-Area">
         <div>
           <h1 className="title">문화예술 맛보기</h1>
         </div>
-        <div className="ranking-List pd-top-60">
+        <div className="taster-List pd-top-60">
           <div className="tab-area">
             <Tab.Container id="left-tabs-example" defaultActiveKey="1">
               <Nav variant="pills" className="pd-bottom-60">
