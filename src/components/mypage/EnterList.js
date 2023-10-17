@@ -4,16 +4,18 @@ import "../../css/mypage.css";
 import "../../css/enterlist.css";
 import { mypageActions } from "../../toolkit/actions/mypage_action";
 import { useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const EnterList = ({ enter }) => {
   const navigator = useNavigate();
   const dispatch = useDispatch();
+  const loginList = useSelector((state) => state.login.loginList);
 
   const updateEnter = (enterSeq, completed) => {
     mypageActions.getEnterUpdate(enterSeq, completed);
-    dispatch(mypageActions.getUserList( localStorage.getItem("email")));
-    navigator('/mypage');
+    //dispatch(mypageActions.getUserList( localStorage.getItem("email")));
+    dispatch(mypageActions.getUserList(loginList.email));
+    navigator("/mypage");
   };
 
   return (
