@@ -18,6 +18,7 @@ const Main = () => {
   //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
+
   // const getAlgoList = () => {
   //   dispatch(algoActions.getAlgoList());
   // };

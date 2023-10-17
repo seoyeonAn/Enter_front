@@ -36,7 +36,8 @@ const Mypage = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("email", localStorage.getItem("email"));
+    //formData.append("email", localStorage.getItem("email"));
+    formData.append("email", loginList.email);
     //formData.append("name", localStorage.getItem("name"));
     //formData.append("email", email);
 
@@ -70,6 +71,7 @@ const Mypage = () => {
 
   const getUserList = () => {
     dispatch(mypageActions.getUserList(localStorage.getItem("email")));
+    //dispatch(mypageActions.getUserList(loginList.email);
   };
 
   //   const getEnterList = () => {
@@ -87,6 +89,7 @@ const Mypage = () => {
   }, []);
 
   const userList = useSelector((state) => state.user.userList);
+  const loginList = useSelector((state) => state.login.loginList);
   const diaryList = useSelector((state) => state.diary.diaryList);
   const enterList = useSelector((state) => state.enterlist.enterList);
   return (
