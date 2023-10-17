@@ -11,7 +11,7 @@ import  store from "./toolkit/store";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import { configureStore } from "@reduxjs/toolkit";
-import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 
 //npm install react-router-dom
 
