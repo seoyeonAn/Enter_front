@@ -12,12 +12,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { algoActions } from "../toolkit/actions/algorithm_action";
 import AlgoCard from "./AlgoCard";
 import axios from "axios";
-import MainInfo_exhibition from "../main/MainInfo_exhibition";
 
 const Main = () => {
   //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
+  const loginList = useSelector((state) => state.login.loginList);
   // const getAlgoList = () => {
   //   dispatch(algoActions.getAlgoList());
   // };
