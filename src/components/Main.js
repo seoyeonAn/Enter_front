@@ -18,9 +18,6 @@ const Main = () => {
   //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
-  const loginList = useSelector((state)=>state.login.loginList);
-  const exhibitionList = useSelector((state)=>state.e)
-
   // const getAlgoList = () => {
   //   dispatch(algoActions.getAlgoList());
   // };
@@ -29,10 +26,9 @@ const Main = () => {
   //   getAlgoList();
   // }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log("algoList:", algoList);
-  },[algoList,loginList]);
- 
+  }, [algoList, loginList]);
 
   return (
     <div className="main">
@@ -66,31 +62,25 @@ const Main = () => {
         </Carousel>
       </div>
 
-      {loginList.name !=null ? (
-        <>
-          <h1 className="title">
-            {loginList.name+ " 님을 위한 추천 "}
-          </h1>          
-          <ul>          
-            {algoList &&
-              algoList.map((algorithm) => {
-                return(
-                <li key={algorithm.enter_seq}>                 
-                  <p>Email: {algorithm.email}</p>
-                  <p>Enter_seq: {algorithm.enter_seq}</p>
-                  <p>title: {algorithm.title}</p>
-                  <p>tag: {algorithm.tag}</p>            
-                </li>
-                )
-                // return (
-                //   <AlgoCard algorithm={algorithm} key={algorithm.enter_seq} />
-                // );
-              })}
-          </ul>
-        </>
-      ) : (
-        <></>
-      )}
+      <div className="container pd-content-100 ranking-List-Area">
+        {loginList.name != null ? (
+          <>
+            <h1 className="algoTitle title">
+              {loginList.name + " 님을 위한 추천 "}
+            </h1>
+            <ul className="algoList">
+              {algoList &&
+                algoList.map((algorithm) => {
+                  return (
+                    <AlgoCard algorithm={algorithm} key={algorithm.info_seq} />
+                  );
+                })}
+            </ul>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
 
       {/* banner */}
       <div className="container pd-content-100">

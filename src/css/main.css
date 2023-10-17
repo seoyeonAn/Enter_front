@@ -1,98 +1,107 @@
 .main .slide-Area {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .main .banner-List {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .main .banner-List .list-Item {
-    width: 430px;
-    height: 100px;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 5px 0;
+  width: 430px;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 5px 0;
 }
 
 .main .banner-List .list-Item img {
-    width: 100%;
+  width: 100%;
 }
 
 .main .calender-daylist-Area {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main .calender-daylist-Area .calender-Area {
-    width: 48%;
+  width: 48%;
 }
 
 .main .calender-daylist-Area .calender-Area .react-calendar {
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #d9d9d9;
-    font-family: 'Pretendard';
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  font-family: "Pretendard";
 }
 
-.main .calender-daylist-Area .calender-Area .react-calendar .react-calendar__tile--now {
-    background-color: #be3455;
-    color: #fff !important;
-    border-radius: 5px;
+.main
+  .calender-daylist-Area
+  .calender-Area
+  .react-calendar
+  .react-calendar__tile--now {
+  background-color: #be3455;
+  color: #fff !important;
+  border-radius: 5px;
 }
 
-.main .calender-daylist-Area .calender-Area .react-calendar .react-calendar__tile--now abbr {
-    color: #fff !important;
+.main
+  .calender-daylist-Area
+  .calender-Area
+  .react-calendar
+  .react-calendar__tile--now
+  abbr {
+  color: #fff !important;
 }
 
 .main .calender-daylist-Area .day-List-Area {
-    width: 48%;
-    border: 1px solid #d9d9d9;
-    border-radius: 5px;
-    height: 300px;
-    overflow: auto;
+  width: 48%;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  height: 300px;
+  overflow: auto;
 }
 
 .main .calender-daylist-Area .day-List-Area::-webkit-scrollbar {
-    width: 5px;
-    background-color: #fff;
-    border-radius: 5px;
+  width: 5px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .main .calender-daylist-Area .day-List-Area::-webkit-scrollbar-thumb {
-    width: 5px;
-    background-color: #d9d9d9;
-    border-radius: 5px;
+  width: 5px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
 }
 
 .main .calender-daylist-Area .day-List-Area .day-List {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 .main .calender-daylist-Area .day-List-Area .d-list-Item {
-    padding: 20px !important;
-    border-bottom: 1px solid #d9d9d9;
+  padding: 20px !important;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .main .calender-daylist-Area .day-List-Area .d-list-Item:last-child {
-    border-bottom: 0;
+  border-bottom: 0;
 }
 
 .main .calender-daylist-Area .day-List-Area .d-list-Item a {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main .videoBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .main .videoBox .video {
-    width: 33% !important;
-    height: 260px !important;
+  width: 33% !important;
+  height: 260px !important;
 }
 
 .main .taster-List-Area .title h1 {
@@ -136,4 +145,12 @@
 
 .main .taster-List-Area .taster-List .taster-List-Item img {
     padding: 10px;
+}
+
+.algoList {
+  display: flex;
+}
+
+.algoTitle {
+  padding-bottom: 40px;
 }
