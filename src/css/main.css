@@ -95,45 +95,45 @@
     height: 260px !important;
 }
 
-.main .ranking-List-Area .title h1 {
+.main .taster-List-Area .title h1 {
     margin: 0;
 }
 
-.main .ranking-List-Area .ranking-List .tab-area {
+.main .taster-List-Area .taster-List .tab-area {
     width: 100%;
     margin: 0 auto;
 }
 
-.main .ranking-List-Area .ranking-List .tab-area .tab-content {
+.main .taster-List-Area .taster-List .tab-area .tab-content {
     width: 100%;
     margin: 0 auto;
 }
 
-.main .ranking-List-Area .ranking-List .tab-area .nav {
+.main .taster-List-Area .taster-List .tab-area .nav {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
 }
 
-.main .ranking-List-Area .ranking-List .tab-area .nav-link {
+.main .taster-List-Area .taster-List .tab-area .nav-link {
     color: #be3455;
 }
 
-.main .ranking-List-Area .ranking-List .tab-area .nav-link.active {
+.main .taster-List-Area .taster-List .tab-area .nav-link.active {
     background-color: #be3455;
     color: #fff !important;
 }
 
-.main .ranking-List-Area .ranking-List .ranking-List-content{
+.main .taster-List-Area .taster-List .taster-List-content{
     display: flex;
     justify-content: space-between ;
     align-items: center;
 }
-.main .ranking-List-Area .ranking-List .ranking-List-Item {
+.main .taster-List-Area .taster-List .taster-List-Item {
     width: 32%;
     margin: 0 10px;
 }
 
-.main .ranking-List-Area .ranking-List .ranking-List-Item img {
+.main .taster-List-Area .taster-List .taster-List-Item img {
     padding: 10px;
 }

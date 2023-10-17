@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import infoSlice from "./reducers/info_reducer";
 import { slice } from "./reducers/mypage_reducer";
 import algoSlice from "./reducers/algorithm_reducer";
+
 import {
   persistReducer,
   FLUSH,
@@ -11,10 +12,10 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-//import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/lib/storage";
 import loginSlice from "./reducers/users_reducer";
 
-//import persistStore from "redux-persist/es/persistStore";
+import persistStore from "redux-persist/es/persistStore";
 
 const store = configureStore({
   reducer: {
@@ -54,7 +55,7 @@ const store = configureStore({
 //   ],
 // };
 
-//const persistedReducer = persistReducer(persistConfig, reducers);
+// const  persistedReducer = persistReducer(persistConfig, reducers);
 
 // const store = configureStore({
 //   reducer: persistedReducer,
@@ -69,3 +70,7 @@ const store = configureStore({
 // });
 
 export default store;
+
+
+
+

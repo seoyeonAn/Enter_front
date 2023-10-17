@@ -12,12 +12,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { algoActions } from "../toolkit/actions/algorithm_action";
 import AlgoCard from "./AlgoCard";
 import axios from "axios";
+import MainInfo_exhibition from "../main/MainInfo_exhibition";
 
 const Main = () => {
   //const dispatch = useDispatch();
 
   const algoList = useSelector((state) => state.algorithm.algoList);
   const loginList = useSelector((state)=>state.login.loginList);
+  const exhibitionList = useSelector((state)=>state.e)
 
   // const getAlgoList = () => {
   //   dispatch(algoActions.getAlgoList());
@@ -135,52 +137,18 @@ const Main = () => {
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="1">
-                  <div className="ranking-List-content">
-                    <Card className="ranking-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="ranking-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="ranking-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                    <Card className="ranking-List-Item">
-                      <Card.Img variant="top" src="images/main/test.jpg" />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
+                  <div className="taster-List-content">
+                    {/* {exhibitionList &&
+                    exhibitionList.map((exhibition) => {
+                      return(
+                        <MainInfo_exhibition exhibition={exhibition} key={exhibition.info_seq} />
+                      );
+                    })} */}
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="2">
-                  <div className="ranking-List-content">
-                    <Card className="ranking-List-Item">
+                  <div className="taster-List-content">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
@@ -190,7 +158,7 @@ const Main = () => {
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                    <Card className="ranking-List-Item">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
@@ -200,7 +168,7 @@ const Main = () => {
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                    <Card className="ranking-List-Item">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
@@ -210,7 +178,7 @@ const Main = () => {
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                    <Card className="ranking-List-Item">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
@@ -223,8 +191,8 @@ const Main = () => {
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="3">
-                  <div className="ranking-List-content">
-                    <Card className="ranking-List-Item">
+                  <div className="taster-List-content">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
@@ -234,7 +202,7 @@ const Main = () => {
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                    <Card className="ranking-List-Item">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
@@ -244,7 +212,7 @@ const Main = () => {
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                    <Card className="ranking-List-Item">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
@@ -254,7 +222,7 @@ const Main = () => {
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                    <Card className="ranking-List-Item">
+                    <Card className="taster-List-Item">
                       <Card.Img variant="top" src="images/main/test.jpg" />
                       <Card.Body>
                         <Card.Title>Card Title</Card.Title>
