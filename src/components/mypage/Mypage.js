@@ -12,11 +12,12 @@ import Container from "react-bootstrap/Container";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { useNavigate, useParams } from "react-router-dom";
+import { loginActions } from "../../toolkit/actions/users_action";
 
 const Mypage = () => {
   const dispatch = useDispatch();
   const navigator = useNavigate();
-
+  const jwtToken = useSelector((state) => state.login.jwtToken);
   const [diary, setDiary] = useState({
     title: "",
     content: "",
@@ -38,13 +39,15 @@ const Mypage = () => {
     formData.append("content", content);
     //formData.append("email", localStorage.getItem("email"));
     formData.append("email", loginList.email);
+
     //formData.append("name", localStorage.getItem("name"));
     //formData.append("email", email);
 
     const config = {
       headers: {
         "Content-Type": "multipart/form-data",
-        Authorization: localStorage.getItem("Authorization"),
+        //Authorization: localStorage.getItem("Authorization"),
+        Authorization: jwtToken,
       },
     };
 
