@@ -12,11 +12,12 @@ import Container from "react-bootstrap/Container";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { useNavigate, useParams } from "react-router-dom";
+import { loginActions } from "../../toolkit/actions/users_action";
 
 const Mypage = () => {
   const dispatch = useDispatch();
   const navigator = useNavigate();
-
+  const jwtToken = useSelector((state) => state.login.jwtToken);
   const [diary, setDiary] = useState({
     title: "",
     content: "",
@@ -36,14 +37,17 @@ const Mypage = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("email", localStorage.getItem("email"));
+    //formData.append("email", localStorage.getItem("email"));
+    formData.append("email", loginList.email);
+
     //formData.append("name", localStorage.getItem("name"));
     //formData.append("email", email);
 
     const config = {
       headers: {
         "Content-Type": "multipart/form-data",
-        Authorization: localStorage.getItem("Authorization"),
+        //Authorization: localStorage.getItem("Authorization"),
+        Authorization: jwtToken,
       },
     };
 
@@ -69,7 +73,8 @@ const Mypage = () => {
   };
 
   const getUserList = () => {
-    dispatch(mypageActions.getUserList(localStorage.getItem("email")));
+    //dispatch(mypageActions.getUserList(localStorage.getItem("email")));
+    dispatch(mypageActions.getUserList(loginList.email));
   };
 
   //   const getEnterList = () => {
@@ -87,6 +92,7 @@ const Mypage = () => {
   }, []);
 
   const userList = useSelector((state) => state.user.userList);
+  const loginList = useSelector((state) => state.login.loginList);
   const diaryList = useSelector((state) => state.diary.diaryList);
   const enterList = useSelector((state) => state.enterlist.enterList);
   return (
