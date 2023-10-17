@@ -141,8 +141,11 @@
 .main .taster-List-Area .taster-List .taster-List-Item {
     width: 32%;
     margin: 0 10px;
+    height: 500px;
 }
-
+.main .taster-List-Area .taster-List .taster-List-Item .card-title {
+  margin-bottom: 20px !important;
+}  
 .main .taster-List-Area .taster-List .taster-List-Item img {
     padding: 10px;
 }
