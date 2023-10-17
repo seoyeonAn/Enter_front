@@ -70,8 +70,8 @@ const Mypage = () => {
   };
 
   const getUserList = () => {
-    dispatch(mypageActions.getUserList(localStorage.getItem("email")));
-    //dispatch(mypageActions.getUserList(loginList.email);
+    //dispatch(mypageActions.getUserList(localStorage.getItem("email")));
+    dispatch(mypageActions.getUserList(loginList.email));
   };
 
   //   const getEnterList = () => {
