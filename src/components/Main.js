@@ -23,29 +23,33 @@ const Main = () => {
 
   const algoList = useSelector((state) => state.algorithm.algoList);
   const loginList = useSelector((state) => state.login.loginList);
-  const exhibitionList = useSelector((state) => state.exhibition.exhibitionList);
+  const exhibitionList = useSelector(
+    (state) => state.exhibition.exhibitionList
+  );
   const showList = useSelector((state) => state.show.showList);
   const museumList = useSelector((state) => state.museum.museumList);
 
   const dispatch = useDispatch();
 
+  const getAlgorithm = () => {
+    dispatch(algoActions.getAlgoList(loginList.email));
+  };
+
   const getMainTaster = () => {
     dispatch(tasterActions.getMainTaster());
-  }
-  
-  console.log('exhibition list: ', exhibitionList);
-  // const getAlgoList = () => {
-  //   dispatch(algoActions.getAlgoList());
-  // };
+  };
 
-  // useEffect(() => {
-  //   getAlgoList();
-  // }, []);
+  console.log("exhibition list: ", exhibitionList);
 
   useEffect(() => {
     console.log("algoList:", algoList);
+
+    if (loginList.email) {
+      getAlgorithm();
+    }
+
     getMainTaster();
-  }, [algoList, loginList]);
+  }, [loginList]);
 
   return (
     <div className="main">
@@ -146,38 +150,41 @@ const Main = () => {
                 <Tab.Pane eventKey="1">
                   <div className="taster-List-content">
                     {exhibitionList &&
-                    exhibitionList.map((exhibition) => {
-                      return(
-                        <ExhibitionTaster exhibition={exhibition} key={exhibition.infoSeq} />
-                      );
-                    })}
+                      exhibitionList.map((exhibition) => {
+                        return (
+                          <ExhibitionTaster
+                            exhibition={exhibition}
+                            key={exhibition.infoSeq}
+                          />
+                        );
+                      })}
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="2">
                   <div className="taster-List-content">
-                  {showList &&
-                    showList.map((show) => {
-                      return(
-                        <ShowTaster show={show} key={show.infoSeq} />
-                      );
-                    })}
+                    {showList &&
+                      showList.map((show) => {
+                        return <ShowTaster show={show} key={show.infoSeq} />;
+                      })}
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="3">
                   <div className="taster-List-content">
-                  {museumList &&
-                    museumList.map((museum) => {
-                      return(
-                        <MuseumTaster museum={museum} key={museum.infoSeq} />
-                      );
-                    })}
+                    {museumList &&
+                      museumList.map((museum) => {
+                        return (
+                          <MuseumTaster museum={museum} key={museum.infoSeq} />
+                        );
+                      })}
                   </div>
                 </Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </div>
           <div className="btn-area pd-top-40">
-            <Link to={"/info/1"} className="btn btn-origin">더보기</Link>
+            <Link to={"/info/1"} className="btn btn-origin">
+              더보기
+            </Link>
           </div>
         </div>
       </div>

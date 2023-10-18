@@ -23,12 +23,10 @@ const Use_Login = () => {
   const dispatch = useDispatch();
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("aa");
 
-    //  const infoList = useSelector((state) => state.information.infoList);
-    dispatch(loginActions.getLoginList(users,navigator));
-    dispatch(algoActions.getAlgoList(email));
+    dispatch(loginActions.getLoginList(users, navigator));
     //navigator("/");
+
     //window.location.replace("/");
   };
 

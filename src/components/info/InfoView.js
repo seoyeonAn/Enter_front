@@ -6,6 +6,7 @@ import { Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../css/info.css";
 import axios from "axios";
+import { algoActions } from "../../toolkit/actions/algorithm_action";
 
 const InfoView = () => {
   const { infoSeq } = useParams();
@@ -19,6 +20,8 @@ const InfoView = () => {
 
   useEffect(() => {
     dispatch(infoActions.getInfoDetail(infoSeq));
+    //
+    dispatch(algoActions.getAlgoList(loginList.email));
   }, [dispatch, infoSeq]);
 
   const [imageSrc, setImageSrc] = useState("../../images/infoview/unstar.png");
@@ -58,6 +61,9 @@ const InfoView = () => {
     formData.append("email", loginList.email);
     dispatch(infoActions.insertInfo(formData, config));
     navigator(`/info/view/${infoSeq}`);
+
+    // 엔터리스트에 추가하면 알고리즘 갱신
+    dispatch(algoActions.getAlgoList(loginList.email));
   };
 
   return (
