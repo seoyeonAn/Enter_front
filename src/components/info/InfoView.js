@@ -85,12 +85,16 @@ const InfoView = () => {
             <h2>{infoDetail.title}</h2>
             <form onSubmit={onSubmit}>
               <input type="hidden" value={infoDetail.infoSeq} readOnly />
-              <input
-                type="image"
-                onClick={addenter}
-                src={imageSrc}
-                style={{ height: "30px", width: "30px", float: "right" }}
-              />
+              {loginList.email ? (
+                <input
+                  type="image"
+                  onClick={addenter}
+                  src={imageSrc}
+                  style={{ height: "30px", width: "30px", float: "right" }}
+                />
+              ) : (
+                <></>
+              )}
             </form>
           </div>
           <Table size="bg">
