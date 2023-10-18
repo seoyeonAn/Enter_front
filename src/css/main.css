@@ -26,7 +26,7 @@
 }
 
 .main .calender-daylist-Area .calender-Area {
-  width: 48%;
+  width: 44%;
 }
 
 .main .calender-daylist-Area .calender-Area .react-calendar {
@@ -56,7 +56,7 @@
 }
 
 .main .calender-daylist-Area .day-List-Area {
-  width: 48%;
+  width: 54%;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   height: 300px;
@@ -76,7 +76,7 @@
 }
 
 .main .calender-daylist-Area .day-List-Area .day-List {
-  margin: 0 20px;
+  margin: 20px;
 }
 
 .main .calender-daylist-Area .day-List-Area .d-list-Item {
@@ -91,6 +91,18 @@
 .main .calender-daylist-Area .day-List-Area .d-list-Item a {
   display: flex;
   justify-content: space-between;
+}
+
+.main .calender-daylist-Area .day-List-Area .d-list-Item a:hover span {
+  color: #be3455 !important;
+}
+
+.main .calender-daylist-Area .day-List-Area .d-list-Item a .m-title {
+  font-weight: 600;
+}
+
+.main .calender-daylist-Area .day-List-Area .d-list-Item a .m-date {
+  font-size: 0.8rem;
 }
 
 .main .videoBox {

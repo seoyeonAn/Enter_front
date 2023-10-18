@@ -83,9 +83,10 @@ const Main = () => {
         </Carousel>
       </div>
 
-      <div className="container pd-content-100 ranking-List-Area">
+      
         {loginList.name != null ? (
           <>
+          <div className="container pd-content-100 ranking-List-Area">
             <h1 className="algoTitle title">
               {loginList.name + " 님을 위한 추천 "}
             </h1>
@@ -97,11 +98,11 @@ const Main = () => {
                   );
                 })}
             </ul>
+            </div>
           </>
         ) : (
           <></>
         )}
-      </div>
 
       {/* banner */}
       <div className="container pd-content-100">
@@ -196,33 +197,27 @@ const Main = () => {
         <div className="day-List-Area">
           <ul className="day-List">
             <li className="d-list-Item">
-              <a href="#">
-                <span>전시 1</span>
-                <span>2023-09-20 ~ 2023-10-20</span>
+              <a href="/info/view/53">
+                <span className="m-title">[시민청] 집에 깃든 우리들의 시간</span>
+                <span className="m-date">2023-10-07 ~ 2023-10-13</span>
               </a>
             </li>
             <li className="d-list-Item">
-              <a href="#">
-                <span>전시 2</span>
-                <span>2023-09-20 ~ 2023-10-20</span>
+              <a href="/info/view/1">
+                <span className="m-title">[강동문화재단] 2023 서울오페라페스티벌 세비야의 이발사</span>
+                <span className="m-date">2023-10-20 ~ 2023-10-21</span>
               </a>
             </li>
             <li className="d-list-Item">
-              <a href="#">
-                <span>전시 3</span>
-                <span>2023-09-20 ~ 2023-10-20</span>
+              <a href="/info/view/2">
+                <span className="m-title">[세종문화회관] 대한민국국악관현악축제_서울시국악관현악단</span>
+                <span className="m-date">2023-10-21 ~ 2023-10-21</span>
               </a>
             </li>
             <li className="d-list-Item">
-              <a href="#">
-                <span>전시 4</span>
-                <span>2023-09-20 ~ 2023-10-20</span>
-              </a>
-            </li>
-            <li className="d-list-Item">
-              <a href="#">
-                <span>전시 5</span>
-                <span>2023-09-20 ~ 2023-10-20</span>
+              <a href="/info/view/4">
+                <span className="m-title">시그널 : 오르간과 함께 하는 합창음악</span>
+                <span className="m-date">2023-10-24 ~ 2023-10-24</span>
               </a>
             </li>
           </ul>
@@ -231,7 +226,7 @@ const Main = () => {
       <div className="container pd-content-100">
         <h1 className="title">인기 동영상</h1>
         <div className="videoBox pd-top-60">
-          {/* <ReactPlayer
+          <ReactPlayer
             className="video"
             url={"https://youtu.be/rrI7tOhoVzA?si=U49HzIgORu8ErKAA"}
             height="300px"
@@ -256,7 +251,7 @@ const Main = () => {
             playing={false}
             muted={true}
             controls={true}
-          /> */}
+          />
         </div>
       </div>
     </div>
