@@ -24,8 +24,7 @@ const Use_Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    dispatch(loginActions.getLoginList(users));
-    // dispatch(algoActions.getAlgoList(email));
+    dispatch(loginActions.getLoginList(users, navigator));
     //navigator("/");
 
     //window.location.replace("/");

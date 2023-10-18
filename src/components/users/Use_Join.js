@@ -103,8 +103,6 @@ const Use_Join = () => {
       alert("비밀번호 불일치");
       return;
     }
-// 이메일이 유효할 때 분기처리할 부분
-
     await axios
       .post("/join", users)
       .then((response) => {

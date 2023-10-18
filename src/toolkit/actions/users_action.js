@@ -1,18 +1,16 @@
 import axios from "axios";
 import loginSlice, { loginReducers } from "../reducers/users_reducer";
-import { algoActions } from "./algorithm_action";
 
-function getLoginList(users) {
+import { useNavigate } from "react-router-dom";
+
+function getLoginList(users, navigator) {
   return async (dispatch) => {
     const data = await axios
       .post("/login", users)
       .then((response) => {
         console.log("response : ", response);
         dispatch(loginReducers.getLoginList(response));
-        //dispatch(algoActions.getAlgoList(response.data.email));
-
-        var userAgent = navigator.userAgent;
-        console.log(userAgent);
+        navigator("/");
 
         // let jwtToken = response.headers.get("authorization");
         // localStorage.setItem("Authorization", jwtToken);
@@ -25,9 +23,6 @@ function getLoginList(users) {
         if (error.response.status === 401)
           alert("아이디나 패스워드를 확인해주세요.");
       });
-    // .catch((error) => {
-    //   console.log(error);
-    // });
   };
 }
 
