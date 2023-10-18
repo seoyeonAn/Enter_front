@@ -26,9 +26,9 @@ const Use_Login = () => {
     console.log("aa");
 
     //  const infoList = useSelector((state) => state.information.infoList);
-    dispatch(loginActions.getLoginList(users));
+    dispatch(loginActions.getLoginList(users,navigator));
     dispatch(algoActions.getAlgoList(email));
-    navigator("/");
+    //navigator("/");
     //window.location.replace("/");
   };
 
