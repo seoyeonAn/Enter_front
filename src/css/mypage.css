@@ -1,52 +1,4 @@
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-* {
-    font-family: 'Pretendard-Regular';
-    padding: 0;
-    margin: 0;
-}
-
-*::selection {
-  background-color: #be3455;
-  color: #fff;
-}
-
-input:focus {
-    outline: none;
-    border-bottom: 1px solid #BE3455 !important;
-}
-
-/* padding */
-.pd-top-20 {
-    padding-top: 20px;
-}
-.pd-top-40 {
-    padding-top: 40px;
-}
-.pd-top-60 {
-  padding-top: 60px;
-}
-.pd-top-100 {
-  padding-top: 100px;
-}
-.pd-content-100 {
-  padding: 100px 0;
-}
-.pd-content-60 {
-  padding: 60px 0;
-}
-
-.mp-Title {
-  font-weight: 900;
-}
 .user-info {
-  /* padding-bottom: 60px; */
   border-bottom: 1px solid #d9d9d9;
 }
 
@@ -63,12 +15,12 @@ input:focus {
   /* background-color: #BE3455;     */
 }
 .user-info .user-info-img {
-  width: 200%;
+  width: 100%;
 }
 
 .user-info .user-info-desc-area {
   width: 33%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .user-info-desc-area .user-info-desc {
   padding-top: 40px;
@@ -91,20 +43,6 @@ input:focus {
     padding-top: 5px;
 }
 
-.user-info-desc-btn {
-    text-align: center;
-}
-
-.user-info-desc-btn .btn {
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #be3455;
-  border-radius: 5px;
-}
-.user-info-desc-btn .btn:hover {
-  background-color: #a82040;
-  color: #fff;
-}
 
 .list-diary-area {
   padding-top: 60px;
@@ -112,17 +50,18 @@ input:focus {
   margin: 0 auto;
 }
 .list-diary-area .tab-area .tab-li {
-  padding-left: 20px;
+  padding-left: 20px !important;
+  border-bottom: 0;
 }
 .list-diary-area .tab-area .tab-li .nav-item button {
   border: 1px solid #be3455;
-  color: #be3455;
+  color: #be3455 !important;
 }
 .list-diary-area .tab-area .tab-li .nav-item .nav-link.active {
   background-color: #be3455;
   border: 1px solid #be3455;
   border-color: #be3455;
-  color: #fff;
+  color: #fff !important;
 }
 .list-diary-area .tab-area .tab-content-area {
   width: 100%;
@@ -133,7 +72,7 @@ input:focus {
 }
 .list-diary-area .tab-area .tab-content-area .tab-content-desc {
     height: 580px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 5px;
     background-color: #fff;
 }
@@ -169,7 +108,7 @@ input:focus {
 }
 
 .list-diary-area .tab-area .tab-content-area .tab-content-desc .user-diary-list {
-    height: 330px;
+    height: 320px;
     overflow: auto;
     padding-right: 5px;
 }
@@ -185,6 +124,18 @@ input:focus {
     background-color: #BE3455;
     border-radius: 5px;
 }
+
+.form-check-label {
+  text-decoration: line-through !important;
+  text-decoration-color: #be3455 !important;
+  text-decoration-thickness: 2px !important;
+}
+
+.form-check-input:checked {
+  border-color: #be3455;
+  background-color: #be3455;
+}
+
 
 /* diary */
 .form-Area {
@@ -216,16 +167,24 @@ input:focus {
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #BE3455;
-    color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: #fff;
+    color: #fff !important;
     box-shadow: none;
+    font-weight: 700;
 }
 
 .accordion-button:not(.collapsed) .d-date {
-    color: #fff !important;
-    font-weight: 100 !important;
+    color: #333 !important;
+    font-weight: 500;
 }
 
 .accordion-button {
     padding: 16px;
+}
+
+@media screen and (max-width : 1200px) {
+  .list-diary-area {
+    width: 80%;
+  }
 }

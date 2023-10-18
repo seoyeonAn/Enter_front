@@ -1,5 +1,6 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import '../../css/common.css'
 import "../../css/mypage.css"
 
 const DiaryList = ( { diary }) => {

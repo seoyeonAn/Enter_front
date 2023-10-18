@@ -1,6 +1,5 @@
 .pagination {
-  padding-left: 45%;
-  padding-right: 45%;
+  justify-content: center;
   margin-top: 100px;
   --bs-pagination-border-color: none;
   --bs-pagination-hover-border-color: none;

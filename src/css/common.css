@@ -1,0 +1,162 @@
+@import url("https://webfontworld.github.io/pretendard/Pretendard.css");
+
+*,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pretendard";
+  font-size: 1rem;
+  color: #333 !important;
+  text-decoration: none !important;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0 !important;
+}
+
+a:hover {
+  color: #be3455;
+}
+
+*::selection {
+  background-color: #be3455;
+  color: #fff;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #BE3455;
+  border-radius: 5px;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding-left: 0 !important;
+  margin: 0;
+  padding-left: 0 !important;
+}
+
+/* padding */
+.pd-top-20 {
+  padding-top: 20px;
+}
+
+.pd-top-40 {
+  padding-top: 40px;
+}
+
+.pd-top-60 {
+  padding-top: 60px;
+}
+
+.pd-top-80 {
+  padding-top: 80px;
+}
+
+.pd-top-100 {
+  padding-top: 100px;
+}
+
+.pd-bottom-60 {
+  padding-bottom: 60px;
+}
+
+.pd-bottom-100 {
+  padding-bottom: 100px;
+}
+
+.pd-content-100 {
+  padding: 100px 0;
+}
+
+.pd-content-60 {
+  padding: 60px 0;
+}
+
+.title-Area h2 {
+  font-size: 1.8rem !important;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.sub-title {
+  font-weight: 700;
+}
+
+.viva-color {
+  color: #be3455 !important;
+}
+
+.btn-area {
+  text-align: center;
+}
+
+/*버튼*/
+.btn-origin {
+  background-color: #be3455 !important;
+  color: #fff !important;
+  border: 0 !important;
+  padding: 5px;
+  text-align: center;
+}
+
+.btn-origin:hover {
+  background-color: #a82040 !important;
+}
+
+input:focus {
+  outline: none !important;
+  border-bottom: 1px solid #be3455 !important;
+}
+
+/*BaseLayout   # :ID값을 줌(id=#main)  .은 class거나 classname일 때*/
+
+.navbar .container-fluid .navbar-nav .logo img {
+  
+  height: 50px;
+}
+
+.navbar .container-fluid .navbar-nav .search img {
+  width: 24px;
+}
+
+/*margin값은 위->오른->아래->왼쪽(시계방향)으로 적용됌*/
+ul.navbar-nav > li {
+  margin: 0 10px; /* '>'는 하위구조를 지칭해서,바로 아래의 자식태그를 적어줌  0:상하, 10px:좌우*/
+}
+
+.navbar .container-fluid .navbar-nav {
+  align-items: center;
+}
+
+/*footer*/
+.footer {
+  background-color: #be3455;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.footer p {
+  color: #fff !important;
+  text-align: left;
+  padding-left: 40px;
+}
