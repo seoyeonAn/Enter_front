@@ -83,9 +83,9 @@ const Main = () => {
         </Carousel>
       </div>
 
-      <div className="container pd-content-100 ranking-List-Area">
-        {loginList.name != null ? (
-          <>
+      {loginList.name != null ? (
+        <>
+          <div className="container pd-content-100 ranking-List-Area">
             <h1 className="algoTitle title">
               {loginList.name + " 님을 위한 추천 "}
             </h1>
@@ -97,11 +97,11 @@ const Main = () => {
                   );
                 })}
             </ul>
-          </>
-        ) : (
-          <></>
-        )}
-      </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
 
       {/* banner */}
       <div className="container pd-content-100">
