@@ -20,7 +20,7 @@ const AlgoCard = ({ algorithm }) => {
             <Card.Body>
               <Card.Title>{algorithm.title}</Card.Title>
               {/* <Card.Text className="cardText">코사인 유사도 : {algorithm.cosine_sim}</Card.Text> */}
-              {algorithm.start_date === null ? (
+              {algorithm.start_date === "" ? (
                 <Card.Text className="cardText">상시 개관</Card.Text>
               ) : (
                 <Card.Text className="cardText">
