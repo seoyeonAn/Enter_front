@@ -165,7 +165,6 @@ const InfoView = () => {
           ) : (
             infoDetail.content
           )}
-          <img src={infoDetail.content} />
         </div>
       </div>
     </div>
