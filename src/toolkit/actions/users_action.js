@@ -3,14 +3,13 @@ import loginSlice, { loginReducers } from "../reducers/users_reducer";
 
 import { useNavigate } from "react-router-dom";
 
-function getLoginList(users, navigator) {
+function getLoginList(users) {
   return async (dispatch) => {
     const data = await axios
       .post("/login", users)
       .then((response) => {
         console.log("response : ", response);
         dispatch(loginReducers.getLoginList(response));
-        navigator("/");
 
         // let jwtToken = response.headers.get("authorization");
         // localStorage.setItem("Authorization", jwtToken);

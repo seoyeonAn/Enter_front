@@ -41,7 +41,7 @@ const Use_Join = () => {
     console.log("email" + users.email);
 
     //이메일 존재여부 체크 후 존재시 가입을 막음
-    
+
     await axios.get(`/users/email?email=${users.email}`).then((res) => {
       const resMessge = res.data;
       console.log("email:" + res.data);
@@ -88,8 +88,8 @@ const Use_Join = () => {
     e.preventDefault();
     const { email, password, name, phone } = users;
 
-    if(!isEmailValid){
-      alert('이메일 중복확인을 해주세요.')
+    if (!isEmailValid) {
+      alert("이메일 중복확인을 해주세요.");
       return;
     }
 
@@ -140,7 +140,6 @@ const Use_Join = () => {
                 중복확인
               </button>
             </div>
-
           </div>
           <div className="form-group mb-1 users_name">
             이름
