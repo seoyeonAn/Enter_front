@@ -79,7 +79,7 @@ const Use_Login = () => {
   // };
 
   return (
-    <div className="container pd-content-100">
+    <div className="container pd-content-login">
       <form onSubmit={onSubmit} className="join-form">
         <h1 className="title">로그인</h1>
         <div className="container con">
