@@ -36,7 +36,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   width: 5px;
-  background-color: #BE3455;
+  background-color: #be3455;
   border-radius: 5px;
 }
 
@@ -80,6 +80,10 @@ li {
 
 .pd-content-100 {
   padding: 100px 0;
+}
+
+.pd-content-login {
+  padding: 185px 0;
 }
 
 .pd-content-60 {
@@ -129,7 +133,6 @@ input:focus {
 /*BaseLayout   # :ID값을 줌(id=#main)  .은 class거나 classname일 때*/
 
 .navbar .container-fluid .navbar-nav .logo img {
-  
   height: 50px;
 }
 
@@ -152,7 +155,6 @@ ul.navbar-nav > li {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-
 }
 
 .footer p {
