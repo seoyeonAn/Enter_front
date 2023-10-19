@@ -24,13 +24,23 @@ const Use_Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    dispatch(loginActions.getLoginList(users, navigator));
-    //navigator("/");
-
+    dispatch(loginActions.getLoginList(users));
     //window.location.replace("/");
   };
 
-  useEffect(() => {}, [loginList]);
+  const callmove = () => {
+    if (loginList.email) {
+      navigator("/");
+      console.log("ok" + loginList.email);
+    } else {
+      console.log("error" + loginList.email);
+      navigator("/login");
+    }
+  };
+
+  useEffect(() => {
+    callmove();
+  }, [loginList.email]);
   // await axios
   //   .post("/login", users)
   //   .then((response) => {
