@@ -91,6 +91,7 @@
 .main .calender-daylist-Area .day-List-Area .d-list-Item a {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .main .calender-daylist-Area .day-List-Area .d-list-Item a:hover span {
@@ -168,4 +169,67 @@
 
 .algoTitle {
   padding-bottom: 40px;
+}
+
+/* 1200 */
+@media screen and (max-width : 1200px) {
+  .algoList .col-3 {
+    width: 25%;
+    padding: 10px;
+  }
+
+  .banner-List .list-Item {
+    width: 550px !important;
+    height: auto !important;
+    margin: 10px 0 !important;
+  }
+
+  .main .d-block{
+    height: 500px;
+  }
+
+  .main .slide-Area {
+    padding-bottom: 60px;
+  }
+
+  .main .calender-daylist-Area .day-List-Area {
+    height: 260px;
+  }
+  .main .calender-daylist-Area .day-List-Area .d-list-Item {
+    padding: 16px 10px !important;
+  }
+}
+
+@media screen and (max-width : 1020px){
+  .algoList .col-3:last-child {
+    display: none;
+  }
+  .algoList .col-3 {
+     width: 33%;
+     padding: 20px;
+  }
+  .banner-List .list-Item {
+    width: 460px !important;
+  }
+  .taster-List-Item:last-child  {
+    display: none;
+  }
+  .taster-List-Item {
+    width: 33%;
+    margin: 20px !important;
+  }
+
+  .main .calender-daylist-Area .day-List-Area {
+    height: 300px;
+  }
+  .main .calender-daylist-Area .day-List-Area a {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .main .videoBox .video:last-child {
+    display: none;
+  }
+  .main .videoBox .video {
+    width: 460px !important;
+  }
 }
