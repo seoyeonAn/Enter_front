@@ -93,10 +93,14 @@ const Use_Join = () => {
       return;
     }
 
-    if (!email || !password || !name || !phone) {
+    if (!email || !password || !name) {
       alert("모든 가입 정보를 입력해주세요.");
       return;
     }
+    // if (!email || !password || !name || !phone) {
+    //   alert("모든 가입 정보를 입력해주세요.");
+    //   return;
+    // }
 
     console.log(password, passwordText);
     if (password !== passwordText) {
@@ -178,7 +182,7 @@ const Use_Join = () => {
             <span className="passcheck">{passwordCheck}</span>
           </div>
 
-          <div className="form-group mb-1 users_phone">
+          {/* <div className="form-group mb-1 users_phone">
             휴대폰 번호
             <input
               type="text"
@@ -187,7 +191,7 @@ const Use_Join = () => {
               placeholder="-를 빼고 입력해주세요."
               onChange={handleValueChange}
             />
-          </div>
+          </div> */}
 
           <div className="btn-area pd-top-40">
             <button
