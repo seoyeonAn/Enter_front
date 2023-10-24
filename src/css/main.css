@@ -45,6 +45,15 @@
   color: #fff !important;
   border-radius: 5px;
 }
+/* .main
+  .calender-daylist-Area
+  .calender-Area
+  .react-calendar
+  .react-calendar__tile--active {
+  background-color: gray;
+  color: #fff !important;
+  border-radius: 5px;
+} */
 
 .main
   .calender-daylist-Area
@@ -118,49 +127,49 @@
 }
 
 .main .taster-List-Area .title h1 {
-    margin: 0;
+  margin: 0;
 }
 
 .main .taster-List-Area .taster-List .tab-area {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .main .taster-List-Area .taster-List .tab-area .tab-content {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .main .taster-List-Area .taster-List .tab-area .nav {
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .main .taster-List-Area .taster-List .tab-area .nav-link {
-    color: #be3455;
+  color: #be3455;
 }
 
 .main .taster-List-Area .taster-List .tab-area .nav-link.active {
-    background-color: #be3455;
-    color: #fff !important;
+  background-color: #be3455;
+  color: #fff !important;
 }
 
 .main .taster-List-Area .taster-List .taster-List-content {
-    display: flex;
-    justify-content: space-between ;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .main .taster-List-Area .taster-List .taster-List-Item {
-    width: 32%;
-    margin: 0 10px;
-    height: 500px;
+  width: 32%;
+  margin: 0 10px;
+  height: 500px;
 }
 .main .taster-List-Area .taster-List .taster-List-Item .card-title {
   margin-bottom: 20px !important;
-}  
+}
 .main .taster-List-Area .taster-List .taster-List-Item img {
-    padding: 10px;
+  padding: 10px;
 }
 
 .algoList {

@@ -9,7 +9,7 @@ const activeStyle = ({ isActive }) => ({
 const BaseLayout = () => {
   const loginList = useSelector((state) => state.login.loginList);
   useEffect(() => {
-    console.log("baselayout", loginList);
+    //console.log("baselayout", loginList);
   }, [loginList]);
   return (
     <div className="total">
