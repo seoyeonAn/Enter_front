@@ -10,8 +10,6 @@ import { algoActions } from "../../toolkit/actions/algorithm_action";
 
 const InfoView = () => {
   const { infoSeq } = useParams();
-  console.log("infoSeq: ", infoSeq);
-
   const dispatch = useDispatch();
   const navigator = useNavigate();
   const infoDetail = useSelector((state) => state.information.infoDetail);
@@ -20,25 +18,13 @@ const InfoView = () => {
 
   useEffect(() => {
     dispatch(infoActions.getInfoDetail(infoSeq));
-    //
-    dispatch(algoActions.getAlgoList(loginList.email));
+    if (loginList.email) {
+      dispatch(algoActions.getAlgoList(loginList.email));
+    }
   }, [dispatch, infoSeq]);
 
   const [imageSrc, setImageSrc] = useState("../../images/infoview/unstar.png");
-
-  // const [imageSrc, setImageSrc] = useState(
-  //   infoDetail.enter_seq === null
-  //     ? "../../images/infoview/unstar.png"
-  //     : "../../images/infoview/star.png"
-  // );
-
   const [isClicked, setIsClicked] = useState(false);
-
-  // const [imageSrc, setImageSrc] = useState(
-  //   isClicked === false
-  //     ? "../../images/infoview/unstar.png"
-  //     : "../../images/infoview/star.png"
-  // );
 
   const addenter = () => {
     if (isClicked) {
@@ -57,7 +43,6 @@ const InfoView = () => {
     let config = { "Content-Type": "multipart/form-data" };
     const formData = new FormData();
     formData.append("infoSeq", infoSeq);
-    //formData.append("email", localStorage.getItem("email"));
     formData.append("email", loginList.email);
     dispatch(infoActions.insertInfo(formData, config));
     navigator(`/info/view/${infoSeq}`);
@@ -161,7 +146,7 @@ const InfoView = () => {
         </div>
       </div>
 
-      <div className="textContent">
+      {/* <div className="textContent">
         <h3 className="sub-title">상세내용</h3>
         <div className="division-line pd-top-100">
           {infoDetail.content === null ? (
@@ -170,7 +155,7 @@ const InfoView = () => {
             infoDetail.content
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

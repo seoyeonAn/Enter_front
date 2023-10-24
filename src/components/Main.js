@@ -17,6 +17,8 @@ import ExhibitionTaster from "./main/ExhibitionTaster";
 import ShowTaster from "./main/ShowTaster";
 import MuseumTaster from "./main/MuseumTaster";
 import { Link } from "react-router-dom";
+import { calendarActions } from "../toolkit/actions/calendar_action";
+import CalendarList from "./main/CalendarList";
 
 const Main = () => {
   //const dispatch = useDispatch();
@@ -29,6 +31,8 @@ const Main = () => {
   const showList = useSelector((state) => state.show.showList);
   const museumList = useSelector((state) => state.museum.museumList);
 
+  const calendarList = useSelector((state) => state.calendar.calendarList);
+
   const dispatch = useDispatch();
 
   const getAlgorithm = () => {
@@ -38,18 +42,34 @@ const Main = () => {
   const getMainTaster = () => {
     dispatch(tasterActions.getMainTaster());
   };
-
-  console.log("exhibition list: ", exhibitionList);
+  //console.log("exhibition list: ", exhibitionList);
 
   useEffect(() => {
-    console.log("algoList:", algoList);
-
     if (loginList.email) {
       getAlgorithm();
     }
-
     getMainTaster();
   }, [loginList]);
+
+  //React Calendar
+  const [value, onChange] = useState(new Date());
+
+  const getFormattedDate = (date) => {
+    return `${date.getFullYear()}/${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}/${date.getDate().toString().padStart(2, "0")}`;
+  };
+
+  const formattedDate = getFormattedDate(value);
+
+  const getCalendar = () => {
+    dispatch(calendarActions.getCalendarList(formattedDate));
+  };
+
+  // 선택된 날짜가 변경될 때마다 getCalendar 함수 호출
+  useEffect(() => {
+    getCalendar();
+  }, [formattedDate]);
 
   return (
     <div className="main">
@@ -191,42 +211,32 @@ const Main = () => {
       {/* Calender/list */}
       <div className="container pd-content-100 calender-daylist-Area">
         <div className="calender-Area">
-          <Calendar />
+          {/* <Calendar /> */}
+          <Calendar
+            onChange={onChange}
+            value={value}
+            formatDay={(locale, date) =>
+              date.toLocaleString("en", { day: "numeric" })
+            }
+          />
         </div>
         <div className="day-List-Area">
           <ul className="day-List">
-            <li className="d-list-Item">
-              <a href="/info/view/53">
-                <span className="m-title">
-                  [시민청] 집에 깃든 우리들의 시간
-                </span>
-                <span className="m-date">2023-10-07 ~ 2023-10-13</span>
-              </a>
-            </li>
-            <li className="d-list-Item">
-              <a href="/info/view/1">
-                <span className="m-title">
-                  [강동문화재단] 2023 서울오페라페스티벌 세비야의 이발사
-                </span>
-                <span className="m-date">2023-10-20 ~ 2023-10-21</span>
-              </a>
-            </li>
-            <li className="d-list-Item">
-              <a href="/info/view/2">
-                <span className="m-title">
-                  [세종문화회관] 대한민국국악관현악축제_서울시국악관현악단
-                </span>
-                <span className="m-date">2023-10-21 ~ 2023-10-21</span>
-              </a>
-            </li>
-            <li className="d-list-Item">
-              <a href="/info/view/4">
-                <span className="m-title">
-                  시그널 : 오르간과 함께 하는 합창음악
-                </span>
-                <span className="m-date">2023-10-24 ~ 2023-10-24</span>
-              </a>
-            </li>
+            {calendarList ? (
+              <>
+                {calendarList &&
+                  calendarList.map((calendar) => {
+                    return (
+                      <CalendarList
+                        calendar={calendar}
+                        key={calendar.info_seq}
+                      />
+                    );
+                  })}
+              </>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
       </div>

@@ -9,7 +9,6 @@ const algoSlice = createSlice({
   initialState,
   reducers: {
     getAlgoList(state, action) {
-      console.log("action", action.payload.data);
       state.algoList = action.payload.data;
     },
   },

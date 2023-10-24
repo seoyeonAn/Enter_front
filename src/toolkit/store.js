@@ -17,6 +17,7 @@ import loginSlice from "./reducers/users_reducer";
 
 import persistStore from "redux-persist/es/persistStore";
 import { mslice } from "./reducers/mainTaster_reducer";
+import calendarSlice from "./reducers/calendar_reducer";
 
 const store = configureStore({
   reducer: {
@@ -29,11 +30,13 @@ const store = configureStore({
     exhibition: mslice.exhibitionSlice.reducer,
     show: mslice.showSlice.reducer,
     museum: mslice.museumSlice.reducer,
+    //메인페이지 달력
+    calendar: calendarSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware({
-        serializableCheck: false,
-  }) 
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 // const reducers = combineReducers({
@@ -74,7 +77,3 @@ const store = configureStore({
 // });
 
 export default store;
-
-
-
-
