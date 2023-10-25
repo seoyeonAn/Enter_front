@@ -94,7 +94,7 @@ const Use_Login = () => {
         <h1 className="title">로그인</h1>
         <div className="container con">
           <div className="form-group mb-1 userid">
-            아이디
+            이메일
             <input
               type="email"
               id="email"
