@@ -122,7 +122,7 @@ const Use_Join = () => {
   };
 
   return (
-    <div className="container pd-content-100">
+    <div className="container pd-content-join">
       <form onSubmit={handleJoinSubmit} className="join-form">
         <h1 className="title">회원가입</h1>
         <div className="container con">
