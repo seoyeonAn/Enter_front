@@ -45,14 +45,23 @@
   color: #fff !important;
   border-radius: 5px;
 }
-/* .main
+
+/* .react-calendar__tile--active {
+  background: gray;
+  border-radius: 5px;
+}
+
+.main
   .calender-daylist-Area
   .calender-Area
   .react-calendar
-  .react-calendar__tile--active {
-  background-color: gray;
-  color: #fff !important;
-  border-radius: 5px;
+  .react-calendar__tile--active:enabled:hover,
+.main
+  .calender-daylist-Area
+  .calender-Area
+  .react-calendar
+  .react-calendar__tile--active:enabled:focus {
+  background: gray;
 } */
 
 .main
@@ -181,7 +190,7 @@
 }
 
 /* 1200 */
-@media screen and (max-width : 1200px) {
+@media screen and (max-width: 1200px) {
   .algoList .col-3 {
     width: 25%;
     padding: 10px;
@@ -193,7 +202,7 @@
     margin: 10px 0 !important;
   }
 
-  .main .d-block{
+  .main .d-block {
     height: 500px;
   }
 
@@ -209,18 +218,18 @@
   }
 }
 
-@media screen and (max-width : 1020px){
+@media screen and (max-width: 1020px) {
   .algoList .col-3:last-child {
     display: none;
   }
   .algoList .col-3 {
-     width: 33%;
-     padding: 20px;
+    width: 33%;
+    padding: 20px;
   }
   .banner-List .list-Item {
     width: 460px !important;
   }
-  .taster-List-Item:last-child  {
+  .taster-List-Item:last-child {
     display: none;
   }
   .taster-List-Item {
