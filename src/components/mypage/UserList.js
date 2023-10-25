@@ -131,7 +131,9 @@ const UserList = () => {
               onChange={passChange}
             />
           </div>
-          <span className="passcheck">{passwordCheck}</span>
+          <div className="users_passchek">
+            <span className="passcheck">{passwordCheck}</span>
+          </div>
         </div>
         {/* <div className="user-info-phone user-info-desc">
           <span className="user-info-desc-l">전화번호</span>
