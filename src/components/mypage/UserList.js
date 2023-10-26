@@ -11,7 +11,6 @@ const UserList = () => {
     email: "",
     password: "",
     name: "",
-    phone: "",
   });
 
   const dispatch = useDispatch();
@@ -21,7 +20,7 @@ const UserList = () => {
   const loginList = useSelector((state) => state.login.loginList);
   const jwtToken = useSelector((state) => state.login.jwtToken);
   const navigator = useNavigate();
-  const { email, password, name, phone } = users;
+  const { email, password, name } = users;
 
   const config = {
     headers: {
@@ -67,10 +66,15 @@ const UserList = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (!password) {
-      alert("비밀번호를 입력하세요.");
-      return;
-    }
+    // if (!password) {
+    //   alert("비밀번호를 입력하세요.");
+    //   return;
+    // }
+    alert("변경이 완료 되었습니다.")
+    // else {
+    //   alert("변경이 완료 되었습니다.")
+    //   return;
+    // }
 
     console.log("user:", users);
     setUsers({ ...users, email: email });
@@ -127,9 +131,11 @@ const UserList = () => {
               onChange={passChange}
             />
           </div>
-          <span className="passcheck">{passwordCheck}</span>
+          <div className="users_passchek">
+            <span className="passcheck">{passwordCheck}</span>
+          </div>
         </div>
-        <div className="user-info-phone user-info-desc">
+        {/* <div className="user-info-phone user-info-desc">
           <span className="user-info-desc-l">전화번호</span>
           <input
             type="text"
@@ -138,7 +144,7 @@ const UserList = () => {
             value={phone}
             onChange={handleValueChange}
           />
-        </div>
+        </div> */}
         <div className="btn-area user-info-desc-btn pd-top-60">
           <button type="submit" className="btn btn-origin">
             변경하기

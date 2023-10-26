@@ -3,7 +3,6 @@ import { algoReducers } from "../reducers/algorithm_reducer";
 
 function getAlgoList(email) {
   return async (dispatch) => {
-    console.log("email: ", email);
     const data = await axios
       .post("http://127.0.0.1:5000/flask_login", { email })
       .then((response) => JSON.stringify(response.data))
@@ -11,7 +10,7 @@ function getAlgoList(email) {
       .catch((error) => {
         console.log(error);
       });
-    console.log("data : " + data);
+    //console.log("data : " + data);
     const result = JSON.parse(data); //parse(): 객체로 형변환
     dispatch(algoReducers.getAlgoList({ data: result }));
   };

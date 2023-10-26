@@ -82,6 +82,9 @@ li {
   padding: 100px 0;
 }
 
+.pd-content-join {
+  padding: 124px 0;
+}
 .pd-content-login {
   padding: 185px 0;
 }
@@ -161,4 +164,9 @@ ul.navbar-nav > li {
   color: #fff !important;
   text-align: left;
   padding-left: 40px;
+}
+
+.users_passchek {
+  padding-top: 10px;
+  text-align: center;
 }
